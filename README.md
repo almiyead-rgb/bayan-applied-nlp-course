@@ -1,6 +1,8 @@
 # معالجة اللغات الطبيعية التطبيقية  
 # Applied Natural Language Processing
 
+[![Quality checks](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml/badge.svg?branch=develop)](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml)
+
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
 **السياق التدريبي | Training context:** أكاديمية سدايا · SDAIA Academy  
 **المدة | Duration:** 4 أيام حضورية · 4 in-person days  

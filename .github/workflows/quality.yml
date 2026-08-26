@@ -1,0 +1,94 @@
+name: Quality checks
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  day-01-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install test dependencies
+        run: python -m pip install --disable-pip-version-check numpy pytest
+
+      - name: Run Day 1 unit tests
+        env:
+          PYTHONPATH: src
+        run: python -m pytest -q
+
+      - name: Validate public learning materials
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import unquote
+
+          root = Path.cwd().resolve()
+          expected_notebooks = {
+              "notebooks/00_runtime_doctor.ipynb",
+              "notebooks/01_text_processing_tokenization.ipynb",
+              "notebooks/02_attention_transformers.ipynb",
+          }
+          forbidden_paths = {
+              "INSTRUCTOR_PACKAGE.md",
+              "TRAINING_CONTENT.md",
+              "BAYAN_INSTRUCTOR_MASTER_GUIDE_PRIVATE.md",
+          }
+
+          all_files = {
+              path.relative_to(root).as_posix()
+              for path in root.rglob("*")
+              if path.is_file() and ".git" not in path.parts
+          }
+          missing = expected_notebooks - all_files
+          exposed = {path for path in all_files if Path(path).name in forbidden_paths}
+          errors = []
+          if missing:
+              errors.append(f"Missing notebooks: {sorted(missing)}")
+          if exposed:
+              errors.append(f"Private paths exposed: {sorted(exposed)}")
+
+          link_pattern = re.compile(r"!?(?:\[[^\]]*\])\(([^)]+)\)")
+          for markdown in root.rglob("*.md"):
+              if ".git" in markdown.parts:
+                  continue
+              for raw_target in link_pattern.findall(markdown.read_text(encoding="utf-8")):
+                  target = raw_target.strip().strip("<>")
+                  if not target or target.startswith("#") or re.match(r"^(https?:|mailto:|data:)", target):
+                      continue
+                  target = unquote(target.split("#", 1)[0].split("?", 1)[0])
+                  resolved = (markdown.parent / target).resolve()
+                  if root not in resolved.parents and resolved != root:
+                      errors.append(f"{markdown.relative_to(root)}: link escapes repository: {raw_target}")
+                  elif not resolved.exists():
+                      errors.append(f"{markdown.relative_to(root)}: missing link target: {raw_target}")
+
+          for notebook_path in sorted(root.glob("notebooks/*.ipynb")):
+              notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
+              author = notebook.get("metadata", {}).get("authors", [{}])[0].get("name")
+              if author != "Meaad Al-Marri":
+                  errors.append(f"{notebook_path}: author metadata is missing or incorrect")
+              for index, cell in enumerate(notebook.get("cells", [])):
+                  if cell.get("cell_type") == "code":
+                      if cell.get("execution_count") is not None or cell.get("outputs"):
+                          errors.append(f"{notebook_path}: saved output in code cell {index}")
+
+          if errors:
+              raise SystemExit("\n".join(errors))
+          print(f"Public-material validation=PASS ({len(all_files)} files)")
+          PY
