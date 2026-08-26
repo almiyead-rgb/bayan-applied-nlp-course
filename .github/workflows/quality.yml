@@ -44,11 +44,19 @@ jobs:
               "notebooks/01_text_processing_tokenization.ipynb",
               "notebooks/02_attention_transformers.ipynb",
           }
-          forbidden_paths = {
-              "INSTRUCTOR_PACKAGE.md",
-              "TRAINING_CONTENT.md",
-              "BAYAN_INSTRUCTOR_MASTER_GUIDE_PRIVATE.md",
-          }
+          private_directories = {"private", "internal", "instructor", "trainer", "solutions", "answer_keys"}
+          private_prefixes = ("instructor_", "trainer_", "internal_")
+
+          def looks_internal(path_string: str) -> bool:
+              path = Path(path_string)
+              lowered_parts = {part.lower() for part in path.parts[:-1]}
+              name = path.name.lower()
+              return (
+                  bool(lowered_parts & private_directories)
+                  or name.startswith(private_prefixes)
+                  or "master_guide" in name
+                  or "answer_key" in name
+              )
 
           all_files = {
               path.relative_to(root).as_posix()
@@ -56,7 +64,7 @@ jobs:
               if path.is_file() and ".git" not in path.parts
           }
           missing = expected_notebooks - all_files
-          exposed = {path for path in all_files if Path(path).name in forbidden_paths}
+          exposed = {path for path in all_files if looks_internal(path)}
           errors = []
           if missing:
               errors.append(f"Missing notebooks: {sorted(missing)}")
