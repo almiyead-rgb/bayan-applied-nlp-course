@@ -25,3 +25,17 @@
 ## الحدود
 
 12 سجلًا فقط؛ مناسب للشرح والـsmoke tests، وغير مناسب لتدريب نموذج أو استنتاجات إحصائية. الأرقام الناتجة منه توسم `EXAMPLE` إلا إذا قيس تشغيل محدد ووسم `MEASURED`.
+
+
+## عينات اليوم الثاني | Day 2 samples
+
+| الملف | الحجم | الغرض |
+|---|---:|---|
+| `data/sample/bayan_day2_classification.csv` | 40 سجلًا | topic classification + baseline + grouped splits |
+| `data/sample/bayan_day2_ner.jsonl` | 12 جملة | BIO alignment + NER training smoke |
+| `data/sample/bayan_day2_qa.json` | 10 أسئلة | extractive QA + حالتا no-answer |
+
+- جميع النصوص والأرقام المرجعية مصطنعة.
+- `group_id` معرف تعليمي لمنع تسرب الأمثلة المتقاربة، وليس معرف شخص.
+- الأحجام مخصصة لاختبار صحة pipeline داخل الحصة، وليست لتقدير جودة إنتاجية.
+- أي metric من هذه الملفات يجب أن تحمل الوسم `MEASURED_SMOKE`.
