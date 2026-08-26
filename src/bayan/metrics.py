@@ -13,7 +13,7 @@ def classification_report(
     """Return per-label precision/recall/F1 and macro-F1."""
     if len(y_true) != len(y_pred):
         raise ValueError("y_true and y_pred must have the same length")
-    if not y_true:
+    if len(y_true) == 0:
         raise ValueError("labels must not be empty")
 
     if labels is None:
