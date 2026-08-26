@@ -1,0 +1,13 @@
+case_id,language,text,topic
+BAYAN-001,ar,الخدمة الرقمية سريعة وواضحة,digital_service
+BAYAN-002,en,The online service was clear and fast,digital_service
+BAYAN-003,ar,أحتاج معرفة حالة طلب التصريح,permit
+BAYAN-004,en,I need an update about my permit request,permit
+BAYAN-005,ar,موعد العيادة تأخر وأحتاج إعادة الجدولة,health
+BAYAN-006,en,My clinic appointment was delayed,health
+BAYAN-007,ar,الحافلة لم تصل في الوقت المحدد,transport
+BAYAN-008,en,The bus did not arrive on time,transport
+BAYAN-009,ar,تم حل البلاغ وشكرًا لفريق الدعم,support
+BAYAN-010,en,The support team resolved the issue,support
+BAYAN-011,ar,تعذر تسجيل الدخول إلى البوابة,digital_service
+BAYAN-012,en,I cannot sign in to the portal,digital_service

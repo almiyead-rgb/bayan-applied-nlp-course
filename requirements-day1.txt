@@ -1,0 +1,4 @@
+# Tested dependency set for Day 1 on 2026-08-26.
+# Colab reference runtime 2026.07 already provides NumPy and PyTorch.
+transformers==5.15.1
+tokenizers==0.22.2
