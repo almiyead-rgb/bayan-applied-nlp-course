@@ -19,6 +19,7 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 | [ابدأ من هنا · START HERE](START_HERE.md) | أول صفحة تفتحها قبل الدورة وفي صباح اليوم الأول |
 | [دليل البرنامج · Course guide](COURSE_GUIDE.md) | الأهداف، الأيام، طريقة التعلم، والتقييم |
 | [اليوم الأول · Day 1](day-01/README.md) | صفحة العرض المباشر: النص، الترميز، الانتباه، المختبرات، وبوابة المشروع |
+| [اليوم الثاني · Day 2](day-02/README.md) | Fine-tuning للتصنيف وNER وQA وبوابة Gate B |
 | [تجهيز البيئة · Setup hub](docs/setup/README.md) | GitHub وColab وفحص الجاهزية وحل الأعطال |
 | [الأدوات المجانية · Free tools](docs/tools/free-tools.md) | ما هو إلزامي ومجاني، وما هو اختياري أو مدفوع |
 | [قاموس المصطلحات · Glossary](docs/glossary/README.md) | تعريفات عربية/إنجليزية مبسطة وتقنية |
@@ -43,7 +44,7 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 | اليوم | السؤال الرئيس | ما تضيفه إلى بيان |
 |---|---|---|
 | [1](day-01/README.md) | كيف يتحول النص إلى أرقام يفهمها النموذج؟ | preprocessing + tokenizer decision + attention notebook |
-| 2 | كيف نجعل النموذج يحل مهمة محددة؟ | classification + NER + QA |
+| [2](day-02/README.md) | كيف نجعل النموذج يحل مهمة محددة؟ | classification + NER + QA |
 | 3 | كيف نتعامل مع العربية ونثبت صحة النتائج؟ | CAMeL Tools + semantic search + evaluation report |
 | 4 | كيف نجعل الحل أسرع وقابلًا للتسليم؟ | optimisation + tested API + final repository |
 
@@ -53,6 +54,13 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 2. نفّذ [مختبر معالجة النصوص والترميز](notebooks/01_text_processing_tokenization.ipynb) في Colab.
 3. نفّذ [مختبر الانتباه والمحولات](notebooks/02_attention_transformers.ipynb) في Colab.
 4. أكمل [بوابة مختبرات اليوم الأول وGate A](day-01/04-labs-checkpoint.md) واحفظ روابط الـcommits.
+
+### ابدأ اليوم الثاني | Start Day 2
+
+1. افتح [صفحة اليوم الثاني](day-02/README.md) وراجع شرط Gate A.
+2. نفّذ [مختبر التصنيف](notebooks/03_text_classification.ipynb).
+3. نفّذ [مختبر NER وQA](notebooks/04_ner_and_qa.ipynb) في runtime نفسه للاستفادة من cache.
+4. أكمل [Gate B](day-02/05-labs-checkpoint.md) واحفظ رابط commit العام.
 
 
 ## مسارات التعلم | Learning lanes

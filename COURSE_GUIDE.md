@@ -69,13 +69,16 @@
 - [مختبرات اليوم الأول وبوابة Gate A](day-01/04-labs-checkpoint.md).
 - **مخرج بيان:** preprocessing module واختيار tokenizer مدعوم بقياس.
 
-### اليوم 2 — جعل النموذج متخصصًا
+### [اليوم 2 — جعل النموذج متخصصًا](day-02/README.md)
 
 - baseline قبل Transformer.
 - classification وmacro-F1.
 - NER وBIO labels ومحاذاة subwords.
 - extractive QA وno-answer.
 - مقدمة للنماذج العربية ومتعددة اللغات.
+- [دفتر التصنيف والضبط الدقيق](notebooks/03_text_classification.ipynb).
+- [دفتر NER وQA](notebooks/04_ner_and_qa.ipynb).
+- [مختبرات اليوم الثاني وبوابة Gate B](day-02/05-labs-checkpoint.md).
 - **مخرج بيان:** مسارات classification وNER وQA قابلة للتقييم.
 
 ### اليوم 3 — العربية، البحث، والحقيقة

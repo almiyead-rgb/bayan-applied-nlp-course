@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  day-01-quality:
+  course-quality:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,7 +25,7 @@ jobs:
       - name: Install test dependencies
         run: python -m pip install --disable-pip-version-check numpy pytest
 
-      - name: Run Day 1 unit tests
+      - name: Run course unit tests
         env:
           PYTHONPATH: src
         run: python -m pytest -q
@@ -43,6 +43,12 @@ jobs:
               "notebooks/00_runtime_doctor.ipynb",
               "notebooks/01_text_processing_tokenization.ipynb",
               "notebooks/02_attention_transformers.ipynb",
+              "notebooks/03_text_classification.ipynb",
+              "notebooks/04_ner_and_qa.ipynb",
+          }
+          required_markers = {
+              "notebooks/03_text_classification.ipynb": "DAY2_NOTEBOOK3_CORE=PASS",
+              "notebooks/04_ner_and_qa.ipynb": "DAY2_NOTEBOOK4_CORE=PASS",
           }
           private_directories = {"private", "internal", "instructor", "trainer", "solutions", "answer_keys"}
           private_prefixes = ("instructor_", "trainer_", "internal_")
@@ -87,7 +93,12 @@ jobs:
                       errors.append(f"{markdown.relative_to(root)}: missing link target: {raw_target}")
 
           for notebook_path in sorted(root.glob("notebooks/*.ipynb")):
-              notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
+              notebook_text = notebook_path.read_text(encoding="utf-8")
+              notebook = json.loads(notebook_text)
+              relative_notebook = notebook_path.relative_to(root).as_posix()
+              required_marker = required_markers.get(relative_notebook)
+              if required_marker and required_marker not in notebook_text:
+                  errors.append(f"{notebook_path}: missing Core success marker")
               author = notebook.get("metadata", {}).get("authors", [{}])[0].get("name")
               if author != "Meaad Al-Marri":
                   errors.append(f"{notebook_path}: author metadata is missing or incorrect")
