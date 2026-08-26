@@ -1,41 +1,73 @@
 # معالجة اللغات الطبيعية التطبيقية  
 # Applied Natural Language Processing
 
-> **حالة المستودع | Repository status:** قيد البناء والمراجعة الأكاديمية — لا يُعد هذا الفرع إصدارًا تدريبيًا جاهزًا بعد.  
-> **Under construction and academic review — this branch is not yet a delivery-ready release.**
+**إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
+**السياق التدريبي | Training context:** أكاديمية سدايا · SDAIA Academy  
+**المدة | Duration:** 4 أيام حضورية · 4 in-person days  
+**البيئة | Environment:** Google Colab Free + GitHub
 
-برنامج حضوري تطبيقي مكثّف لمدة **4 أيام** يربط بين أساسيات معالجة النصوص ومعمارية المحولات، ثم يحوّل المعرفة إلى مشروع ثنائي اللغة قابل للتقييم والتسليم.
+برنامج تطبيقي يبدأ من الصفر وينتقل بالمتدرب من معالجة النصوص إلى بناء مشروع **بيان**: نظام NLP ثنائي اللغة يجمع التصنيف، والتعرف على الكيانات، والإجابة الاستخراجية عن الأسئلة، والبحث الدلالي، والتقييم، وتحسين الاستدلال.
 
-An intensive **4-day, in-person, hands-on** program connecting text-processing foundations to Transformer-based NLP and a bilingual, assessable capstone.
+A beginner-friendly applied program that moves from text processing to **Bayan**, a bilingual NLP project combining classification, NER, extractive QA, semantic search, evaluation, and inference optimisation.
 
-## معلومات البرنامج | Program information
+## ابدأ هنا | Start here
 
-| العربية | English |
+| وجهتك | متى تستخدمها؟ |
 |---|---|
-| **اسم البرنامج:** معالجة اللغات الطبيعية التطبيقية | **Program:** Applied Natural Language Processing |
-| **المدربة:** ميعاد المري | **Instructor:** Meaad Al-Marri |
-| **المدة:** 4 أيام، 5 ساعات صباحية يوميًا | **Duration:** 4 days, 5 morning hours per day |
-| **نمط التنفيذ:** حضوري مع تطبيقات على Google Colab | **Mode:** In person with Google Colab labs |
-| **الفئة:** مبتدئ، متوسط، مختص — بمسارات تعلم متدرجة | **Audience:** Beginner, intermediate, and specialist — with tiered learning lanes |
-| **العدد المستهدف:** حتى 20 متدربًا | **Target cohort:** Up to 20 learners |
-| **التكلفة البرمجية:** أدوات مجانية فقط في المسار الإلزامي | **Software cost:** Free tools only in the required path |
-| **التسليم:** مستودع GitHub عام لكل متدرب | **Submission:** One public GitHub repository per learner |
+| [ابدأ من هنا · START HERE](START_HERE.md) | أول صفحة تفتحها قبل الدورة وفي صباح اليوم الأول |
+| [دليل البرنامج · Course guide](COURSE_GUIDE.md) | الأهداف، الأيام، طريقة التعلم، والتقييم |
+| [تجهيز البيئة · Setup hub](docs/setup/README.md) | GitHub وColab وفحص الجاهزية وحل الأعطال |
+| [الأدوات المجانية · Free tools](docs/tools/free-tools.md) | ما هو إلزامي ومجاني، وما هو اختياري أو مدفوع |
+| [قاموس المصطلحات · Glossary](docs/glossary/README.md) | تعريفات عربية/إنجليزية مبسطة وتقنية |
+| [التقييم والاجتياز](docs/policies/assessment-and-completion.md) | الأوزان وشروط الشهادة |
+| [طريقة التسليم](docs/policies/submission.md) | المستودع والملفات والـcommits والوسم النهائي |
+| [النزاهة والخصوصية](docs/policies/integrity-and-privacy.md) | البيانات المسموحة والممنوعة |
+| [مشروع بيان](docs/03-capstone-spec.md) | نطاق المشروع ومراحله ومخرجاته |
+| [المصادر الرسمية](docs/references/official-sources.md) | الروابط الأولية المعتمدة للمحتوى والتجهيز |
 
-## المشروع الختامي | Capstone
+## ماذا ستتعلم؟ | What will you learn?
 
-**بيان — Bayan**: نظام ثنائي اللغة لتحليل ملاحظات المستفيدين بالعربية والإنجليزية، يجمع بين التصنيف، والتعرف على الكيانات المسماة، والبحث الدلالي، والتقييم، وتحسين الاستدلال، وواجهة API قابلة للاختبار داخل Colab.
+1. بناء خط معالجة وترميز للنص العربي والإنجليزي.
+2. فهم الانتباه ومعمارية المحولات.
+3. Fine-tune نماذج BERT-family للتصنيف وNER وQA.
+4. بناء بحث دلالي باستخدام sentence embeddings وFAISS.
+5. تقييم كل مهمة بمقياسها الصحيح وتحليل الأخطاء.
+6. قياس وتحسين latency والذاكرة للنشر.
+7. تسليم مشروع عربي/إنجليزي موثق وقابل لإعادة التشغيل.
 
-**Bayan** is a bilingual citizen-feedback NLP system combining classification, named-entity recognition, semantic search, evaluation, inference optimization, and an API testable inside Colab.
+## خريطة الأيام | Four-day journey
 
-## مبادئ البناء | Build principles
+| اليوم | السؤال الرئيس | ما تضيفه إلى بيان |
+|---|---|---|
+| 1 | كيف يتحول النص إلى أرقام يفهمها النموذج؟ | preprocessing + tokenizer decision + attention notebook |
+| 2 | كيف نجعل النموذج يحل مهمة محددة؟ | classification + NER + QA |
+| 3 | كيف نتعامل مع العربية ونثبت صحة النتائج؟ | CAMeL Tools + semantic search + evaluation report |
+| 4 | كيف نجعل الحل أسرع وقابلًا للتسليم؟ | optimisation + tested API + final repository |
 
-- محتوى عربي/إنجليزي واضح، مع تعريف المصطلحات عند أول استخدام.
-- مسار أساسي إلزامي، ومسار استكشافي للمتوسط، ومسار تميّز للمختص.
-- Google Colab Free هو خط الأساس، مع بدائل CPU وخطط استعادة.
-- كل مثال قابل للتشغيل، وكل نتيجة رقمية موسومة: مرجعية أو مقاسة أو مستهدفة أو توضيحية.
-- لا تُرفع البيانات الحساسة أو الأسرار أو أوزان النماذج الكبيرة إلى GitHub.
-- النشر إلى `main` يتم فقط بعد المراجعة والاختبار.
+## مسارات التعلم | Learning lanes
+
+- 🟢 **الأساسي · Core:** إلزامي للجميع، ومصمم ليبدأ من الصفر.
+- 🔵 **الاستكشاف · Explore:** مقارنة أو تجربة إضافية بعد اكتمال الأساسي.
+- 🟣 **التميّز · Distinction:** تحديات للمختصين ولا تعوض نقص Core.
+
+## التكلفة | Cost
+
+المسار الإلزامي مجاني: Google Colab Free، Google Drive، GitHub Public، ومكتبات Python مفتوحة المصدر. لا تحتاج اشتراك Colab Pro، أو خدمة API مدفوعة، أو جهازًا ببطاقة رسومية.
+
+The required path is free. Paid services may be mentioned for comparison but are never required for completion.
+
+## قبل تشغيل أي notebook
+
+1. اقرأ الهدف والوقت المتوقع.
+2. افتح النسخة من GitHub في Colab.
+3. اختر **Save a copy in Drive**.
+4. شغّل الخلايا بالترتيب.
+5. لا تتجاوز خلية فاشلة.
+6. احفظ الدليل المطلوب ثم اعمل commit إلى مستودعك.
+7. قبل التسليم نفذ **Runtime → Restart session and run all**.
+
+> لا تستخدم بيانات حقيقية أو أسرارًا. جميع تطبيقات بيان تستخدم بيانات تعليمية اصطناعية أو عامة موثقة.
 
 ---
 
-Built for the SDAIA Academy training context. Official Academy identity assets remain subject to their applicable brand and usage rules.
+© Meaad Al-Marri. Third-party libraries, datasets, references, and SDAIA Academy identity assets retain their respective rights and usage terms.
