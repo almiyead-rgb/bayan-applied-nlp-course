@@ -57,13 +57,16 @@
 
 ## محتوى الأيام | Day-by-day
 
-### اليوم 1 — من النص إلى Tensor
+### [اليوم 1 — من النص إلى Tensor](day-01/README.md)
 
 - Unicode والنص العربي/الإنجليزي.
 - التنظيف، PII masking، والتطبيع كقرار.
 - الكلمات، subwords، special tokens، وfertility.
 - التضمينات والسياق.
 - attention وTransformer encoder.
+- [دفتر معالجة النصوص والترميز](notebooks/01_text_processing_tokenization.ipynb).
+- [دفتر الانتباه والمحولات](notebooks/02_attention_transformers.ipynb).
+- [مختبرات اليوم الأول وبوابة Gate A](day-01/04-labs-checkpoint.md).
 - **مخرج بيان:** preprocessing module واختيار tokenizer مدعوم بقياس.
 
 ### اليوم 2 — جعل النموذج متخصصًا
