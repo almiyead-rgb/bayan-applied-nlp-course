@@ -81,13 +81,17 @@
 - [مختبرات اليوم الثاني وبوابة Gate B](day-02/05-labs-checkpoint.md).
 - **مخرج بيان:** مسارات classification وNER وQA قابلة للتقييم.
 
-### اليوم 3 — العربية، البحث، والحقيقة
+### [اليوم 3 — العربية، البحث، والحقيقة](day-03/README.md)
 
 - تحديات MSA واللهجات وclitics.
 - CAMeL Tools واستخدامه المناسب.
 - sentence embeddings وcosine similarity.
 - FAISS وretrieve ثم re-rank.
 - task metrics وslices وerror taxonomy.
+- [دفتر معالجة العربية](notebooks/05_arabic_nlp.ipynb).
+- [دفتر البحث الدلالي](notebooks/06_semantic_search.ipynb).
+- [دفتر التقييم وتحليل الأخطاء](notebooks/07_evaluation_error_analysis.ipynb).
+- [مختبرات اليوم الثالث وبوابة Gate C](day-03/04-labs-checkpoint.md).
 - **مخرج بيان:** بحث ثنائي اللغة وتقرير تقييم وتحليل أخطاء.
 
 ### اليوم 4 — أسرع، أخف، وقابل للتسليم

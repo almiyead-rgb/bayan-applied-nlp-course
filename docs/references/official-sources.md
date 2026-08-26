@@ -30,3 +30,9 @@
 - `MEASURED`: ناتج تشغيل موثق.
 - `TARGET`: حد نجاح تدريبي.
 - `EXAMPLE`: رقم توضيحي فقط.
+
+## مصادر محتوى الأيام
+
+- [مراجع اليوم الأول](../../day-01/REFERENCES.md)
+- [مراجع اليوم الثاني](../../day-02/REFERENCES.md)
+- [مراجع اليوم الثالث](../../day-03/REFERENCES.md): CAMeL Tools، Sentence Transformers، FAISS، وبطاقات النماذج المستخدمة.

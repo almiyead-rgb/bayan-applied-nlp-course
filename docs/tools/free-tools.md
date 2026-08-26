@@ -57,3 +57,11 @@
 4. هل نستطيع إعادة إنتاج النتيجة دون secret أو حساب إضافي؟
 
 إذا كانت الإجابة “لا” على أحدها، فالأداة ليست جزءًا إلزاميًا.
+
+## إصدارات اليوم الثالث | Day 3 versions
+
+يستخدم المختبر ملف [`requirements-day3.txt`](../../requirements-day3.txt) المثبت والمراجع في 26 أغسطس 2026. المسار الإلزامي لا يحتاج token أو API أو قاعدة متجهات خارجية. model weights تُنزّل إلى runtime المؤقت ولا تُرفع إلى GitHub.
+
+- CAMeL Tools utilities فقط في Core؛ حزم بيانات dialect الكبيرة Explore.
+- Sentence Transformer متعدد اللغات + FAISS CPU في Core.
+- Cross-encoder وإدارة vector database خيارات لاحقة، ولا تمنح نقاطًا بدل الأدلة الإلزامية.

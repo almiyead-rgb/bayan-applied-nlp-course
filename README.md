@@ -20,6 +20,7 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 | [دليل البرنامج · Course guide](COURSE_GUIDE.md) | الأهداف، الأيام، طريقة التعلم، والتقييم |
 | [اليوم الأول · Day 1](day-01/README.md) | صفحة العرض المباشر: النص، الترميز، الانتباه، المختبرات، وبوابة المشروع |
 | [اليوم الثاني · Day 2](day-02/README.md) | Fine-tuning للتصنيف وNER وQA وبوابة Gate B |
+| [اليوم الثالث · Day 3](day-03/README.md) | العربية وCAMeL Tools والبحث الدلالي والتقييم وبوابة Gate C |
 | [تجهيز البيئة · Setup hub](docs/setup/README.md) | GitHub وColab وفحص الجاهزية وحل الأعطال |
 | [الأدوات المجانية · Free tools](docs/tools/free-tools.md) | ما هو إلزامي ومجاني، وما هو اختياري أو مدفوع |
 | [قاموس المصطلحات · Glossary](docs/glossary/README.md) | تعريفات عربية/إنجليزية مبسطة وتقنية |
@@ -45,7 +46,7 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 |---|---|---|
 | [1](day-01/README.md) | كيف يتحول النص إلى أرقام يفهمها النموذج؟ | preprocessing + tokenizer decision + attention notebook |
 | [2](day-02/README.md) | كيف نجعل النموذج يحل مهمة محددة؟ | classification + NER + QA |
-| 3 | كيف نتعامل مع العربية ونثبت صحة النتائج؟ | CAMeL Tools + semantic search + evaluation report |
+| [3](day-03/README.md) | كيف نتعامل مع العربية ونثبت صحة النتائج؟ | CAMeL Tools + semantic search + evaluation report |
 | 4 | كيف نجعل الحل أسرع وقابلًا للتسليم؟ | optimisation + tested API + final repository |
 
 ### ابدأ اليوم الأول | Start Day 1
@@ -61,6 +62,14 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 2. نفّذ [مختبر التصنيف](notebooks/03_text_classification.ipynb).
 3. نفّذ [مختبر NER وQA](notebooks/04_ner_and_qa.ipynb) في runtime نفسه للاستفادة من cache.
 4. أكمل [Gate B](day-02/05-labs-checkpoint.md) واحفظ رابط commit العام.
+
+### ابدأ اليوم الثالث | Start Day 3
+
+1. افتح [صفحة اليوم الثالث](day-03/README.md) وتحقق من اكتمال Gate B.
+2. نفّذ [مختبر معالجة العربية](notebooks/05_arabic_nlp.ipynb) وأنشئ profile موثقة.
+3. نفّذ [مختبر البحث الدلالي](notebooks/06_semantic_search.ipynb) وابنِ فهرس FAISS ثنائي اللغة.
+4. نفّذ [مختبر التقييم وتحليل الأخطاء](notebooks/07_evaluation_error_analysis.ipynb).
+5. أكمل [Gate C](day-03/04-labs-checkpoint.md) واحفظ التقارير وروابط الـcommits.
 
 
 ## مسارات التعلم | Learning lanes

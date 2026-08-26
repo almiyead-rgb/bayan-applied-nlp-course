@@ -74,7 +74,7 @@ print(entity_f1(truth, guess))
 
 ## العربية واللصائق
 
-قد يظهر الموقع داخل `وبالرياض`. whitespace word لا يعكس دائمًا الوحدة الصرفية. اليوم نثبت محاذاة tokenizer؛ في اليوم الثالث نقارن segmentation باستخدام CAMeL Tools، مع قاعدة ثابتة:
+قد يظهر الموقع داخل `وبالرياض`. whitespace word لا يعكس دائمًا الوحدة الصرفية. اليوم نثبت محاذاة tokenizer؛ وفي اليوم الثالث نبني profile عربية باستخدام CAMeL Tools، بينما تبقى مقارنة morphological segmentation في Explore، مع قاعدة ثابتة:
 
 > ما يطبق في التدريب يجب أن يطبق نفسه في الاستدلال.
 

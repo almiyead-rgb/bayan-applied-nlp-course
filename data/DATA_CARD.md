@@ -39,3 +39,17 @@
 - `group_id` معرف تعليمي لمنع تسرب الأمثلة المتقاربة، وليس معرف شخص.
 - الأحجام مخصصة لاختبار صحة pipeline داخل الحصة، وليست لتقدير جودة إنتاجية.
 - أي metric من هذه الملفات يجب أن تحمل الوسم `MEASURED_SMOKE`.
+
+## عينات اليوم الثالث | Day 3 samples
+
+| الملف | الحجم | الغرض | وسم الدليل |
+|---|---:|---|---|
+| `data/sample/bayan_day3_arabic.csv` | 20 سجلًا | profiles عربية + audit لـMSA/Gulf/Arabizi | `COURSE_FIXTURE` |
+| `data/sample/bayan_day3_cases.csv` | 24 حالة | corpus بحث عربي/إنجليزي مع summary وresolution | `MEASURED_SMOKE` عند تشغيل النموذج |
+| `data/sample/bayan_day3_queries.jsonl` | 18 استعلامًا | validation/test، mono/cross/no-answer، وrelevance labels | `MEASURED_SMOKE` عند تشغيل النموذج |
+| `data/sample/bayan_day3_predictions.csv` | 36 تنبؤًا | تعليم Macro-F1 وCI والشرائح والمقارنة الزوجية | `COURSE_FIXTURE` دائمًا |
+
+- `variant` وسم تعليمي يدوي في العينة، وليس مخرج dialect classifier.
+- حالات البحث والتنبؤات مصطنعة ولا تمثل خدمة أو مستفيدين حقيقيين.
+- يضبط no-answer threshold على validation فقط، ثم يثبت قبل test.
+- صغر الشرائح يظهر كـ`SMALL_SLICE` ولا يسمح باستنتاجات سكانية أو إنتاجية.
