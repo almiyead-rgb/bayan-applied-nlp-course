@@ -9,8 +9,8 @@
 | 3 | Fine-tuning للتصنيف وNER وQA | [يوم 2: M3](../day-02/README.md) | baseline ثم نموذج BERT-family؛ label alignment؛ null answer | `03_text_classification.ipynb` + `04_ner_and_qa.ipynb` | metrics موسومة + zero leakage + اختبارات alignment/no-answer |
 | 4 | البحث الدلالي بالتضمينات | [يوم 3: M5](../day-03/02-semantic-search.md) | bi-encoder، cosine، FAISS، retrieve ثم re-rank اختياري | bilingual case search | Recall@k وMRR + اختبار cross-lingual |
 | 5 | التقييم وتحليل الأخطاء | [يوم 3: M6](../day-03/03-evaluation-error-analysis.md) | task metrics، slices، CIs، behavioural tests، taxonomy | `EVALUATION_REPORT.md` وmodel cards | نتائج قابلة لإعادة الإنتاج + 3 إصلاحات مرتبة |
-| 6 | تحسين الاستدلال والذاكرة | يوم 4: M7 | batching/length، ONNX، INT8 حيث يدعم، benchmark منضبط | optimized serving path | latency/memory/quality tax قبل وبعد |
-| 7 | مشروع عربي/إنجليزي مكتمل | الأيام 1–4 | تجميع المكونات، API، README، demo | مستودع Bayan عام | validator + rubric + tag `submission-v1.0` |
+| 6 | تحسين الاستدلال والذاكرة | [يوم 4: M7](../day-04/README.md) | batching/length، ONNX، INT8 حيث يدعم، benchmark منضبط | optimized serving path | latency/memory/quality tax قبل وبعد |
+| 7 | مشروع عربي/إنجليزي مكتمل | [الأيام 1–4](../day-04/04-capstone-assembly-demo.md) | تجميع المكونات، API، README، demo | مستودع Bayan عام | [validator + rubric + tag](../day-04/05-lab-gates-submission.md) `submission-v1.0` |
 
 ## التدرّج حسب المستوى | Level differentiation
 

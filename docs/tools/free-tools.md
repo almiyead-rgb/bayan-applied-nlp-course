@@ -65,3 +65,14 @@
 - CAMeL Tools utilities فقط في Core؛ حزم بيانات dialect الكبيرة Explore.
 - Sentence Transformer متعدد اللغات + FAISS CPU في Core.
 - Cross-encoder وإدارة vector database خيارات لاحقة، ولا تمنح نقاطًا بدل الأدلة الإلزامية.
+
+## إصدارات اليوم الرابع | Day 4 versions
+
+يستخدم [مختبر اليوم الرابع](../../notebooks/08_optimization_serving.ipynb) ملف [`requirements-day4.txt`](../../requirements-day4.txt)، المراجع في 26 أغسطس 2026:
+
+- ONNX وONNX Runtime CPU للتصدير والاستدلال والتكميم المحلي.
+- FastAPI وHTTPX2/TestClient لاختبار HTTP داخل Colab بلا استضافة.
+- psutil لقياس RSS observed peak بوصفه قياسًا تقريبيًا.
+- Transformers مع checkpoint صغير في `SYSTEMS_SMOKE`، ثم artefact المشروع في Gate D.
+
+`optimum-onnx` خيار Explore رسمي، لكنه ليس مطلوبًا للمسار الأساسي. لا تحتاج managed endpoint أو tunnel أو قاعدة بيانات مدفوعة، ولا تمنح الاستضافة العامة نقاطًا إضافية. راجع [مراجع اليوم الرابع](../../day-04/REFERENCES.md).

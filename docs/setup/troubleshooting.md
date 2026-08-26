@@ -101,6 +101,45 @@ assert text.encode("utf-8").decode("utf-8") == text
 
 الاختبار قد يفحص مسافة، Unicode code point، type، shape، أو ترتيبًا. اطبع `repr(value)` و`type(value)` و`shape` إن وجدت. لا تعدّل الاختبار ليصبح أخضر.
 
+### فشل ONNX export أو `onnx.checker`
+
+1. تأكد أن `model.eval()` استُدعيت وأن inputs tensors فعلية.
+2. افحص أسماء `input_ids` و`attention_mask` وdtype `int64`.
+3. استخدم opset المحددة في Notebook 08، ولا تغيّر عدة إعدادات معًا.
+4. لا تعتبر وجود ملف `.onnx` نجاحًا إذا فشل checker أو parity.
+5. احتفظ بـPyTorch FP32 وسجل أول error إن بقي operator غير مدعوم.
+
+### ONNX Runtime: input أو shape mismatch
+
+```python
+print([(item.name, item.shape, item.type) for item in session.get_inputs()])
+```
+
+قارنها بالمفاتيح والأشكال المرسلة. لا تضف input غير موجود ولا تحذف `attention_mask` لأن النموذج أعطى نتيجة مرة واحدة.
+
+### INT8 أبطأ أو خفّض الجودة
+
+هذه نتيجة ممكنة وليست خطأ في المختبر:
+
+- أعد warm-up وثبت workload والجهاز والbatch.
+- احسب quality tax على الأمثلة نفسها.
+- إذا لم يحقق candidate الميزانية فاختر `KEEP_PYTORCH_FP32` أو ONNX FP32 الموثق.
+- لا تغيّر budget بعد رؤية النتيجة.
+
+### FastAPI/TestClient يعيد 422
+
+422 متوقع للطلب الفارغ أو اللغة غير المدعومة. إذا ظهر لطلب صالح، اطبع `response.json()` وافحص أسماء حقول JSON وأن `text` string و`language` واحدة من `ar/en/auto`.
+
+### فاحص التسليم يعيد FAIL
+
+اقرأ كل سطر `[ERROR]` وأصلح الملف المذكور؛ لا تعدّل `scripts/validate_submission.py` لتجاوز الشرط. الأخطاء المعتادة:
+
+- placeholder مثل `YOUR_USERNAME` أو `FILL_ME`.
+- notebook مفقود أو علامة Core غير موجودة.
+- `benchmark_mode` ما زال `SYSTEMS_SMOKE`.
+- وزن/ONNX/secret أو ملف أكبر من حد الدورة.
+- tag النهائي غير موجود عند استخدام `--require-tag`.
+
 ## طلب المساعدة الصحيح
 
 ```text

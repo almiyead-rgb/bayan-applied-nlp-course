@@ -117,3 +117,23 @@ MyDrive/bayan-nlp/
 ## 9. متى أستخدم Colab المدفوع؟
 
 ليس مطلوبًا في الدورة. قد يوفر compute units أو وصولًا أوسع لبعض الموارد، لكنه لا يلغي ديناميكية التوفر. لا تشترِ اشتراكًا لأجل الاجتياز؛ استخدم reduced path وcheckpoints المجانية.
+
+## 10. تسليم model artefact من اليوم الثاني إلى الرابع
+
+بعد نجاح نموذج بيان المضبوط في Notebook 03، احفظه في Drive الخاص **من runtime التدريب نفسه**:
+
+```python
+from google.colab import drive
+from pathlib import Path
+
+drive.mount("/content/drive")
+handoff = Path("/content/drive/MyDrive/bayan-nlp/checkpoints/classifier-v1")
+handoff.mkdir(parents=True, exist_ok=True)
+model.save_pretrained(handoff)
+tokenizer.save_pretrained(handoff)
+print("PRIVATE_MODEL_HANDOFF=PASS", handoff)
+```
+
+في Notebook 08 ضع المسار نفسه في `PROJECT_MODEL_SOURCE` و`PROJECT_TOKENIZER_SOURCE`. لا تضع الرابط أو الأوزان في GitHub؛ وثق model ID/revision وhash وخطوات إعادة الإنتاج فقط.
+
+إذا انتهى runtime قبل الحفظ، أعد Notebook 03 من checkpoint والإعدادات الموثقة. لا تستخدم نموذج Systems Smoke بوصفه بديلًا عن artefact المشروع في Gate D.

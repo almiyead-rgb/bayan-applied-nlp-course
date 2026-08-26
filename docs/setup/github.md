@@ -75,7 +75,14 @@ perf: record ONNX benchmark
 
 ## 6. النسخة النهائية
 
-بعد اجتياز فاحص التسليم:
+شغّل فاحص ما قبل tag أولًا:
+
+```bash
+PYTHONPATH=src python scripts/validate_submission.py . \
+  --json-report reports/submission_validation.json
+```
+
+بعد ظهور `BAYAN_SUBMISSION_VALIDATOR=PASS` والتحقق من الروابط في نافذة خاصة:
 
 1. افتح **Releases** في مستودعك.
 2. اختر **Draft a new release**.
@@ -84,6 +91,12 @@ perf: record ONNX benchmark
 4. اجعل target هو `main`.
 5. اكتب عنوانًا: `Bayan NLP Final Submission`.
 6. انشر الإصدار ثم انسخ رابطه.
+
+ثم اسحب أو افتح النسخة التي تحتوي tag وأعد:
+
+```bash
+PYTHONPATH=src python scripts/validate_submission.py . --require-tag
+```
 
 GitHub Releases مبنية على tags التي تحدد نقطة في تاريخ المستودع، وفق [الوثائق الرسمية](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
 

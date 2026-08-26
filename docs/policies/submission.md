@@ -83,6 +83,7 @@ sample_outputs/
   "repository_url": "https://github.com/YOUR_USERNAME/bayan-nlp-YOUR_USERNAME",
   "languages": ["ar", "en"],
   "tasks": ["classification", "ner", "qa", "semantic_search"],
+  "benchmark_mode": "PROJECT_ARTIFACT",
   "final_tag": "submission-v1.0",
   "privacy_check": true,
   "tests_passed": true
@@ -90,6 +91,8 @@ sample_outputs/
 ```
 
 استبدل القيم بمشروعك. لا تكتب `true` ما لم يتحقق الشرط.
+
+`benchmark_mode` لا يصبح `PROJECT_ARTIFACT` إلا بعد إعادة Notebook 08 على checkpoint بيان المضبوط وworkload المشروع. مسار `SYSTEMS_SMOKE` يثبت البنية فقط ويرفضه الفاحص في التسليم النهائي.
 
 ## SUBMISSION.yml
 
@@ -106,6 +109,15 @@ visibility: public
 استخدم spaces لا tabs.
 
 ## الفحص قبل الوسم النهائي
+
+انسخ [قالب PROJECT_SUMMARY](../../templates/PROJECT_SUMMARY.template.json) و[قالب SUBMISSION](../../templates/SUBMISSION.template.yml)، ثم شغّل:
+
+```bash
+PYTHONPATH=src python scripts/validate_submission.py . \
+  --json-report reports/submission_validation.json
+```
+
+يجب أن تظهر `BAYAN_SUBMISSION_VALIDATOR=PASS`. الفاحص محلي ولا يستطيع إثبات visibility؛ افتح الروابط في نافذة خاصة أيضًا.
 
 - [ ] جميع الروابط تعمل في نافذة خاصة بلا صلاحيات إضافية.
 - [ ] README يشرح التشغيل من الصفر.
@@ -127,5 +139,11 @@ visibility: public
 4. العنوان: `Bayan NLP Final Submission`.
 5. انشر الإصدار.
 6. سلّم رابط الـrelease بالطريقة التي تعلنها الجهة المنظمة.
+
+بعد إنشاء tag، اسحب النسخة النهائية ثم أعد الفحص:
+
+```bash
+PYTHONPATH=src python scripts/validate_submission.py . --require-tag
+```
 
 بعد الوسم لا تعدّل النتائج وتدّعي أنها النسخة نفسها؛ أي تصحيح لاحق يحتاج tag جديدًا إذا سُمح بإعادة التسليم.

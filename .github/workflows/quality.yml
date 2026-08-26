@@ -48,6 +48,7 @@ jobs:
               "notebooks/05_arabic_nlp.ipynb",
               "notebooks/06_semantic_search.ipynb",
               "notebooks/07_evaluation_error_analysis.ipynb",
+              "notebooks/08_optimization_serving.ipynb",
           }
           expected_day3_files = {
               "requirements-day3.txt",
@@ -64,12 +65,42 @@ jobs:
               "templates/EVALUATION_REPORT_TEMPLATE.md",
               "templates/MODEL_CARD_TEMPLATE.md",
           }
+          expected_day4_files = {
+              "requirements-day4.txt",
+              "day-04/README.md",
+              "day-04/01-benchmark-before-optimization.md",
+              "day-04/02-onnx-int8-decision.md",
+              "day-04/03-fastapi-serving-canaries.md",
+              "day-04/04-capstone-assembly-demo.md",
+              "day-04/05-lab-gates-submission.md",
+              "day-04/REFERENCES.md",
+              "src/bayan/benchmarking.py",
+              "src/bayan/serving.py",
+              "src/bayan/submission.py",
+              "scripts/validate_submission.py",
+              "tests/test_day4_benchmarking.py",
+              "tests/test_day4_serving.py",
+              "tests/test_day4_submission.py",
+              "templates/BENCHMARKS_TEMPLATE.md",
+              "templates/DATA_CARD_TEMPLATE.md",
+              "templates/DECISIONS_TEMPLATE.md",
+              "templates/DEMO_SCRIPT_TEMPLATE.md",
+              "templates/PEER_REVIEW_TEMPLATE.md",
+              "templates/PROGRESS_TEMPLATE.md",
+              "templates/PROJECT_README_TEMPLATE.md",
+              "templates/PROJECT_SUMMARY.template.json",
+              "templates/STUDENT_PROFILE_TEMPLATE.md",
+              "templates/SUBMISSION.template.yml",
+          }
           required_markers = {
+              "notebooks/01_text_processing_tokenization.ipynb": "DAY1_NOTEBOOK1_CORE=PASS",
+              "notebooks/02_attention_transformers.ipynb": "DAY1_NOTEBOOK2_CORE=PASS",
               "notebooks/03_text_classification.ipynb": "DAY2_NOTEBOOK3_CORE=PASS",
               "notebooks/04_ner_and_qa.ipynb": "DAY2_NOTEBOOK4_CORE=PASS",
               "notebooks/05_arabic_nlp.ipynb": "DAY3_NOTEBOOK5_CORE=PASS",
               "notebooks/06_semantic_search.ipynb": "DAY3_NOTEBOOK6_CORE=PASS",
               "notebooks/07_evaluation_error_analysis.ipynb": "DAY3_NOTEBOOK7_CORE=PASS",
+              "notebooks/08_optimization_serving.ipynb": "DAY4_NOTEBOOK8_CORE=PASS",
           }
           private_directories = {"private", "internal", "instructor", "trainer", "solutions", "answer_keys"}
           private_prefixes = ("instructor_", "trainer_", "internal_")
@@ -90,7 +121,7 @@ jobs:
               for path in root.rglob("*")
               if path.is_file() and ".git" not in path.parts
           }
-          missing = (expected_notebooks | expected_day3_files) - all_files
+          missing = (expected_notebooks | expected_day3_files | expected_day4_files) - all_files
           exposed = {path for path in all_files if looks_internal(path)}
           errors = []
           if missing:

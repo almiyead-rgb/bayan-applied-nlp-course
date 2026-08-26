@@ -51,6 +51,7 @@ cache/
 outputs/
 tmp/
 *.log
+:memory:.ses
 
 # Editors and operating systems
 .vscode/

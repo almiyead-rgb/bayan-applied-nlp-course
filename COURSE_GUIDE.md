@@ -94,13 +94,17 @@
 - [مختبرات اليوم الثالث وبوابة Gate C](day-03/04-labs-checkpoint.md).
 - **مخرج بيان:** بحث ثنائي اللغة وتقرير تقييم وتحليل أخطاء.
 
-### اليوم 4 — أسرع، أخف، وقابل للتسليم
+### [اليوم 4 — أسرع، أخف، وقابل للتسليم](day-04/README.md)
 
 - قياس latency وthroughput وmemory.
 - length، padding، batching، ONNX وINT8.
 - quality tax قبل قرار النشر.
 - FastAPI واختبار الخدمة داخل Colab.
 - تجميع بيان، التحقق، والعرض.
+- [دفتر التحسين والخدمة](notebooks/08_optimization_serving.ipynb).
+- [Benchmark وONNX وINT8](day-04/02-onnx-int8-decision.md).
+- [الخدمة وcanaries](day-04/03-fastapi-serving-canaries.md).
+- [بوابتا Gate D وGate E](day-04/05-lab-gates-submission.md).
 - **مخرج بيان:** مستودع نهائي وAPI مختبرة وbenchmark موثق.
 
 ## التقييم | Assessment

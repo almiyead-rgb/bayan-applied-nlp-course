@@ -111,3 +111,5 @@ CPU/GPU:
 3. [إعداد Colab وDrive](docs/setup/colab.md)
 4. [الأدوات المجانية والاختيارية](docs/tools/free-tools.md)
 5. [قاموس المصطلحات](docs/glossary/README.md)
+6. [خريطة الأيام الأربعة](README.md#خريطة-الأيام--four-day-journey)
+7. [طريقة التسليم النهائي](docs/policies/submission.md)

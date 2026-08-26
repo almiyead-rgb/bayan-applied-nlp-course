@@ -61,8 +61,8 @@ flowchart TD
 | A — ingest | نهاية اليوم 1 | golden preprocessing tests خضراء + قرار tokenizer |
 | B — tasks | نهاية اليوم 2 | baseline موثق + مسارات classification/NER/QA تعمل |
 | C — search & truth | نهاية اليوم 3 | search metrics + sliced evaluation + taxonomy |
-| D — ship | اليوم 4، الجلسة 4 | API tests + benchmark قبل/بعد + canaries |
-| E — submit | اليوم 4، الجلسة 5 | validator + demo + tag `submission-v1.0` |
+| D — ship | [اليوم 4، الجلسة 4](../day-04/05-lab-gates-submission.md) | API tests + benchmark قبل/بعد + canaries على `PROJECT_ARTIFACT` |
+| E — submit | [اليوم 4، الجلسة 5](../day-04/05-lab-gates-submission.md) | validator + demo + tag `submission-v1.0` |
 
 ## ملفات التسليم | Deliverables
 
@@ -76,6 +76,8 @@ flowchart TD
 - `PROJECT_SUMMARY.json` و`SUBMISSION.yml` بصيغ قابلة للفحص.
 - 9 notebooks المطلوبة، و`src/bayan`، و`tests`، ومخرجات عيّنة صغيرة.
 - رابط Colab لكل notebook ولقطة badge الاختبارات في README.
+
+استخدم [قوالب المشروع](../templates/) وفاحص [`scripts/validate_submission.py`](../scripts/validate_submission.py). لا يُقبل `SYSTEMS_SMOKE` بوصفه benchmark نهائيًا؛ يجب أن يصرح `PROJECT_SUMMARY.json` بـ`PROJECT_ARTIFACT` بعد القياس الفعلي.
 
 ## ميزانية الأداء | Performance budget
 

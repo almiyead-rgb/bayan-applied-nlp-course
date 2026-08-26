@@ -36,3 +36,4 @@
 - [مراجع اليوم الأول](../../day-01/REFERENCES.md)
 - [مراجع اليوم الثاني](../../day-02/REFERENCES.md)
 - [مراجع اليوم الثالث](../../day-03/REFERENCES.md): CAMeL Tools، Sentence Transformers، FAISS، وبطاقات النماذج المستخدمة.
+- [مراجع اليوم الرابع](../../day-04/REFERENCES.md): القياس، padding، ONNX/ONNX Runtime، التكميم، FastAPI/TestClient، والإصدارات المثبتة.

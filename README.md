@@ -21,6 +21,7 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 | [اليوم الأول · Day 1](day-01/README.md) | صفحة العرض المباشر: النص، الترميز، الانتباه، المختبرات، وبوابة المشروع |
 | [اليوم الثاني · Day 2](day-02/README.md) | Fine-tuning للتصنيف وNER وQA وبوابة Gate B |
 | [اليوم الثالث · Day 3](day-03/README.md) | العربية وCAMeL Tools والبحث الدلالي والتقييم وبوابة Gate C |
+| [اليوم الرابع · Day 4](day-04/README.md) | القياس والتحسين وONNX وINT8 والخدمة والتسليم النهائي |
 | [تجهيز البيئة · Setup hub](docs/setup/README.md) | GitHub وColab وفحص الجاهزية وحل الأعطال |
 | [الأدوات المجانية · Free tools](docs/tools/free-tools.md) | ما هو إلزامي ومجاني، وما هو اختياري أو مدفوع |
 | [قاموس المصطلحات · Glossary](docs/glossary/README.md) | تعريفات عربية/إنجليزية مبسطة وتقنية |
@@ -47,7 +48,7 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 | [1](day-01/README.md) | كيف يتحول النص إلى أرقام يفهمها النموذج؟ | preprocessing + tokenizer decision + attention notebook |
 | [2](day-02/README.md) | كيف نجعل النموذج يحل مهمة محددة؟ | classification + NER + QA |
 | [3](day-03/README.md) | كيف نتعامل مع العربية ونثبت صحة النتائج؟ | CAMeL Tools + semantic search + evaluation report |
-| 4 | كيف نجعل الحل أسرع وقابلًا للتسليم؟ | optimisation + tested API + final repository |
+| [4](day-04/README.md) | كيف نجعل الحل أسرع وقابلًا للتسليم؟ | optimisation + tested API + final repository |
 
 ### ابدأ اليوم الأول | Start Day 1
 
@@ -70,6 +71,15 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 3. نفّذ [مختبر البحث الدلالي](notebooks/06_semantic_search.ipynb) وابنِ فهرس FAISS ثنائي اللغة.
 4. نفّذ [مختبر التقييم وتحليل الأخطاء](notebooks/07_evaluation_error_analysis.ipynb).
 5. أكمل [Gate C](day-03/04-labs-checkpoint.md) واحفظ التقارير وروابط الـcommits.
+
+### ابدأ اليوم الرابع | Start Day 4
+
+1. افتح [صفحة اليوم الرابع](day-04/README.md) وتحقق من اكتمال Gate C.
+2. اكتب performance budget قبل رؤية نتائج البدائل.
+3. نفّذ [دفتر التحسين والخدمة](notebooks/08_optimization_serving.ipynb) أولًا بوصف `SYSTEMS_SMOKE`.
+4. أعد القياس على `PROJECT_ARTIFACT` الفعلي وأكمل [Gate D](day-04/05-lab-gates-submission.md).
+5. شغّل فاحص التسليم، راجع الروابط في نافذة خاصة، وقدّم العرض.
+6. أنشئ release/tag باسم `submission-v1.0` ثم أعد الفاحص بوضع `--require-tag`.
 
 
 ## مسارات التعلم | Learning lanes
