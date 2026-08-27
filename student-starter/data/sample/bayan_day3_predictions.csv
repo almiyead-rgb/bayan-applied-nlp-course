@@ -1,0 +1,37 @@
+example_id,split,language,variant,length_bucket,topic,prediction_a,prediction_b,text
+EV-001,validation,ar,Gulf,short,digital_service,permit,digital_service,ما وصلني رمز التحقق
+EV-002,validation,ar,Gulf,long,health,health,health,أبي أغير موعد العيادة لأن الوقت الحالي ما يناسبني
+EV-003,validation,ar,Gulf,short,permit,permit,permit,طلبي واقف بالمراجعة
+EV-004,validation,ar,Gulf,long,transport,transport,transport,الباص تأخر علينا أكثر من ساعة وما وصل إشعار
+EV-005,validation,ar,Gulf,short,digital_service,digital_service,digital_service,التطبيق يعلق عند الدخول
+EV-006,validation,ar,Gulf,long,health,transport,transport,النتيجة للحين ما ظهرت بالتطبيق رغم مرور يومين
+EV-007,validation,ar,Gulf,short,permit,digital_service,digital_service,المرفق انرفض
+EV-008,validation,ar,Gulf,long,transport,transport,transport,المسار الجديد مو موجود في الخريطة بعد التحديث
+EV-009,validation,ar,Gulf,short,digital_service,digital_service,digital_service,الكود ما وصل
+EV-010,validation,ar,Gulf,long,health,health,digital_service,أحتاج أجدد الوصفة من التطبيق لكن الزر ما يشتغل
+EV-011,validation,ar,Gulf,short,permit,permit,permit,انخصمت الرسوم مرتين
+EV-012,validation,ar,Gulf,long,transport,digital_service,digital_service,وين موقف الباص الجديد في الحي؟
+EV-013,validation,ar,MSA,short,digital_service,digital_service,digital_service,تعذر الدخول إلى البوابة
+EV-014,validation,ar,MSA,long,health,health,health,لا تتوفر مواعيد مناسبة في العيادة المطلوبة
+EV-015,validation,ar,MSA,short,permit,permit,permit,رُفض المستند المرفق
+EV-016,validation,ar,MSA,long,transport,transport,transport,تأخرت الحافلة عن الموعد المحدد بنصف ساعة
+EV-017,validation,ar,MSA,short,digital_service,permit,digital_service,يفشل رفع الملف
+EV-018,validation,ar,MSA,long,health,health,health,لم تظهر نتيجة الفحص في الملف الصحي الإلكتروني
+EV-019,validation,ar,MSA,short,permit,digital_service,digital_service,حالة التصريح معلقة
+EV-020,validation,ar,MSA,long,transport,transport,digital_service,لا يظهر مسار الحافلة في التطبيق
+EV-021,validation,ar,MSA,short,digital_service,digital_service,digital_service,لم يصل رمز التحقق
+EV-022,validation,ar,MSA,long,health,health,health,تعذر تجديد الوصفة الطبية عبر الخدمة الإلكترونية
+EV-023,validation,ar,MSA,short,permit,permit,permit,تم خصم الرسم مرتين
+EV-024,validation,ar,MSA,long,transport,transport,transport,أرغب في معرفة موقع أقرب محطة للحافلات
+EV-025,validation,en,English,short,digital_service,digital_service,digital_service,The sign in code did not arrive
+EV-026,validation,en,English,long,health,health,health,I need to move my clinic appointment to another day
+EV-027,validation,en,English,short,permit,permit,permit,My permit document was rejected
+EV-028,validation,en,English,long,transport,transport,transport,The bus arrived forty minutes after the scheduled time
+EV-029,validation,en,English,short,digital_service,digital_service,digital_service,The portal freezes
+EV-030,validation,en,English,long,health,transport,transport,My laboratory result is still missing from the health record
+EV-031,validation,en,English,short,permit,digital_service,digital_service,The request is stuck
+EV-032,validation,en,English,long,transport,transport,transport,The new bus route is missing from the mobile map
+EV-033,validation,en,English,short,digital_service,digital_service,digital_service,PDF upload failed
+EV-034,validation,en,English,long,health,health,health,The prescription renewal button does not work in the application
+EV-035,validation,en,English,short,permit,permit,permit,I was charged twice
+EV-036,validation,en,English,long,transport,transport,transport,I cannot find the neighbourhood bus stop

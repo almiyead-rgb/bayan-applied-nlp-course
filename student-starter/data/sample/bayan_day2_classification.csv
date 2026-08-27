@@ -1,0 +1,41 @@
+example_id,group_id,split,language,text,topic,sentiment
+D-001,DG-01,train,ar,تعذر تسجيل الدخول إلى البوابة,digital_service,negative
+D-002,DG-01,train,en,I cannot sign in to the portal,digital_service,negative
+D-003,DG-02,train,ar,البوابة بطيئة عند رفع المستند,digital_service,negative
+D-004,DG-02,train,en,The portal is slow when uploading a document,digital_service,negative
+D-005,DG-03,train,ar,تم تحديث بياناتي إلكترونيا بسهولة,digital_service,positive
+D-006,DG-03,train,en,My details were updated online easily,digital_service,positive
+D-007,DG-04,validation,ar,لم يصل رمز التحقق للخدمة الرقمية,digital_service,negative
+D-008,DG-04,validation,en,The verification code did not arrive,digital_service,negative
+D-009,DG-05,test,ar,الخدمة الإلكترونية واضحة وسريعة,digital_service,positive
+D-010,DG-05,test,en,The online service is clear and fast,digital_service,positive
+D-011,PG-01,train,ar,أحتاج معرفة حالة طلب التصريح,permit,neutral
+D-012,PG-01,train,en,I need the status of my permit request,permit,neutral
+D-013,PG-02,train,ar,تأخر إصدار التصريح المطلوب,permit,negative
+D-014,PG-02,train,en,The requested permit was delayed,permit,negative
+D-015,PG-03,train,ar,تمت الموافقة على التصريح اليوم,permit,positive
+D-016,PG-03,train,en,The permit was approved today,permit,positive
+D-017,PG-04,validation,ar,كيف أجدد التصريح المنتهي,permit,neutral
+D-018,PG-04,validation,en,How can I renew an expired permit,permit,neutral
+D-019,PG-05,test,ar,لم أجد رقم طلب التصريح,permit,negative
+D-020,PG-05,test,en,I could not find the permit request number,permit,negative
+D-021,HG-01,train,ar,تأخر موعد العيادة هذا الصباح,health,negative
+D-022,HG-01,train,en,My clinic appointment was delayed this morning,health,negative
+D-023,HG-02,train,ar,أحتاج إعادة جدولة الموعد الصحي,health,neutral
+D-024,HG-02,train,en,I need to reschedule the health appointment,health,neutral
+D-025,HG-03,train,ar,كانت خدمة العيادة ممتازة,health,positive
+D-026,HG-03,train,en,The clinic service was excellent,health,positive
+D-027,HG-04,validation,ar,أين أجد نتيجة الموعد الطبي,health,neutral
+D-028,HG-04,validation,en,Where can I find my medical appointment result,health,neutral
+D-029,HG-05,test,ar,تم إلغاء موعد العيادة دون إشعار,health,negative
+D-030,HG-05,test,en,The clinic appointment was cancelled without notice,health,negative
+D-031,TG-01,train,ar,الحافلة لم تصل في الوقت المحدد,transport,negative
+D-032,TG-01,train,en,The bus did not arrive on time,transport,negative
+D-033,TG-02,train,ar,أحتاج معرفة مسار الحافلة,transport,neutral
+D-034,TG-02,train,en,I need to know the bus route,transport,neutral
+D-035,TG-03,train,ar,كانت الرحلة مريحة ومنظمة,transport,positive
+D-036,TG-03,train,en,The trip was comfortable and organised,transport,positive
+D-037,TG-04,validation,ar,تغير وقت وصول الحافلة,transport,neutral
+D-038,TG-04,validation,en,The bus arrival time has changed,transport,neutral
+D-039,TG-05,test,ar,توقفت الحافلة قبل المحطة المطلوبة,transport,negative
+D-040,TG-05,test,en,The bus stopped before the requested station,transport,negative

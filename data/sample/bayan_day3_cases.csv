@@ -1,0 +1,25 @@
+case_id,language,variant,topic,summary,resolution
+AR-001,ar,MSA,digital_service,تعذر تسجيل الدخول إلى البوابة بعد تحديث كلمة المرور,تمت إعادة مزامنة الحساب وإرسال رابط دخول جديد
+AR-002,ar,Gulf,digital_service,ما وصل رمز التحقق للجوال عند محاولة الدخول,تم تحديث رقم التواصل وإعادة إرسال الرمز
+AR-003,ar,MSA,digital_service,يفشل رفع ملف PDF في صفحة الطلب,تم ضغط الملف وتغيير اسمه ثم اكتمل الرفع
+AR-004,ar,Gulf,transport,الباص تأخر عن المحطة أكثر من نصف ساعة,تمت إضافة رحلة بديلة وإشعار المستفيدين
+AR-005,ar,MSA,transport,لا يظهر مسار الحافلة الجديد في التطبيق,تم تحديث بيانات المسار وإعادة تحميل الخريطة
+AR-006,ar,Gulf,transport,موقع موقف الحافلة غير واضح في الحي,تم إرسال رابط الموقع وإضافة لوحة إرشادية
+AR-007,ar,MSA,health,لا توجد مواعيد متاحة في العيادة المطلوبة,تم فتح قائمة انتظار واقتراح عيادة قريبة
+AR-008,ar,Gulf,health,نتيجة التحليل ما ظهرت في التطبيق الصحي,تمت مزامنة النتيجة مع الملف الصحي
+AR-009,ar,MSA,health,تعذر تجديد الوصفة من خلال التطبيق,تم التحقق من الأهلية وإعادة تفعيل طلب التجديد
+AR-010,ar,MSA,permit,رُفض المستند المرفق بطلب التصريح,تم توضيح صيغة المستند وإعادة فتح الطلب للرفع
+AR-011,ar,Gulf,permit,طلب التصريح واقف عند المراجعة من أسبوع,تم تصعيد الطلب وتحديث الحالة في اليوم التالي
+AR-012,ar,MSA,permit,تم احتساب رسوم التصريح مرتين,أعيد المبلغ المكرر وثُبتت عملية دفع واحدة
+EN-001,en,English,digital_service,Cannot sign in to the portal after changing the password,The account was resynchronised and a new sign-in link was sent
+EN-002,en,English,digital_service,The verification code never arrived on the registered phone,The contact number was verified and the code was resent
+EN-003,en,English,digital_service,The portal rejects a PDF attachment during upload,The file was compressed and renamed before a successful upload
+EN-004,en,English,transport,The bus arrived more than thirty minutes late,An additional trip was assigned and passengers were notified
+EN-005,en,English,transport,The new bus route is missing from the mobile map,The route dataset was refreshed and the map was reloaded
+EN-006,en,English,transport,The location of the neighbourhood bus stop is unclear,A location link was sent and a sign was added
+EN-007,en,English,health,No appointments are available at the requested clinic,A waiting list was opened and a nearby clinic was suggested
+EN-008,en,English,health,The laboratory result is missing from the health application,The result was synchronised with the health record
+EN-009,en,English,health,The prescription renewal action fails in the application,Eligibility was checked and the renewal request was reactivated
+EN-010,en,English,permit,The permit request rejected the uploaded document,The required format was explained and upload was reopened
+EN-011,en,English,permit,The permit status has remained under review for a week,The request was escalated and its status was updated the next day
+EN-012,en,English,permit,The permit fee was charged twice,The duplicate amount was refunded and one payment was retained

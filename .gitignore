@@ -1,0 +1,60 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+service-account*.json
+secrets/
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Jupyter and Colab
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Model artefacts and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.bin
+checkpoints/
+models/
+artifacts/
+wandb/
+runs/
+
+# Data: keep only reviewed samples and schemas
+data/raw/
+data/interim/
+data/processed/
+data/private/
+!data/sample/
+!data/schemas/
+
+# Generated reports and caches
+cache/
+.cache/
+outputs/
+tmp/
+*.log
+:memory:.ses
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

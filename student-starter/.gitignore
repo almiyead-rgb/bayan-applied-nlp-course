@@ -1,0 +1,23 @@
+# Model and runtime artefacts
+*.bin
+*.ckpt
+*.onnx
+*.pt
+*.pth
+*.safetensors
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+cache/
+artifacts/
+
+# Secrets and local environments
+.env
+.venv/
+venv/
+credentials.json
+service-account.json
+
+# OS/editor files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,18 @@
+{"query_id":"QV-001","split":"validation","query":"ما وصلني كود الدخول على الجوال","language":"ar","retrieval_mode":"monolingual","relevant_case_ids":["AR-002"]}
+{"query_id":"QV-002","split":"validation","query":"The portal will not accept my PDF file","language":"en","retrieval_mode":"monolingual","relevant_case_ids":["EN-003"]}
+{"query_id":"QV-003","split":"validation","query":"The bus was over thirty minutes late","language":"en","retrieval_mode":"cross_lingual","relevant_case_ids":["AR-004"]}
+{"query_id":"QV-004","split":"validation","query":"انخصمت رسوم التصريح مرتين","language":"ar","retrieval_mode":"cross_lingual","relevant_case_ids":["EN-012"]}
+{"query_id":"QV-005","split":"validation","query":"أحتاج موعد عيادة ولا يوجد وقت متاح","language":"ar","retrieval_mode":"monolingual","relevant_case_ids":["AR-007"]}
+{"query_id":"QV-006","split":"validation","query":"My permit has been under review for a week","language":"en","retrieval_mode":"monolingual","relevant_case_ids":["EN-011"]}
+{"query_id":"QV-007","split":"validation","query":"ما ساعات عمل المكتبة؟","language":"ar","retrieval_mode":"no_answer","relevant_case_ids":[]}
+{"query_id":"QV-008","split":"validation","query":"What is tomorrow's weather?","language":"en","retrieval_mode":"no_answer","relevant_case_ids":[]}
+{"query_id":"QV-009","split":"validation","query":"أرغب في التقديم على وظيفة","language":"ar","retrieval_mode":"no_answer","relevant_case_ids":[]}
+{"query_id":"QV-010","split":"validation","query":"Where can I renew my passport?","language":"en","retrieval_mode":"no_answer","relevant_case_ids":[]}
+{"query_id":"QT-001","split":"test","query":"رمز التحقق لا يصل لهاتفي","language":"ar","retrieval_mode":"cross_lingual","relevant_case_ids":["EN-002"]}
+{"query_id":"QT-002","split":"test","query":"The new route is absent from the map","language":"en","retrieval_mode":"monolingual","relevant_case_ids":["EN-005"]}
+{"query_id":"QT-003","split":"test","query":"نتيجة المختبر غير موجودة في الملف الصحي","language":"ar","retrieval_mode":"monolingual","relevant_case_ids":["AR-008"]}
+{"query_id":"QT-004","split":"test","query":"The uploaded permit document was refused","language":"en","retrieval_mode":"cross_lingual","relevant_case_ids":["AR-010"]}
+{"query_id":"QT-005","split":"test","query":"وين موقع موقف الباص في الحي؟","language":"ar","retrieval_mode":"monolingual","relevant_case_ids":["AR-006"]}
+{"query_id":"QT-006","split":"test","query":"I cannot renew my prescription in the app","language":"en","retrieval_mode":"monolingual","relevant_case_ids":["EN-009"]}
+{"query_id":"QT-007","split":"test","query":"أحتاج وصفة طبخ سريعة","language":"ar","retrieval_mode":"no_answer","relevant_case_ids":[]}
+{"query_id":"QT-008","split":"test","query":"How do I reserve a football field?","language":"en","retrieval_mode":"no_answer","relevant_case_ids":[]}

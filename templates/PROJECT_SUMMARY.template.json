@@ -1,0 +1,14 @@
+{
+  "student_github": "YOUR_USERNAME",
+  "repository_url": "https://github.com/YOUR_USERNAME/bayan-nlp-YOUR_USERNAME",
+  "languages": ["ar", "en"],
+  "tasks": ["classification", "sentiment", "ner", "qa", "semantic_search"],
+  "extension": {
+    "name": "FILL_ME",
+    "evidence": "FILL_ME"
+  },
+  "benchmark_mode": "PROJECT_ARTIFACT",
+  "final_tag": "submission-v1.0",
+  "privacy_check": false,
+  "tests_passed": false
+}

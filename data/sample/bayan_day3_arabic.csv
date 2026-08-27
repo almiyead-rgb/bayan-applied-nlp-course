@@ -1,0 +1,21 @@
+record_id,language,variant,channel,topic,text
+A-001,ar,Gulf,chat,digital_service,وش سبب تعليق البوابة كل ما أرفع الملف؟
+A-002,ar,Gulf,chat,digital_service,ما وصلني رمز التحقق للحين
+A-003,ar,Gulf,chat,transport,الباص تأخر علينا والموعد راح
+A-004,ar,Gulf,chat,transport,وين ألقى مسار الحافلة الجديد؟
+A-005,ar,Gulf,chat,health,أبي أغير موعد العيادة لبكرة
+A-006,ar,Gulf,chat,permit,طلبي واقف من أسبوع وش المطلوب؟
+A-007,ar,Gulf,web,permit,انرفض المرفق مع إنه واضح
+A-008,ar,Gulf,chat,health,النتيجة للحين ما نزلت في التطبيق
+A-009,ar,MSA,web,digital_service,تعذر تسجيل الدخول إلى البوابة الإلكترونية
+A-010,ar,MSA,web,digital_service,يظهر خطأ عند رفع المستند المطلوب
+A-011,ar,MSA,web,transport,تأخرت الحافلة عن الموعد المحدد
+A-012,ar,MSA,web,transport,أرغب في معرفة أقرب محطة للحافلات
+A-013,ar,MSA,web,health,أرجو إعادة جدولة موعد العيادة
+A-014,ar,MSA,web,health,لم تظهر نتيجة الفحص في الملف الصحي
+A-015,ar,MSA,web,permit,ما زالت حالة التصريح قيد المراجعة
+A-016,ar,MSA,web,permit,تم رفض الوثيقة المرفقة دون توضيح
+A-017,ar,MSA,web,digital_service,إِدَارَةُ الحِساب لا تعمل بعد التحديث
+A-018,ar,Gulf,chat,transport,الخـدمة متأخرة مرررة اليوم
+A-019,ar,Arabizi,chat,digital_service,ma wasalni code 3al jawal
+A-020,ar,Arabizi,chat,transport,al bus ta5ar 2 hours

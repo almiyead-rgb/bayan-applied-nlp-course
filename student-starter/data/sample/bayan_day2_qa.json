@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "synthetic": true,
+  "examples": [
+    {
+      "split": "train",
+      "language": "ar",
+      "context": "يمكن تجديد التصريح إلكترونيا من بوابة الخدمات بعد تسجيل الدخول.",
+      "question": "من أين يمكن تجديد التصريح؟",
+      "answer_text": "بوابة الخدمات",
+      "id": "Q-001",
+      "answer_start": 32
+    },
+    {
+      "split": "train",
+      "language": "en",
+      "context": "A clinic appointment can be rescheduled through the appointments service.",
+      "question": "Where can the clinic appointment be rescheduled?",
+      "answer_text": "the appointments service",
+      "id": "Q-002",
+      "answer_start": 48
+    },
+    {
+      "split": "train",
+      "language": "ar",
+      "context": "يعمل مركز الدعم من الساعة الثامنة صباحا حتى الرابعة مساء.",
+      "question": "متى يبدأ عمل مركز الدعم؟",
+      "answer_text": "الساعة الثامنة صباحا",
+      "id": "Q-003",
+      "answer_start": 19
+    },
+    {
+      "split": "train",
+      "language": "en",
+      "context": "Bus route updates are published every Monday on the transport portal.",
+      "question": "When are bus route updates published?",
+      "answer_text": "every Monday",
+      "id": "Q-004",
+      "answer_start": 32
+    },
+    {
+      "split": "train",
+      "language": "ar",
+      "context": "تظهر حالة الطلب في صفحة طلباتي بعد إدخال رقم المرجع.",
+      "question": "أين تظهر حالة الطلب؟",
+      "answer_text": "صفحة طلباتي",
+      "id": "Q-005",
+      "answer_start": 19
+    },
+    {
+      "split": "train",
+      "language": "en",
+      "context": "The verification code remains valid for five minutes.",
+      "question": "How long is the verification code valid?",
+      "answer_text": "five minutes",
+      "id": "Q-006",
+      "answer_start": 40
+    },
+    {
+      "split": "validation",
+      "language": "ar",
+      "context": "يمكن تقديم بلاغ النقل عبر التطبيق أو مركز الاتصال.",
+      "question": "كيف يمكن تقديم بلاغ النقل؟",
+      "answer_text": "عبر التطبيق أو مركز الاتصال",
+      "id": "Q-007",
+      "answer_start": 22
+    },
+    {
+      "split": "validation",
+      "language": "en",
+      "context": "Permit documents must be uploaded as PDF files.",
+      "question": "Which file format is required?",
+      "answer_text": "PDF",
+      "id": "Q-008",
+      "answer_start": 37
+    },
+    {
+      "split": "test",
+      "language": "ar",
+      "context": "تعمل العيادة من الأحد إلى الخميس.",
+      "question": "ما رقم هاتف العيادة؟",
+      "answer_text": null,
+      "id": "Q-009",
+      "answer_start": null
+    },
+    {
+      "split": "test",
+      "language": "en",
+      "context": "The digital portal supports Arabic and English.",
+      "question": "What is the annual fee?",
+      "answer_text": null,
+      "id": "Q-010",
+      "answer_start": null
+    }
+  ]
+}

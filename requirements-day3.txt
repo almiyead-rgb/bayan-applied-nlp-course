@@ -1,0 +1,8 @@
+# Tested dependency set for Day 3 on 2026-08-27.
+# Google Colab already provides PyTorch, NumPy, pandas, and scikit-learn.
+camel-tools==1.6.0
+sentence-transformers==6.0.0
+faiss-cpu==1.15.0
+transformers==5.15.1
+tokenizers==0.22.2
+scikit-learn==1.9.0
