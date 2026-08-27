@@ -26,7 +26,7 @@ flowchart LR
 
 1. فحص Unicode دون إفساد العربية.
 2. فصل نسخة العرض عن نسخة النموذج.
-3. تطبيق masking وnormalisation بقرارات صريحة.
+3. تطبيق masking وnormalisation وتقسيم الجمل بـspaCy بقرارات صريحة.
 4. تفسير token وsubword وspecial token.
 5. قياس token fertility وخطر truncation.
 6. شرح الفرق بين token ID وembedding.
@@ -38,22 +38,22 @@ flowchart LR
 
 | الوقت | الموضوع | ما ستنتجه |
 |---|---|---|
-| 08:30–09:20 | [النص، Unicode، وخط المعالجة](01-text-preprocessing.md) | عقد نسختين + فحص محارف |
+| 08:30–09:20 | انطلاقة البرنامج: لماذا أُعيد بناء NLP؟ + مشروع بيان + [خط النص](01-text-preprocessing.md) | خريطة المشروع + مخاطر corpus أولية |
 | 09:20–09:30 | استراحة | — |
-| 09:30–10:20 | [الحماية والتطبيع والترميز](01-text-preprocessing.md) | model text آمن |
+| 09:30–10:20 | [المعالجة والترميز والتضمينات](01-text-preprocessing.md) + [تفاصيل tokenisation](02-tokenization-embeddings.md) | عقد نسختين + fertility + token IDs |
 | 10:20–10:30 | استراحة | — |
-| 10:30–11:20 | [Tokenisation وEmbeddings](02-tokenization-embeddings.md) | fertility + token IDs + vectors |
+| 10:30–11:20 | Lab 1: [Notebook 01](../notebooks/01_text_processing_tokenization.ipynb) | pipeline ثنائي اللغة + golden tests + قرار tokenizer |
 | 11:20–11:30 | استراحة | — |
 | 11:30–12:20 | [Attention وTransformers](03-attention-transformers.md) | attention matrix + encoder map |
 | 12:20–12:40 | استراحة طويلة/صلاة | احفظ نقطة استعادة |
-| 12:40–13:30 | [المختبران وبوابة بيان A](04-labs-checkpoint.md) | tests + decision + commit |
+| 12:40–13:30 | Lab 2: [Notebook 02](../notebooks/02_attention_transformers.ipynb) + [Gate A](04-labs-checkpoint.md) | parameter audit + forward/heatmap + commit |
 
 ## دفاتر اليوم | Notebooks
 
 | الدفتر | الغرض | التكلفة |
 |---|---|---|
-| [01 — Text Processing & Tokenisation](../notebooks/01_text_processing_tokenization.ipynb) | Unicode، masking، profiles، WordPiece، fertility، embeddings | مجاني، CPU |
-| [02 — Attention & Transformers](../notebooks/02_attention_transformers.ipynb) | Q/K/V، scaling، masks، multi-head، encoder | مجاني، CPU |
+| [01 — Text Processing & Tokenisation](../notebooks/01_text_processing_tokenization.ipynb) | Unicode، masking، profiles، spaCy، WordPiece، fertility، embeddings | مجاني، CPU |
+| [02 — Attention & Transformers](../notebooks/02_attention_transformers.ipynb) | Q/K/V، scaling، masks، multi-head، تدقيق معاملات وforward فعلي | مجاني، CPU |
 
 ## مستويات اليوم
 

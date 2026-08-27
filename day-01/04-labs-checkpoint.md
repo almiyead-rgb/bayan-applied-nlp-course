@@ -20,12 +20,13 @@
 1. افحص Unicode لنص عربي.
 2. أنشئ `display_text` و`model_text`.
 3. اخفِ email/phone التعليميين.
-4. شغّل profile محافظًا.
-5. قارن offline WordPiece وmBERT tokenizer إن توفر الاتصال.
-6. قس fertility للعربية والإنجليزية.
-7. قس truncation rate لطولين.
-8. اربط IDs بembedding matrix صغيرة.
-9. اكتب قرار tokenizer.
+4. قسّم نسخة النموذج المحمية إلى جمل باستخدام spaCy، واختبر حالة اختصار معروفة.
+5. شغّل profile محافظًا.
+6. قارن offline WordPiece وmBERT tokenizer إن توفر الاتصال.
+7. قس fertility للعربية والإنجليزية.
+8. قس truncation rate لطولين.
+9. اربط IDs بembedding matrix صغيرة.
+10. اكتب قرار tokenizer.
 
 ### اختبارات النجاح
 
@@ -65,7 +66,10 @@ Decision and reason:
 4. قارن NumPy وPyTorch SDPA إذا توفر PyTorch.
 5. تتبع shapes في multi-head split/combine.
 6. مرر tensor عبر EncoderLayer على CPU.
-7. اشرح attention matrix دون ادعاء سببي.
+7. نفّذ تدقيق معاملات معماريًا على checkpointين من عائلة BERT، واشرح أثر حجم vocabulary.
+8. نفّذ forward pass فعليًا على جملة عربية وأخرى إنجليزية.
+9. اعرض رأس attention واحدًا مع أسماء tokens.
+10. اشرح attention matrix دون ادعاء سببي.
 
 ### اختبار النجاح
 
@@ -82,8 +86,8 @@ PYTHONPATH=src pytest -q tests/test_day1_attention.py
 | `src/bayan/preprocessing.py` | يستخدم عقد النسختين وprofile معلن |
 | preprocessing tests | خضراء |
 | attention tests | خضراء |
-| notebook 01 | يعمل بالترتيب ونتائجه موسومة |
-| notebook 02 | يعمل بالترتيب وshapes مفسرة |
+| notebook 01 | يعمل بالترتيب؛ spaCy وقياسات الترميز ونتائجه موسومة |
+| notebook 02 | يعمل بالترتيب؛ تدقيق checkpointين وforward فعلي وخريطة attention ظاهرة |
 | `DECISIONS.md#day-1-tokenizer-decision` | يحتوي قياسات وحدًا معروفًا |
 | `PROGRESS.md` | Day 1 = complete |
 | الخصوصية | لا raw PII ولا secret |

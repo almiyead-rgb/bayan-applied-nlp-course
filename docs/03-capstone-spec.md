@@ -12,7 +12,7 @@
 
 1. يحفظ نسخة عرض غير معدلة ويُخفي PII في نسخة المعالجة.
 2. يحدد اللغة ويطبق profile معالجة مناسبًا.
-3. يصنف الموضوع/الأولوية أو المشاعر.
+3. يصنف الموضوع والمشاعر بعقدي labels منفصلين.
 4. يستخرج الكيانات المسماة.
 5. يجيب عن سؤال استخراجي عندما يتوفر سياق، مع دعم no-answer.
 6. يسترجع حالات سابقة مشابهة دلاليًا.
@@ -39,12 +39,28 @@ flowchart TD
 | التصنيف | baseline كلاسيكي + Transformer أو checkpoint صغير مضبوط، مع macro-F1 |
 | NER | محاذاة labels صحيحة وتقييم entity-level باستخدام precision/recall/F1 |
 | QA | extractive pipeline مع منطق null/no-answer واختبارات حدية |
-| البحث | sentence embeddings مطبعة + FAISS `IndexFlatIP` + Recall@k وMRR |
+| البحث | sentence embeddings مطبعة + FAISS `IndexFlatIP` + cross-encoder على المرشحين + Recall@k وMRR والزمن قبل/بعد |
 | العربية | profile موثق متوافق مع checkpoint؛ CAMeL Tools في موضع له فائدة |
 | التقييم | slices حسب اللغة والفئة/الطول، interval أو تكرار بذور حيث يناسب، وتحليل أخطاء |
 | التحسين | baseline وoptimized benchmark مع latency وmemory وquality tax |
 | الخدمة | FastAPI أو دوال خدمة موحدة، واختبار داخل Colab عبر `TestClient` |
 | التوثيق | README، قرارات، benchmark، report، model card، data card، limitations |
+
+## أهداف المشروع الرقمية الرسمية | Official capstone targets
+
+الأرقام التالية هي `TARGET` من حزمة البرنامج المرجعية، وليست نتائج الدفاتر المصغرة ولا أرقامًا ينسخها المتدرب:
+
+| المتطلب | بوابة القبول الرسمية |
+|---|---|
+| R1 — المعالجة | وحدة versioned واحدة في التدريب والتقييم والخدمة؛ PII masking recall=`100%` على canaries المقررة؛ skew canaries عند startup |
+| R2 — النماذج | classifier أعلى من TF‑IDF بـ`≥8` نقاط Macro‑F1؛ NER entity‑F1 `≥0.80`؛ QA no-answer `≥17/20`؛ وأي ادعاء تفوق على Gulf slice مدعوم بـCI |
+| R3 — البحث | retrieve ثم cross-encoder re-rank؛ Recall@10 `≥0.80` وMRR@10 `≥0.70`؛ وفرق cross-lingual موثق |
+| R4 — التقييم | invariance `≥95%` وminimum-functionality `≥90%` على suite المقررة؛ قراءة يدوية لـ`≥100` خطأ وبناء top‑3 fixes |
+| R5 — الخدمة | classifier p99 عبر HTTP `≤40 ms` على جهاز المختبر المرجعي وبـ`16` طلبًا متزامنًا؛ ladder كاملة وFP32 rollback |
+| R6 — الثقافة المعمارية | `DECISIONS.md` يربط اختيار كل عائلة/checkpoint بـfertility وslice evidence وحدود attention/architecture |
+| R7 — النظافة والامتداد | frozen test لا يُفتح قبل التقرير؛ تشغيل قابل للإعادة؛ `BENCHMARKS.md` من قياسات الطالب؛ وامتداد واحد مقاس من القائمة أدناه |
+
+هذه الأهداف لا تصبح قابلة للتصحيح إلا على **حزمة الدفعة المعلنة**: corpus/splits وquery/no-answer/behavioural sets المجمدة، مواصفة جهاز المختبر، وحمل التزامن. أما بيانات هذا المستودع الصغيرة فتبقى `MEASURED_SMOKE` لتدقيق المنهج والكود، ولا يجوز استخدامها لإعلان اجتياز R1–R7. يجب أن تعلن الجهة المنظمة حزمة الدفعة وhashes وبيئة القياس قبل التقييم؛ ولا تُغيّر البوابات بعد رؤية نتائج المشاركين.
 
 ## حدود البيانات | Data boundaries
 
@@ -72,7 +88,7 @@ flowchart TD
 - `DECISIONS.md`: كل قرار مع البدائل والدليل.
 - `BENCHMARKS.md`: بيئة القياس، warm-up، repetitions، p50/p95/p99، memory، quality.
 - `EVALUATION_REPORT.md`: metrics، slices، uncertainty، errors، fixes.
-- `MODEL_CARD.md` و`DATA_CARD.md`.
+- `MODEL_CARD.md` (قسم كامل لكل artefact أو بطاقات منفصلة مرتبطة منه) و`DATA_CARD.md`.
 - `PROJECT_SUMMARY.json` و`SUBMISSION.yml` بصيغ قابلة للفحص.
 - 9 notebooks المطلوبة، و`src/bayan`، و`tests`، ومخرجات عيّنة صغيرة.
 - رابط Colab لكل notebook ولقطة badge الاختبارات في README.
@@ -91,20 +107,22 @@ flowchart TD
 
 ## العرض | Demo
 
-**5 دقائق + دقيقتان للأسئلة** لكل مشروع أو وفق تنظيم العدد:
+**5 دقائق إجمالًا لكل زوج** عند السعة القصوى، مع بقاء أدلة كل مشارك قابلة للتقييم الفردي:
 
-1. 30 ثانية: المشكلة والحدود.
-2. 90 ثانية: مثال عربي وآخر إنجليزي.
-3. 60 ثانية: البحث الدلالي.
-4. 60 ثانية: رقم تقييم ورقم أداء مع مصدرهما.
-5. 60 ثانية: خطأ معروف وقرار هندسي.
-6. سؤال المدربة الإلزامي: **لماذا نثق بهذا الرقم؟ | Why should we trust this number?**
+1. 20 ثانية: المشكلة والحدود.
+2. 80 ثانية: مثال عربي وآخر إنجليزي.
+3. 50 ثانية: البحث الدلالي.
+4. 50 ثانية: رقم تقييم ورقم أداء مع مصدرهما.
+5. 40 ثانية: خطأ معروف وقرار هندسي.
+6. 60 ثانية: سؤال التحقق الإلزامي: **لماذا نثق بهذا الرقم؟ | Why should we trust this number?**
 
-عند وجود 20 متدربًا تُستخدم عروض ثنائية/مجموعات مراجعة متوازية، بينما يبقى مستودع ودليل كل متدرب فرديًا.
+عند وجود 20 متدربًا يكون ترتيب العرض لـ10 أزواج متتابعة، وتكون المشاريع مفتوحة مسبقًا لتجنب وقت تبديل الأجهزة. يجيب كل مشارك عن سؤال تحقق واحد أثناء العرض أو spot-check معلن.
 
-## إضافات التميّز | Distinction extensions
+## امتداد المشروع الإلزامي | Required measured extension
 
-اختر واحدة فقط بعد اكتمال الحد الأدنى: Arabizi lane، re-ranking بـ cross-encoder، drift simulation، مقارنة HNSW/IVF مع Flat، أو واجهة بسيطة. يجب قياس فائدتها وتكلفتها؛ وجود feature بلا تقييم لا يمنح نقاطًا.
+اختر واحدة بعد اكتمال R1–R7: dialect router، encoder برأسين، تحسين جودة البحث، batch endpoint، أو QA على مستندات طويلة. يجب قياس الفائدة والتكلفة وذكر baseline؛ وجود feature بلا تقييم لا يحقق المتطلب.
+
+**مهام bonus للمنتهين مبكرًا:** zero-shot showdown، Arabizi lane، drift tripwire، أو مقارنة HNSW/IVF مع Flat على corpus موسع. يطبق bonus الرسمي حتى `+5` نقاط فقط إذا بلغت المتطلبات الإلزامية `80/100` على الأقل، ولا تتجاوز الدرجة `100`.
 
 ## تعريف الإنجاز | Definition of done
 

@@ -26,7 +26,7 @@
 1. تفسير الفرق بين pretraining وfine-tuning وtask head.
 2. بناء TF-IDF baseline قبل Transformer.
 3. تجهيز train/validation/frozen-test مع منع تداخل `group_id`.
-4. تنفيذ خطوة ضبط فعلية لنموذج BERT متعدد اللغات للتصنيف.
+4. تنفيذ ضبط فعلي لنموذج BERT متعدد اللغات لتصنيف الموضوع، ثم إعادة استخدام العقد لرأس sentiment المستقل في المشروع.
 5. محاذاة BIO labels مع subwords باستخدام `word_ids()` و`-100`.
 6. تجهيز وتدريب نموذج NER وقياسه على مستوى الكيان.
 7. تجهيز extractive QA واختيار span صالح أو إرجاع no-answer.
@@ -44,8 +44,8 @@
 | 11:20–11:30 | استراحة | نقطة استعادة |
 | 11:30–12:20 | [مختبر NER وQA](../notebooks/04_ner_and_qa.ipynb) | training smoke + tests |
 | 12:20–12:40 | استراحة طويلة/صلاة | حفظ Drive وGitHub |
-| 12:40–13:05 | [مقدمة نماذج العربية](04-arabic-models-intro.md) | model decision note |
-| 13:05–13:30 | [Gate B](05-labs-checkpoint.md) | commit + evidence + exit ticket |
+| 12:40–13:20 | [مقدمة نماذج العربية](04-arabic-models-intro.md) | model landscape + decision note |
+| 13:20–13:30 | [Gate B](05-labs-checkpoint.md) | commit + evidence + exit ticket |
 
 إجمالي التعلم 250 دقيقة والاستراحات 50 دقيقة.
 
@@ -94,6 +94,7 @@ Colab Pro أو خدمات الاستدلال المستضافة خيارات م�
 - baseline موثق.
 - zero group overlap.
 - classification training smoke.
+- عقد labels للموضوع والمشاعر؛ `sentiment` موجود في بيانات اليوم ويُدرّب كرأس مستقل في تجميع المشروع.
 - NER alignment tests.
 - NER training smoke.
 - QA training smoke + valid span + honest null.

@@ -21,6 +21,8 @@
 - نجاح golden cases للتشكيل والألف والياء المقصورة والتطويل.
 - تسجيل توزيع `variant` وشرح لماذا لا يمثل dialect prediction.
 - توثيق Arabizi كمسار يحتاج تقييمًا مستقلًا.
+- تدريب مقارنة مصغرة بين النموذج متعدد اللغات وCAMeLBERT-DA على نفس split والبذرة.
+- قياس Gulf slice المجمدة، ووصف النتيجة `MEASURED_SMOKE` لا ادعاء أداء إنتاجي.
 
 النجاح داخل الدفتر:
 
@@ -40,6 +42,8 @@ Commit:
 - بناء `FAISS IndexFlatIP` بعدد السجلات الصحيح.
 - تشغيل monolingual وcross-lingual queries.
 - حساب Recall@3 وMRR@3 بوصف `MEASURED_SMOKE`.
+- إعادة ترتيب المرشحين فقط باستخدام cross-encoder متعدد اللغات.
+- قياس MRR@3 قبل/بعد ووقت مرحلة re-ranking بعد warm-up؛ وقبولها أو رفضها بالدليل.
 - ضبط threshold على validation فقط، ثم قياس test.
 - حفظ manifest وmetrics؛ لا تحفظ weights أو cache في GitHub.
 
@@ -121,9 +125,11 @@ reports/retrieval_metrics.json
 - [ ] علامات Core الثلاث ظاهرة بعد Run all.
 - [ ] اختبارات المصدر خضراء.
 - [ ] CAMeL Tools مستخدمة في موضع مفيد، وليست اسمًا في README فقط.
+- [ ] مقارنة CAMeLBERT-DA والنموذج متعدد اللغات منفذة على split واحد، والحدود موثقة.
 - [ ] corpus وquery vectors مطبعة L2.
 - [ ] FAISS manifest يطابق عدد vectors وبعدها.
 - [ ] Recall@k وMRR@k مقاسان على relevance labels.
+- [ ] cross-encoder يعيد ترتيب top candidates فقط، وفرق MRR وزمنه مقاسان.
 - [ ] no-answer threshold لم يضبط على test.
 - [ ] slices وCIs ظاهرة مع تحذير الحجم.
 - [ ] error analysis على validation لا frozen test.
@@ -140,7 +146,7 @@ reports/retrieval_metrics.json
 | FAISS import fail | أعد تشغيل runtime بعد pip | استخدم exact NumPy oracle للتشخيص فقط، لا Gate PASS |
 | لا GPU | لا تغيّر شيئًا | نموذج البحث يعمل على CPU |
 | OOM | أغلِق نموذج اليوم الثاني وruntime قديم | batch أصغر؛ corpus اليوم 24 فقط |
-| cross-encoder بطيء | أوقف Explore | Core لا يحتاج reranker |
+| cross-encoder بطيء | استخدم عدد المرشحين المصغر المثبت في الدفتر وانتظر القياس مرة واحدة | اعرض النتائج المحفوظة؛ لا تشغله على corpus كامل ولا تحذف مرحلة القياس |
 | CI واسعة | لا تزد n_boot لإخفائها | وثق محدودية العينة واجمع بيانات أكثر |
 | تأخر الصف 15 دقيقة | أوقف Explore/Distinction | حافظ على الدفاتر الثلاث وGate C |
 

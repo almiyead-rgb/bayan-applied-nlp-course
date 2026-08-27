@@ -12,7 +12,7 @@ permissions:
 jobs:
   course-quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -28,146 +28,12 @@ jobs:
       - name: Run course unit tests
         env:
           PYTHONPATH: src
-        run: python -m pytest -q
+        run: python -m pytest -q tests
 
-      - name: Validate public learning materials
+      - name: Validate public materials and saved notebook evidence
+        run: python scripts/validate_course.py
+
+      - name: Verify student starter is reproducible
         run: |
-          python - <<'PY'
-          import json
-          import re
-          from pathlib import Path
-          from urllib.parse import unquote
-
-          root = Path.cwd().resolve()
-          expected_notebooks = {
-              "notebooks/00_runtime_doctor.ipynb",
-              "notebooks/01_text_processing_tokenization.ipynb",
-              "notebooks/02_attention_transformers.ipynb",
-              "notebooks/03_text_classification.ipynb",
-              "notebooks/04_ner_and_qa.ipynb",
-              "notebooks/05_arabic_nlp.ipynb",
-              "notebooks/06_semantic_search.ipynb",
-              "notebooks/07_evaluation_error_analysis.ipynb",
-              "notebooks/08_optimization_serving.ipynb",
-          }
-          expected_day3_files = {
-              "requirements-day3.txt",
-              "day-03/README.md",
-              "day-03/01-arabic-nlp-camel-tools.md",
-              "day-03/02-semantic-search.md",
-              "day-03/03-evaluation-error-analysis.md",
-              "day-03/04-labs-checkpoint.md",
-              "day-03/REFERENCES.md",
-              "data/sample/bayan_day3_arabic.csv",
-              "data/sample/bayan_day3_cases.csv",
-              "data/sample/bayan_day3_queries.jsonl",
-              "data/sample/bayan_day3_predictions.csv",
-              "templates/EVALUATION_REPORT_TEMPLATE.md",
-              "templates/MODEL_CARD_TEMPLATE.md",
-          }
-          expected_day4_files = {
-              "requirements-day4.txt",
-              "day-04/README.md",
-              "day-04/01-benchmark-before-optimization.md",
-              "day-04/02-onnx-int8-decision.md",
-              "day-04/03-fastapi-serving-canaries.md",
-              "day-04/04-capstone-assembly-demo.md",
-              "day-04/05-lab-gates-submission.md",
-              "day-04/REFERENCES.md",
-              "src/bayan/benchmarking.py",
-              "src/bayan/serving.py",
-              "src/bayan/submission.py",
-              "scripts/validate_submission.py",
-              "tests/test_day4_benchmarking.py",
-              "tests/test_day4_serving.py",
-              "tests/test_day4_submission.py",
-              "templates/BENCHMARKS_TEMPLATE.md",
-              "templates/DATA_CARD_TEMPLATE.md",
-              "templates/DECISIONS_TEMPLATE.md",
-              "templates/DEMO_SCRIPT_TEMPLATE.md",
-              "templates/PEER_REVIEW_TEMPLATE.md",
-              "templates/PROGRESS_TEMPLATE.md",
-              "templates/PROJECT_README_TEMPLATE.md",
-              "templates/PROJECT_SUMMARY.template.json",
-              "templates/STUDENT_PROFILE_TEMPLATE.md",
-              "templates/SUBMISSION.template.yml",
-          }
-          required_markers = {
-              "notebooks/01_text_processing_tokenization.ipynb": "DAY1_NOTEBOOK1_CORE=PASS",
-              "notebooks/02_attention_transformers.ipynb": "DAY1_NOTEBOOK2_CORE=PASS",
-              "notebooks/03_text_classification.ipynb": "DAY2_NOTEBOOK3_CORE=PASS",
-              "notebooks/04_ner_and_qa.ipynb": "DAY2_NOTEBOOK4_CORE=PASS",
-              "notebooks/05_arabic_nlp.ipynb": "DAY3_NOTEBOOK5_CORE=PASS",
-              "notebooks/06_semantic_search.ipynb": "DAY3_NOTEBOOK6_CORE=PASS",
-              "notebooks/07_evaluation_error_analysis.ipynb": "DAY3_NOTEBOOK7_CORE=PASS",
-              "notebooks/08_optimization_serving.ipynb": "DAY4_NOTEBOOK8_CORE=PASS",
-          }
-          private_directories = {"private", "internal", "instructor", "trainer", "solutions", "answer_keys"}
-          private_prefixes = ("instructor_", "trainer_", "internal_")
-
-          def looks_internal(path_string: str) -> bool:
-              path = Path(path_string)
-              lowered_parts = {part.lower() for part in path.parts[:-1]}
-              name = path.name.lower()
-              return (
-                  bool(lowered_parts & private_directories)
-                  or name.startswith(private_prefixes)
-                  or "master_guide" in name
-                  or "answer_key" in name
-              )
-
-          all_files = {
-              path.relative_to(root).as_posix()
-              for path in root.rglob("*")
-              if path.is_file() and ".git" not in path.parts
-          }
-          missing = (expected_notebooks | expected_day3_files | expected_day4_files) - all_files
-          exposed = {path for path in all_files if looks_internal(path)}
-          errors = []
-          if missing:
-              errors.append(f"Missing notebooks: {sorted(missing)}")
-          if exposed:
-              errors.append(f"Private paths exposed: {sorted(exposed)}")
-
-          link_pattern = re.compile(r"!?(?:\[[^\]]*\])\(([^)]+)\)")
-          for markdown in root.rglob("*.md"):
-              if ".git" in markdown.parts:
-                  continue
-              for raw_target in link_pattern.findall(markdown.read_text(encoding="utf-8")):
-                  target = raw_target.strip().strip("<>")
-                  if not target or target.startswith("#") or re.match(r"^(https?:|mailto:|data:)", target):
-                      continue
-                  target = unquote(target.split("#", 1)[0].split("?", 1)[0])
-                  resolved = (markdown.parent / target).resolve()
-                  if root not in resolved.parents and resolved != root:
-                      errors.append(f"{markdown.relative_to(root)}: link escapes repository: {raw_target}")
-                  elif not resolved.exists():
-                      errors.append(f"{markdown.relative_to(root)}: missing link target: {raw_target}")
-
-          for notebook_path in sorted(root.glob("notebooks/*.ipynb")):
-              notebook_text = notebook_path.read_text(encoding="utf-8")
-              notebook = json.loads(notebook_text)
-              relative_notebook = notebook_path.relative_to(root).as_posix()
-              required_marker = required_markers.get(relative_notebook)
-              if required_marker and required_marker not in notebook_text:
-                  errors.append(f"{notebook_path}: missing Core success marker")
-              author = notebook.get("metadata", {}).get("authors", [{}])[0].get("name")
-              if author != "Meaad Al-Marri":
-                  errors.append(f"{notebook_path}: author metadata is missing or incorrect")
-              for index, cell in enumerate(notebook.get("cells", [])):
-                  if cell.get("cell_type") == "code":
-                      if cell.get("execution_count") is not None or cell.get("outputs"):
-                          errors.append(f"{notebook_path}: saved output in code cell {index}")
-                      try:
-                          compile(
-                              "".join(cell.get("source", [])),
-                              f"{notebook_path}:cell-{index}",
-                              "exec",
-                          )
-                      except SyntaxError as exc:
-                          errors.append(f"{notebook_path}: syntax error in code cell {index}: {exc}")
-
-          if errors:
-              raise SystemExit("\n".join(errors))
-          print(f"Public-material validation=PASS ({len(all_files)} files)")
-          PY
+          python scripts/build_student_starter.py
+          git diff --exit-code -- student-starter downloads

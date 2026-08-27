@@ -8,7 +8,7 @@ Google Colab خدمة Jupyter Notebook مستضافة تعمل في المتصف
 
 ### بيئة Colab المرجعية الحالية | Current reference runtime
 
-بتاريخ **26 أغسطس 2026** تعرض Google البيئة السابقة القابلة للتثبيت `2026.07` وفيها `Python 3.12.13` و`NumPy 2.0.2` و`PyTorch 2.11.0`. هذه قيم `REFERENCE` من [صفحة Runtime Versions الرسمية](https://research.google.com/colaboratory/runtime-version-faq.html)، وليست افتراضًا بأن كل جلسة ستبقى مطابقة. شغّل Runtime Doctor وسجل ما توفر فعليًا بوصفه `MEASURED`.
+بتاريخ **27 أغسطس 2026** تعرض Google البيئة السابقة القابلة للتثبيت `2026.07` وفيها `Python 3.12.13` و`NumPy 2.0.2` و`PyTorch 2.11.0`. هذه قيم `REFERENCE` من [صفحة Runtime Versions الرسمية](https://research.google.com/colaboratory/runtime-version-faq.html)، وليست افتراضًا بأن كل جلسة ستبقى مطابقة. شغّل Runtime Doctor وسجل ما توفر فعليًا بوصفه `MEASURED`.
 
 توضح Google أن الإصدارات السابقة تبقى متاحة حاليًا لمدة سنة، وأن اختيارها قد يزيد وقت الاتصال؛ لذلك نستخدم أحدث runtime افتراضيًا ونلجأ إلى النسخة المرجعية فقط إذا ظهر تعارض موثق.
 

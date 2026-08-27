@@ -120,7 +120,7 @@ CAMeLBERT يقدم checkpoints منفصلة لـMSA واللهجات والعر�
 
 ## التطبيق
 
-نفّذ [Notebook 05 — Arabic NLP](../notebooks/05_arabic_nlp.ipynb). المطلوب ليس حفظ أسماء الدوال؛ المطلوب إثبات عقد ثابت بين corpus وmodel وindex وquery.
+نفّذ [Notebook 05 — Arabic NLP](../notebooks/05_arabic_nlp.ipynb). يبدأ بعقد ثابت بين corpus وmodel وindex وquery، ثم ينفذ مقارنة ضبط دقيق مصغرة بين النموذج متعدد اللغات و`CAMeLBERT-DA` على split ثابت. لا تُعمّم نتيجة العينة؛ المطلوب تفسير الفرق وحدود القياس.
 
 ## English recap
 

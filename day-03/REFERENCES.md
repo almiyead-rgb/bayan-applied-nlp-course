@@ -1,6 +1,6 @@
 # مراجع اليوم الثالث | Day 3 References
 
-**آخر تحقق:** 26 أغسطس 2026.  
+**آخر تحقق:** 27 أغسطس 2026.
 الروابط أدناه مصادر أولية أو وثائق رسمية. أرقام نتائج المتدرب لا تؤخذ منها؛ تُقاس داخل Colab وتوسم حسب مصدرها.
 
 ## CAMeL Tools والعربية
@@ -17,8 +17,8 @@
 
 ## Sentence embeddings والبحث
 
-- [Sentence Transformers semantic search documentation](https://sbert.net/examples/sentence_transformer/applications/semantic-search/)
-- [Sentence Transformers retrieve-and-rerank documentation](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)
+- [Sentence Transformer usage documentation](https://sbert.net/docs/sentence_transformer/usage/usage.html)
+- [Cross-encoder usage and top-k re-ranking](https://sbert.net/docs/cross_encoder/usage/usage.html)
 - [Sentence Transformers 6.0.0 on PyPI](https://pypi.org/project/sentence-transformers/6.0.0/)
 - [Multilingual MiniLM official model card](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
 - [Multilingual mMARCO cross-encoder model card](https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1)

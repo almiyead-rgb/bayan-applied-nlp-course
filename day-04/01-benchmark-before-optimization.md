@@ -50,7 +50,7 @@ same model task + same texts + same batch + same device
 
 ## اكتب الميزانية قبل رؤية النتيجة
 
-ميزانية الأداء **TARGET خاص بالمشروع**، وليست رقمًا موحدًا للدورة:
+في Lab 7 يكتب الطالب `TARGET` تشخيصيًا قبل رؤية candidate. أما بوابة المشروع الرسمية فتقيس classifier عبر HTTP على جهاز المختبر المرجعي عند `16` طلبًا متزامنًا، وهدفها p99 `≤40 ms`. لا يُستبدل هذا الهدف بـp95 أو بجهاز آخر؛ وإذا لم تُعلن بيئة الدفعة فلا يجوز إصدار حكم اجتياز رقمي.
 
 ```yaml
 max_p95_ms: قيمة يحددها المتدرب قبل القياس
@@ -83,6 +83,34 @@ print(report["throughput_items_s"], report["rss_peak_observed_mb"])
 ```
 
 RSS قد لا يرى تخصيصًا حدث قبل نافذة القياس، ولا يساوي ذاكرة tensor الدقيقة. لذلك نسميه `observed` ونسجل طريقة القياس.
+
+## قياس HTTP المتزامن للبوابة الرسمية
+
+بعد نجاح `TestClient` الوظيفي، استخدم الحمل نفسه للـFP32 والمرشح. الدالة لا تخفي استجابة فاشلة؛ ضع assert داخل الطلب:
+
+```python
+from bayan.benchmarking import benchmark_concurrent
+
+with TestClient(app) as client:
+    def request_once():
+        response = client.post(
+            "/v1/classify",
+            json={"text": "الخدمة واضحة", "language": "ar"},
+        )
+        assert response.status_code == 200, response.text
+
+    http_report = benchmark_concurrent(
+        request_once,
+        warmup_requests=16,
+        requests=160,
+        concurrency=16,
+    )
+
+print(http_report["p99_ms"], http_report["throughput_requests_s"])
+assert http_report["concurrency"] == 16
+```
+
+`TestClient` يختبر عقد التطبيق داخل العملية؛ الرقم النهائي يجب أن يذكر هذا الحد ولا يدعي زمن شبكة أو استضافة خارجية. إذا كانت بيئة الدفعة تستخدم خادمًا فعليًا، استعمل harness الجهة نفسها ولا تقارن حدَّين مختلفين.
 
 ## Free wins قبل تغيير الصيغة
 

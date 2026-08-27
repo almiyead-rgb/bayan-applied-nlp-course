@@ -58,11 +58,11 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 
 نعرفه في الدورة:
 
-[
-	ext{fertility} =
-rac{	ext{عدد model tokens دون special tokens}}
-{	ext{عدد الكلمات المفصولة بالمسافة}}
-]
+$$
+\text{fertility} =
+\frac{\text{عدد model tokens دون special tokens}}
+{\text{عدد الكلمات المفصولة بالمسافة}}
+$$
 
 ```python
 from src.bayan.tokenization import token_fertility

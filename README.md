@@ -1,16 +1,19 @@
 # معالجة اللغات الطبيعية التطبيقية  
 # Applied Natural Language Processing
 
-[![Quality checks](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml/badge.svg?branch=develop)](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml)
+[![Quality checks](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml)
 
-**إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**السياق التدريبي | Training context:** أكاديمية سدايا · SDAIA Academy  
-**المدة | Duration:** 4 أيام حضورية · 4 in-person days  
+**إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri<br>
+**رمز البرنامج | Program code:** `SDA-AIE-211`<br>
+**المستوى | Level:** Specialist · تخصصي<br>
+**المتطلب السابق | Prerequisite:** `SDA-AIE-112` أو ما يعادله في Python وأساسيات تعلم الآلة<br>
+**السياق التدريبي | Training context:** أكاديمية سدايا · SDAIA Academy<br>
+**المدة | Duration:** 4 أيام × 5 ساعات تدريبية اسمية = 20 ساعة<br>
 **البيئة | Environment:** Google Colab Free + GitHub
 
-برنامج تطبيقي يبدأ من الصفر وينتقل بالمتدرب من معالجة النصوص إلى بناء مشروع **بيان**: نظام NLP ثنائي اللغة يجمع التصنيف، والتعرف على الكيانات، والإجابة الاستخراجية عن الأسئلة، والبحث الدلالي، والتقييم، وتحسين الاستدلال.
+برنامج تخصصي تطبيقي يبدأ بفحص جاهزية ومراجعة تأسيسية مشتركة، ثم ينتقل من معالجة النصوص إلى بناء مشروع **بيان**: نظام NLP ثنائي اللغة يجمع التصنيف، والتعرف على الكيانات، والإجابة الاستخراجية عن الأسئلة، والبحث الدلالي، والتقييم، وتحسين الاستدلال.
 
-A beginner-friendly applied program that moves from text processing to **Bayan**, a bilingual NLP project combining classification, NER, extractive QA, semantic search, evaluation, and inference optimisation.
+A specialist applied program with a shared readiness refresher, progressing from text processing to **Bayan**, a bilingual NLP project combining classification, NER, extractive QA, semantic search, evaluation, and inference optimisation.
 
 ## ابدأ هنا | Start here
 
@@ -25,11 +28,38 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 | [تجهيز البيئة · Setup hub](docs/setup/README.md) | GitHub وColab وفحص الجاهزية وحل الأعطال |
 | [الأدوات المجانية · Free tools](docs/tools/free-tools.md) | ما هو إلزامي ومجاني، وما هو اختياري أو مدفوع |
 | [قاموس المصطلحات · Glossary](docs/glossary/README.md) | تعريفات عربية/إنجليزية مبسطة وتقنية |
-| [التقييم والاجتياز](docs/policies/assessment-and-completion.md) | الأوزان وشروط الشهادة |
+| [نتائج التشغيل الموثقة](docs/02-verified-runs.md) | ما شُغّل فعليًا، النتائج المحفوظة، وحدود كل رقم |
+| [التقييم والاجتياز](docs/policies/assessment-and-completion.md) | الأوزان ومتطلبات الإكمال وإصدار الجهة المنظمة |
+| [حزمة التقييم](assessments/README.md) | PA‑1 وPA‑2 وتعليمات الاختبار القصير بلا مفاتيح إجابة |
 | [طريقة التسليم](docs/policies/submission.md) | المستودع والملفات والـcommits والوسم النهائي |
 | [النزاهة والخصوصية](docs/policies/integrity-and-privacy.md) | البيانات المسموحة والممنوعة |
 | [مشروع بيان](docs/03-capstone-spec.md) | نطاق المشروع ومراحله ومخرجاته |
 | [المصادر الرسمية](docs/references/official-sources.md) | الروابط الأولية المعتمدة للمحتوى والتجهيز |
+
+## الوصول والتنزيل | Access and downloads
+
+- [تنزيل ملفات الدورة كاملة من `main`](https://github.com/almiyead-rgb/bayan-applied-nlp-course/archive/refs/heads/main.zip).
+- [تنزيل حزمة بداية الطالب الجاهزة](downloads/bayan-student-starter.zip) — `75` ملفًا، تشمل الدفاتر التسعة والمصدر والاختبارات والقوالب وحزمة التقييم في أسمائها النهائية.
+- [استعراض حزمة بداية الطالب قبل تنزيلها](student-starter/GETTING_STARTED.md).
+- [قيمة SHA-256 للحزمة](downloads/SHA256SUMS.txt).
+
+المستودع عام، ولا تحتاج الروابط إلى عضوية في GitHub للقراءة أو التنزيل. يحتاج حفظ نسخة في GitHub أو Drive إلى تسجيل الدخول إلى حساب الطالب نفسه.
+
+## دفاتر Colab الجاهزة | Open notebooks
+
+كل رابط يفتح نسخة `main` مباشرةً في Colab. المخرجات المحفوظة ظاهرة كذلك عند فتح اسم الدفتر في GitHub، لذلك لا تحتاج المدربة إلى تشغيله أثناء العرض.
+
+| # | الدفتر ونتيجته المحفوظة | فتح في Colab |
+|---:|---|---|
+| 00 | [فحص البيئة](notebooks/00_runtime_doctor.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/00_runtime_doctor.ipynb) |
+| 01 | [المعالجة والترميز](notebooks/01_text_processing_tokenization.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/01_text_processing_tokenization.ipynb) |
+| 02 | [الانتباه والمحولات](notebooks/02_attention_transformers.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/02_attention_transformers.ipynb) |
+| 03 | [التصنيف النصي](notebooks/03_text_classification.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/03_text_classification.ipynb) |
+| 04 | [NER وQA](notebooks/04_ner_and_qa.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/04_ner_and_qa.ipynb) |
+| 05 | [معالجة العربية](notebooks/05_arabic_nlp.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/05_arabic_nlp.ipynb) |
+| 06 | [البحث الدلالي](notebooks/06_semantic_search.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/06_semantic_search.ipynb) |
+| 07 | [التقييم وتحليل الأخطاء](notebooks/07_evaluation_error_analysis.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/07_evaluation_error_analysis.ipynb) |
+| 08 | [التحسين والخدمة](notebooks/08_optimization_serving.ipynb) | [Open in Colab](https://colab.research.google.com/github/almiyead-rgb/bayan-applied-nlp-course/blob/main/notebooks/08_optimization_serving.ipynb) |
 
 ## ماذا ستتعلم؟ | What will you learn?
 
@@ -84,9 +114,11 @@ A beginner-friendly applied program that moves from text processing to **Bayan**
 
 ## مسارات التعلم | Learning lanes
 
-- 🟢 **الأساسي · Core:** إلزامي للجميع، ومصمم ليبدأ من الصفر.
+- 🟢 **الأساسي · Core:** إلزامي للجميع، ويقدم سقالات واضحة داخل المستوى التخصصي.
 - 🔵 **الاستكشاف · Explore:** مقارنة أو تجربة إضافية بعد اكتمال الأساسي.
 - 🟣 **التميّز · Distinction:** تحديات للمختصين ولا تعوض نقص Core.
+
+هذه المسارات تخص أنشطة الدروس. المشروع الختامي نفسه يتطلب [امتدادًا واحدًا مقاسًا](docs/03-capstone-spec.md#امتداد-المشروع-الإلزامي--required-measured-extension) ضمن R7؛ أما مهام bonus للتميّز فتأتي بعده.
 
 ## التكلفة | Cost
 
@@ -105,6 +137,8 @@ The required path is free. Paid services may be mentioned for comparison but are
 7. قبل التسليم نفذ **Runtime → Restart session and run all**.
 
 > لا تستخدم بيانات حقيقية أو أسرارًا. جميع تطبيقات بيان تستخدم بيانات تعليمية اصطناعية أو عامة موثقة.
+
+> **للعرض داخل الدرس:** جميع الدفاتر التسعة منشورة بمخرجات تحقق فعلية محفوظة. تستطيع المدربة شرح النتيجة مباشرةً دون انتظار `Run all`. أما المتدرب فينفذ نسخته للتعلم وإنتاج دليله الشخصي؛ راجع [سجل التشغيل](docs/02-verified-runs.md).
 
 ---
 

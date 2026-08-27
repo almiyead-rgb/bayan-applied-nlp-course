@@ -2,7 +2,7 @@
 
 **إعداد وتقديم:** ميعاد المري · **Prepared and delivered by:** Meaad Al-Marri
 
-هذه الصفحة هي نقطة البداية للمتدرب المبتدئ والمتوسط والمختص. اتبعها بالترتيب؛ لا تحتاج تثبيت Python على جهازك لأن التطبيق الأساسي يتم داخل المتصفح باستخدام Google Colab.
+هذه الصفحة هي نقطة البداية للمشارك في برنامج `SDA-AIE-211` التخصصي. يفترض البرنامج إكمال `SDA-AIE-112` أو امتلاك أساس مكافئ في Python وتعلم الآلة. اتبع الخطوات بالترتيب؛ لا تحتاج تثبيت Python محليًا لأن التطبيق الأساسي يتم داخل المتصفح باستخدام Google Colab.
 
 This is the starting point for every learner. Follow it in order. The required path runs in the browser through Google Colab, so local Python installation is not required.
 
@@ -73,11 +73,11 @@ This is the starting point for every learner. Follow it in order. The required p
 - تشغيل خلية وقراءة مخرجها.
 - حفظ نسخة في Drive.
 - معرفة الفرق بين warning وerror.
-- إنشاء مستودع GitHub عام من القالب.
+- إنشاء مستودع GitHub عام باستخدام حزمة بداية الطالب.
 - تنفيذ commit برسالة واضحة.
 - نسخ **نص الخطأ الكامل** عند طلب المساعدة.
 
-لا يشترط أن تعرف Transformers أو BERT مسبقًا.
+لا يشترط أن تكون قد درّبت Transformer أو BERT مسبقًا، لكن يلزم أن تستطيع قراءة Python الأساسية، وتشغيل notebook، وتفسير train/validation/test ومقياس بسيط. إن لم تتأكد، نفّذ [فحص الجاهزية](docs/setup/README.md#فحص-الجاهزية-العلمية--knowledge-readiness) قبل اليوم الأول واطلب مسار الدعم.
 
 ## إذا واجهت مشكلة | If something fails
 

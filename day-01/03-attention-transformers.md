@@ -15,13 +15,13 @@
 
 التشبيه يساعد على البداية لكنه ليس تعريفًا رياضيًا. التعريف:
 
-[
-operatorname{Attention}(Q,K,V)
+$$
+\operatorname{Attention}(Q,K,V)
 =
-operatorname{softmax}left(
-rac{QK^	op}{sqrt{d_k}}
-ight)V
-]
+\operatorname{softmax}\left(
+\frac{QK^\top}{\sqrt{d_k}}
+\right)V
+$$
 
 هذه معادلة scaled dot-product attention في ورقة [Attention Is All You Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need).
 
@@ -31,12 +31,12 @@ operatorname{softmax}left(
 
 | العملية | Shape |
 |---|---|
-| (Q) | (4 	imes 4) |
-| (K^	op) | (4 	imes 4) |
-| scores (QK^	op) | (4 	imes 4) |
-| softmax weights | (4 	imes 4) |
-| (V) | (4 	imes 4) |
-| output | (4 	imes 4) |
+| $Q$ | $4 \times 4$ |
+| $K^\top$ | $4 \times 4$ |
+| scores $QK^\top$ | $4 \times 4$ |
+| softmax weights | $4 \times 4$ |
+| $V$ | $4 \times 4$ |
+| output | $4 \times 4$ |
 
 كل صف في weights يجيب: إلى أي keys ينظر query الحالي؟ مجموع الصف يساوي 1، إلا إذا كانت الخوارزمية/القناع لهما معالجة خاصة.
 
@@ -72,11 +72,11 @@ print(weights.round(3))
 
 بدل مساحة واحدة كبيرة، نقسم التمثيل إلى رؤوس. كل head يتعلم projections مختلفة، ثم تجمع النتائج:
 
-[
-operatorname{MultiHead}(Q,K,V)
+$$
+\operatorname{MultiHead}(Q,K,V)
 =
-operatorname{Concat}(head_1,ldots,head_h)W^O
-]
+\operatorname{Concat}(head_1,\ldots,head_h)W^O
+$$
 
 هذا لا يضمن أن كل رأس يمثل قاعدة لغوية قابلة للتسمية، لكنه يسمح بمساحات تفاعل متعددة.
 
@@ -120,7 +120,7 @@ BERT اختصار **Bidirectional Encoder Representations from Transformers**. �
 
 ## 3.10 التعقيد
 
-self-attention الكامل يبني مصفوفة (n 	imes n) لطول sequence (n)، لذلك كلفة جزء attention في الطول تربيعية تقريبًا (O(n^2)). أول تحسين مجاني ليس شراء جهاز؛ بل اختيار طول مدخل مبني على البيانات، وتقليل padding، وchunking عندما يلزم.
+self-attention الكامل يبني مصفوفة $n \times n$ لطول sequence (n)، لذلك كلفة جزء attention في الطول تربيعية تقريبًا (O(n^2)). أول تحسين مجاني ليس شراء جهاز؛ بل اختيار طول مدخل مبني على البيانات، وتقليل padding، وchunking عندما يلزم.
 
 ## 3.11 هل attention تفسير؟
 

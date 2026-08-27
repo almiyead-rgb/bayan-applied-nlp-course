@@ -60,15 +60,15 @@
 
 ## إصدارات اليوم الثالث | Day 3 versions
 
-يستخدم المختبر ملف [`requirements-day3.txt`](../../requirements-day3.txt) المثبت والمراجع في 26 أغسطس 2026. المسار الإلزامي لا يحتاج token أو API أو قاعدة متجهات خارجية. model weights تُنزّل إلى runtime المؤقت ولا تُرفع إلى GitHub.
+يستخدم المختبر ملف [`requirements-day3.txt`](../../requirements-day3.txt) المثبت والمراجع في 27 أغسطس 2026. المسار الإلزامي لا يحتاج token أو API أو قاعدة متجهات خارجية. model weights تُنزّل إلى runtime المؤقت ولا تُرفع إلى GitHub.
 
 - CAMeL Tools utilities فقط في Core؛ حزم بيانات dialect الكبيرة Explore.
 - Sentence Transformer متعدد اللغات + FAISS CPU في Core.
-- Cross-encoder وإدارة vector database خيارات لاحقة، ولا تمنح نقاطًا بدل الأدلة الإلزامية.
+- Cross-encoder متعدد اللغات على top candidates جزء Core مقاس؛ أما استبداله/ضبطه وقاعدة vector database مُدارة فخيارات لاحقة لا تعوض الأدلة الإلزامية.
 
 ## إصدارات اليوم الرابع | Day 4 versions
 
-يستخدم [مختبر اليوم الرابع](../../notebooks/08_optimization_serving.ipynb) ملف [`requirements-day4.txt`](../../requirements-day4.txt)، المراجع في 26 أغسطس 2026:
+يستخدم [مختبر اليوم الرابع](../../notebooks/08_optimization_serving.ipynb) ملف [`requirements-day4.txt`](../../requirements-day4.txt)، المراجع في 27 أغسطس 2026:
 
 - ONNX وONNX Runtime CPU للتصدير والاستدلال والتكميم المحلي.
 - FastAPI وHTTPX2/TestClient لاختبار HTTP داخل Colab بلا استضافة.

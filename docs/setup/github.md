@@ -1,4 +1,4 @@
-# GitHub من الصفر | GitHub from Zero
+# GitHub خطوة بخطوة | GitHub Setup
 
 ## ما هو المستودع؟ | Repository
 
@@ -20,23 +20,28 @@
 
 **ممنوع:** تصوير recovery codes، إرسالها، أو وضعها في Colab/README.
 
-## 3. إنشاء مستودعك من قالب الطالب
+## 3. تنزيل حزمة بداية الطالب
 
-عند نشر قالب الدورة:
+1. نزّل [حزمة بداية الطالب الرسمية](../../downloads/bayan-student-starter.zip).
+2. افتح [SHA256SUMS](../../downloads/SHA256SUMS.txt) إذا أردت التحقق من سلامة التنزيل.
+3. فك الضغط. يجب أن تجد `GETTING_STARTED.md` وتسعة دفاتر ومجلدات `src` و`tests` و`reports` و`sample_outputs`.
+4. لا ترفع ملف ZIP نفسه إلى مشروعك؛ ارفع **محتوياته بعد فك الضغط**.
 
-1. افتح مستودع `bayan-nlp-student-template`.
-2. اضغط **Use this template**.
-3. اختر **Create a new repository**.
-4. اختر حسابك مالكًا.
-5. استخدم الاسم:
-   `bayan-nlp-YOUR-GITHUB-USERNAME`
-6. اختر **Public**.
-7. لا تختر Include all branches.
-8. اضغط **Create repository**.
+لا تعتمد على قالب خارجي منفصل؛ الحزمة المرفقة هنا هي المصدر الرسمي وتمنع اعتماد الطلاب على رابط غير منشور.
 
-إنشاء مستودع من template يبدأ تاريخًا جديدًا بدل نسخ تاريخ المستودع الأصلي، وفق [دليل GitHub الرسمي](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## 4. إنشاء مستودعك العام ورفع الحزمة
 
-## 4. أول تعديل وCommit
+1. افتح [github.com/new](https://github.com/new).
+2. اختر حسابك مالكًا واستخدم الاسم `bayan-nlp-YOUR-GITHUB-USERNAME`.
+3. اختر **Public**، ولا تضف README أو `.gitignore` جديدين؛ فهما موجودان في الحزمة.
+4. أنشئ المستودع، ثم اختر **uploading an existing file**.
+5. اسحب محتويات الحزمة بعد فكها، بما فيها المجلدات. الحزمة `75` ملفًا، وهي دون حد GitHub الحالي البالغ `100` ملف لكل عملية رفع من المتصفح، ولا تحتوي أوزان نماذج.
+6. استخدم رسالة commit: `chore: initialise Bayan student workspace`.
+7. افتح المستودع في نافذة خاصة وتأكد أن README والدفاتر تظهر بلا تسجيل دخول.
+
+يوضح [دليل GitHub الرسمي](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) رفع الملفات من المتصفح. إذا منعت جهة العمل رفع مجلد كامل، استخدم مسار Git المحلي الاختياري في الدليل الرسمي أو اطلب مساعدة المدربة؛ لا تنشئ token داخل notebook.
+
+## 5. أول تعديل وCommit
 
 1. افتح `STUDENT_PROFILE.md`.
 2. اضغط رمز القلم.
@@ -57,7 +62,7 @@ perf: record ONNX benchmark
 
 لا تستخدم `update` أو `final` وحدهما؛ فهما لا يشرحان ما تغير.
 
-## 5. حفظ notebook من Colab إلى GitHub
+## 6. حفظ notebook من Colab إلى GitHub
 
 الطريقة الأساسية:
 
@@ -73,7 +78,7 @@ perf: record ONNX benchmark
 
 إذا لم يظهر الخيار أو فشل OAuth، اتبع [استكشاف الأعطال](troubleshooting.md) ولا تنشئ token علنيًا.
 
-## 6. النسخة النهائية
+## 7. النسخة النهائية
 
 شغّل فاحص ما قبل tag أولًا:
 
@@ -104,6 +109,7 @@ GitHub Releases مبنية على tags التي تحدد نقطة في تاري�
 
 - [ ] المستودع Public.
 - [ ] الاسم صحيح.
+- [ ] الملفات الـ75 في الحزمة ظهرت، بما فيها المجلدات المتداخلة.
 - [ ] README يظهر في الصفحة الرئيسية.
 - [ ] لا secrets أو ملفات ضخمة.
 - [ ] يوجد commit بعد كل مختبر.

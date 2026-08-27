@@ -1,6 +1,6 @@
 # مواصفات البرنامج | Course Specification
 
-**الإصدار | Version:** 1.0 — Four-day learner path
+**الإصدار | Version:** 1.1 — Final accreditation alignment
 
 **مصدر الحقيقة | Source of truth:** هذا الملف يحكم المدة، النطاق، التقييم، والاجتياز. عند التعارض تُصحّح الملفات الأخرى لتطابقه.  
 This file governs duration, scope, assessment, and completion requirements. Conflicting files must be corrected to match it.
@@ -11,22 +11,26 @@ This file governs duration, scope, assessment, and completion requirements. Conf
 |---|---|---|---|
 | اسم البرنامج | معالجة اللغات الطبيعية التطبيقية | Program | Applied Natural Language Processing |
 | المدربة | ميعاد المري | Instructor | Meaad Al-Marri |
+| رمز البرنامج | `SDA-AIE-211` | Program code | `SDA-AIE-211` |
 | النمط | حضوري + Google Colab | Mode | In person + Google Colab |
-| المدة | 4 أيام × 5 ساعات صباحية | Duration | 4 days × 5 morning hours |
+| المدة | 4 أيام × 5 ساعات تدريبية اسمية = 20 ساعة | Duration | 4 days × 5 nominal learning hours = 20 hours |
 | السعة | حتى 20 متدربًا | Capacity | Up to 20 learners |
-| المستويات | مبتدئ، متوسط، مختص | Levels | Beginner, intermediate, specialist |
+| المستوى | تخصصي | Level | Specialist |
+| المتطلب السابق | `SDA-AIE-112` أو ما يعادله | Prerequisite | `SDA-AIE-112` or equivalent foundations |
 | المشروع | بيان — نظام NLP ثنائي اللغة | Capstone | Bayan — bilingual NLP system |
 | التسليم | مستودع GitHub عام إلزامي | Submission | Mandatory public GitHub repository |
 
 ## الفلسفة التعليمية | Learning design
 
-كل درس يبدأ بالمفهوم، ثم مثال صغير، ثم تطبيق موجّه، ثم دليل قابل للتقييم. ولا يعتمد نجاح المبتدئ على إنهاء مهام التوسع.
+كل درس يبدأ بالمفهوم، ثم مثال صغير، ثم تطبيق موجّه، ثم دليل قابل للتقييم. تخدم السقالات تفاوت الثقة العملية داخل المستوى التخصصي، ولا يعتمد الاجتياز على مهام التوسع.
 
-Every lesson moves from concept to a small example, guided practice, and assessable evidence. A beginner can pass without completing extension work.
+Every lesson moves from concept to a small example, guided practice, and assessable evidence. Scaffolding supports varied practical confidence within the specialist level. Explore/Distinction lane work is optional; the capstone's single measured extension is a separate official R7 requirement.
 
 - 🟢 **أساسي | Core:** إلزامي للجميع ويغطي نواتج التعلم.
 - 🔵 **استكشاف | Explore:** للمتوسطين أو لمن ينتهي مبكرًا.
 - 🟣 **تميّز | Distinction:** تحديات للمختصين، ولا تعوّض نقص المتطلبات الأساسية.
+
+مسارات المستوى السابقة تخص أنشطة الدروس؛ أما المشروع الختامي فيتطلب امتدادًا واحدًا مقاسًا وفق [مواصفات بيان](03-capstone-spec.md).
 
 ## الأهداف الرسمية | Official learning outcomes
 
@@ -67,8 +71,8 @@ Every lesson moves from concept to a small example, guided practice, and assessa
 | 12:20–12:40 | 20 دقيقة | استراحة طويلة/صلاة |
 | 12:40–13:30 | 50 دقيقة | بوابة إنجاز + حفظ نقطة الاستعادة |
 
-إجمالي اليوم: **250 دقيقة تعلم + 50 دقيقة استراحات = 5 ساعات**.  
-Daily total: **250 learning minutes + 50 break minutes = 5 hours**.
+إجمالي اليوم: **5 فترات تدريبية اسمية**؛ كل فترة `50` دقيقة تعلم و`10` دقائق مرونة، أي **250 دقيقة تعلم مباشر + 50 دقيقة انتقال/استراحة = 5 ساعات اسمية**.<br>
+Daily total: **5 nominal learning periods** of `50` learning minutes plus `10` buffer minutes: **250 direct learning minutes + 50 transition/break minutes = 5 nominal hours**.
 
 ## خريطة الأيام | Four-day arc
 
@@ -88,19 +92,23 @@ Daily total: **250 learning minutes + 50 break minutes = 5 hours**.
 | اختبار قصير | 10% | 10 أسئلة موضوعية |
 | مشروع بيان | 40% | rubric + مستودع + عرض |
 
+مواد المتدرب للتقييمين العمليين وتعليمات الاختبار في [حزمة التقييم](../assessments/README.md). مفاتيح الإجابة والتصحيح التفصيلي لا تُنشر في المستودع العام.
+
 ## شروط الاجتياز | Completion requirements
 
-يستحق المتدرب **شهادة/إثبات الاجتياز وفق إجراءات الأكاديمية** عند تحقق جميع الشروط:
+تتحقق **الأهلية الأكاديمية للاجتياز** عند استيفاء الشروط المثبتة في الحزمة المرجعية ومتطلبات التسليم التقنية لهذه النسخة:
 
 1. الدرجة النهائية **70/100 فأعلى**.
 2. درجة المشروع الختامي **70/100 فأعلى**.
-3. حضور **80% على الأقل**؛ وإذا كانت سياسة الأكاديمية أشد فهي المقدّمة.
-4. مستودع GitHub عام ومكتمل، ورابطه مسلّم في الموعد.
+3. عدم وجود مخالفة للنزاهة الأكاديمية.
+4. مستودع GitHub عام ومكتمل، ورابطه مسلّم في الموعد بوصفه دليل هذه النسخة.
 5. اجتياز فاحص التسليم ووجود الأدلة الإلزامية.
-6. عدم وجود مخالفة للنزاهة الأكاديمية أو نشر لبيانات شخصية/أسرار.
+6. عدم نشر بيانات شخصية أو أسرار.
 7. وسم الإصدار النهائي `submission-v1.0`.
 
-**التميّز | Distinction:** 90/100 فأعلى، مع استيفاء جميع المتطلبات الأساسية. مهام التوسع تضيف حتى 5 نقاط، بسقف نهائي 100، ولا تُحسب إذا كان نطاق المشروع الإلزامي أقل من 80%.
+الحضور، والتيسيرات، وإعادة المحاولة، وآلية إصدار الشهادة/الشارة تحددها الجهة المنظمة وتعلنها للدفعة؛ لا يضع هذا المستودع نسبة حضور غير واردة في المصدر المرجعي.
+
+**مسار التميّز | Distinction lane:** التميّز عند `90/100` فأعلى بعد استيفاء شروط الاجتياز. مهام bonus تضيف حتى `+5` نقاط (بحد أقصى `100`) فقط عندما تبلغ المتطلبات الإلزامية للمشروع `80/100` على الأقل؛ ولا تعوض نقص Core أو الامتداد الإلزامي المقاس.
 
 ## سياسة الأدوات | Tooling policy
 

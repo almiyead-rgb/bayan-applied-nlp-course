@@ -1,6 +1,6 @@
 # المصادر الرسمية | Official Sources
 
-**آخر تحقق | Last verified:** 26 August 2026
+**آخر تحقق | Last verified:** 27 August 2026
 
 تعتمد تعليمات التجهيز على مصادر أولية رسمية. إذا تغيرت واجهة خدمة، تُتبع وثيقتها الرسمية وتُبلغ المدربة بالرابط والخطوة التي تغيرت.
 
@@ -15,7 +15,7 @@
 
 - [Creating a GitHub account](https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github)
 - [Quickstart for repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
-- [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+- [Adding/uploading files to a repository](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
 - [Configuring two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)
 - [About releases and tags](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
 - [Managing releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)

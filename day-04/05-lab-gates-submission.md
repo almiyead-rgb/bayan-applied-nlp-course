@@ -41,6 +41,8 @@ Commit:
 
 ## Gate D — Ship
 
+طبّق كذلك [الأهداف الرقمية الرسمية R1–R7 وشرط حزمة الدفعة](../docs/03-capstone-spec.md#أهداف-المشروع-الرقمية-الرسمية--official-capstone-targets). نتائج `MEASURED_SMOKE` المحفوظة تشرح الطريقة ولا تُحتسب بدل هذه البوابات.
+
 ### أدلة artefact المشروع
 
 - [ ] `artefact_role = PROJECT_ARTIFACT` في BENCHMARKS.
@@ -53,6 +55,8 @@ Commit:
 - [ ] API smoke يستخدم artefact المختار لا fixture مجهولة.
 - [ ] canaries عربية وإنجليزية تمر.
 - [ ] الاختبارات كلها خضراء.
+- [ ] topic وsentiment موثقان كرأسي تصنيف منفصلين.
+- [ ] امتداد واحد مقاس وله baseline وقرار ودليل.
 
 ملفات Gate D المقترحة:
 
@@ -89,6 +93,8 @@ cp templates/SUBMISSION.template.yml SUBMISSION.yml
 ```json
 "benchmark_mode": "PROJECT_ARTIFACT"
 ```
+
+ويجب أن يحتوي `extension.name` و`extension.evidence` على اسم الامتداد المقاس ومسار دليله، لا placeholder.
 
 ### 2) شغّل الفاحص قبل tag
 
@@ -146,6 +152,7 @@ PYTHONPATH=src python scripts/validate_submission.py . --require-tag
 - [ ] جميع ملفات التسليم الإلزامية موجودة وغير فارغة.
 - [ ] notebooks التسعة بأسمائها وعلامات Core.
 - [ ] `PROJECT_SUMMARY.json` JSON صالح و`benchmark_mode` نهائي.
+- [ ] `PROJECT_SUMMARY.json` يثبت sentiment وامتدادًا واحدًا مقاسًا.
 - [ ] `SUBMISSION.yml` flat YAML صالح بلا tabs.
 - [ ] لا placeholders أو weights أو secrets أو ملف أكبر من حد الدورة.
 - [ ] فاحص pre-tag ناجح.

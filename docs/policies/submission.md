@@ -82,7 +82,11 @@ sample_outputs/
   "student_github": "YOUR_USERNAME",
   "repository_url": "https://github.com/YOUR_USERNAME/bayan-nlp-YOUR_USERNAME",
   "languages": ["ar", "en"],
-  "tasks": ["classification", "ner", "qa", "semantic_search"],
+  "tasks": ["classification", "sentiment", "ner", "qa", "semantic_search"],
+  "extension": {
+    "name": "batch endpoint",
+    "evidence": "BENCHMARKS.md#batch-endpoint"
+  },
   "benchmark_mode": "PROJECT_ARTIFACT",
   "final_tag": "submission-v1.0",
   "privacy_check": true,

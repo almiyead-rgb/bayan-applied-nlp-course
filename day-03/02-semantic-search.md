@@ -29,7 +29,7 @@
 retrieve many cheaply → re-rank a small candidate set carefully
 ```
 
-Core يبني bi-encoder + FAISS. إعادة الترتيب باستخدام cross-encoder اختيارية؛ لأنها تتطلب checkpoint ثانيًا ووقتًا إضافيًا، ويجب قياس فائدتها وزمنها قبل اعتمادها.
+يبني Core bi-encoder + FAISS، ثم يعيد ترتيب مجموعة صغيرة من المرشحين باستخدام cross-encoder متعدد اللغات. لا يُعتمد الـreranker لمجرد أنه أكثر تعقيدًا: يقيس المختبر `MRR@3` قبل/بعد وزمن المرحلة وحدها، ثم يوثق قرار القبول أو الرفض.
 
 ## Cosine وL2 normalisation
 
@@ -136,7 +136,7 @@ cosine score ليس نسبة مئوية، و`0.70` لا يعني «70% صحيح�
 
 ## التطبيق
 
-نفّذ [Notebook 06 — Semantic Search](../notebooks/06_semantic_search.ipynb)، ثم احفظ manifest وmetrics فقط. الأوزان والكاش تبقى خارج GitHub.
+نفّذ [Notebook 06 — Semantic Search](../notebooks/06_semantic_search.ipynb)، ثم احفظ manifest وmetrics وقرار re-ranking فقط. الأوزان والكاش تبقى خارج GitHub.
 
 ## English recap
 

@@ -39,18 +39,21 @@
 
 | الوقت | الجلسة | الناتج المرئي |
 |---|---|---|
-| 08:30–09:20 | [Benchmark قبل التحسين](01-benchmark-before-optimization.md) | budget + measurement contract |
+| 08:30–08:45 | [الاختبار القصير](../assessments/quiz/README.md) | 10 إجابات فردية مغلقة المراجع |
+| 08:45–09:20 | [تحسين الاستدلال والخدمة](01-benchmark-before-optimization.md) + عرض النتائج المحفوظة | budget + measurement contract + ladder |
 | 09:20–09:30 | استراحة | حفظ البيئة والميزانية |
-| 09:30–10:20 | [Notebook 08: baseline وfree wins](../notebooks/08_optimization_serving.ipynb) | warm-up + p50/p95/p99 + length audit |
+| 09:30–09:50 | Lab 7: [Notebook 08](../notebooks/08_optimization_serving.ipynb) و[ONNX/INT8](02-onnx-int8-decision.md) | benchmark + parity + TestClient + Gate D evidence |
+| 09:50–10:20 | [PA‑2](../assessments/pa-02/README.md) | مراجعة تقرير منافس وقرار شحن |
 | 10:20–10:30 | استراحة | حفظ baseline قبل أي تغيير |
-| 10:30–11:20 | [ONNX وINT8 وقرار النشر](02-onnx-int8-decision.md) | parity + candidate benchmark + quality tax |
+| 10:30–11:20 | [تجميع بيان I](04-capstone-assembly-demo.md) | classifier + NER/QA + search + evaluation evidence map |
 | 11:20–11:30 | استراحة | الاحتفاظ بنسخة FP32 للرجوع |
-| 11:30–12:20 | [FastAPI وcanaries](03-fastapi-serving-canaries.md) | `/health` + `/v1/classify` + TestClient |
+| 11:30–12:20 | [تجميع بيان II + المراجعة النظيرة](04-capstone-assembly-demo.md) | cold-clone review + canaries + إغلاق Gate D/E |
 | 12:20–12:40 | استراحة طويلة/صلاة | حفظ التقارير وإغلاق artefacts الكبيرة |
-| 12:40–13:05 | [تجميع بيان والمراجعة النظيرة](04-capstone-assembly-demo.md) | repository evidence map + peer review |
-| 13:05–13:30 | [Gate D وGate E](05-lab-gates-submission.md) | validator + parallel demo + release tag |
+| 12:40–13:30 | [عروض بيان والتقييم والختام](05-lab-gates-submission.md) | 5 دقائق لكل زوج، سؤال دليل إلزامي، rubric مباشر |
 
-إجمالي التعلم 250 دقيقة والاستراحات 50 دقيقة. عند وجود 20 متدربًا تتم العروض القصيرة في أزواج متوازية؛ فـ20 عرضًا فرديًا من 7 دقائق تحتاج 140 دقيقة ولا تتسع لها الحصة. يبقى تقييم المستودع فرديًا لكل متدرب.
+إجمالي التعلم/التقييم 250 دقيقة والاستراحات 50 دقيقة، مطابق لخطة اليوم الرابع الرسمية ذات 30% شرح و70% تطبيق. عند السعة القصوى (20 متدربًا) يعمل المشاركون في 10 أزواج؛ العرض **5 دقائق إجمالًا لكل زوج** (4 دقائق demo + دقيقة سؤال الدليل). يبقى مستودع ودليل كل متدرب قابلين للتقييم الفردي، ويجب أن يجيب كل مشارك عن سؤال تحقق واحد أثناء العرض أو spot-check معلن.
+
+صفحات [ONNX وINT8](02-onnx-int8-decision.md) و[FastAPI وcanaries](03-fastapi-serving-canaries.md) مرجعان قبل الحصة وأثناء المشروع. خلال العرض تستخدم المدربة النتائج المحفوظة بدل انتظار تنزيل/تصدير حي، ثم يقيس الطالب `PROJECT_ARTIFACT` في نسخته لإغلاق Gate D.
 
 ## خط بيان اليوم | Today’s Bayan delivery path
 
@@ -122,6 +125,7 @@ flowchart LR
 - canaries تمنع model/preprocessing skew.
 - `BENCHMARKS.md` و`DECISIONS.md` و`PROGRESS.md` مكتملة.
 - `PROJECT_SUMMARY.json` و`SUBMISSION.yml` صالحان.
+- امتداد مشروع واحد مقاس ومربوط بدليل داخل `PROJECT_SUMMARY.json`.
 - فاحص محلي ناجح، مستودع عام، وعلامة `submission-v1.0`.
 - عرض موجز يربط كل claim بدليل.
 

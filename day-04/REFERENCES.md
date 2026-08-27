@@ -1,6 +1,6 @@
 # مراجع اليوم الرابع | Day 4 References
 
-**آخر تحقق | Last verified:** 26 August 2026
+**آخر تحقق | Last verified:** 27 August 2026
 
 المصادر هنا رسمية/أولية. لا تُستخدم الأرقام المنشورة كبديل للقياس على Colab الخاص بالمتدرب.
 
@@ -48,6 +48,6 @@
 
 ## Checkpoint مسار Systems Smoke
 
-- [`prajjwal1/bert-tiny` model card](https://huggingface.co/prajjwal1/bert-tiny) — BERT صغير (L=2, H=128)، English-only، MIT. يستخدم فقط لفحص البنية التقنية بسرعة، ولا يمثل جودة بيان العربية/الإنجليزية.
+- [`google/bert_uncased_L-2_H-128_A-2` model card](https://huggingface.co/google/bert_uncased_L-2_H-128_A-2) — BERT صغير (L=2, H=128)، English-only، Apache-2.0. يستخدم مع tokenizer من المصدر نفسه لفحص البنية التقنية بسرعة، ولا يمثل جودة بيان العربية/الإنجليزية.
 
 المشروع النهائي يعيد القياس على artefact المتدرب متعدد اللغات. لا تنسب إلى checkpoint الصغير قدرة عربية أو جودة مهمة لم تُقَس.
