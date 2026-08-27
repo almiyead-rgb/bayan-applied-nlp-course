@@ -32,7 +32,7 @@ Every lesson moves from concept to a small example, guided practice, and assessa
 
 مسارات المستوى السابقة تخص أنشطة الدروس؛ أما المشروع الختامي فيتطلب امتدادًا واحدًا مقاسًا وفق [مواصفات بيان](03-capstone-spec.md).
 
-## الأهداف الرسمية | Official learning outcomes
+## نواتج التعلم الرسمية | Official learning outcomes
 
 بنهاية البرنامج يكون المتدرب قادرًا على:
 
@@ -48,8 +48,12 @@ Every lesson moves from concept to a small example, guided practice, and assessa
    Evaluate NLP models with task-appropriate metrics and error analysis.
 6. تحسين سرعة الاستدلال واستهلاك الذاكرة للنشر.  
    Improve inference speed and memory use for deployment.
-7. إنجاز مشروع تطبيقي ثنائي اللغة بالعربية والإنجليزية.  
-   Deliver a bilingual Arabic–English NLP capstone.
+
+### متطلب التكامل الختامي | Capstone integration requirement
+
+يُثبت المتدرب النواتج الرسمية الستة من خلال مشروع «بيان» التطبيقي ثنائي اللغة. المشروع متطلب تكاملي إلزامي في التقييم، وليس `LO7` إضافيًا في الحزمة المرجعية.
+
+The learner demonstrates the six official outcomes through the bilingual Bayan capstone. The capstone is a mandatory integration and assessment requirement, not an additional `LO7` in the source package.
 
 ## النطاق | Scope
 
