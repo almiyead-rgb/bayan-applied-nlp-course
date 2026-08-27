@@ -10,7 +10,7 @@
 | 4 | البحث الدلالي بالتضمينات | [يوم 3: M5](../day-03/02-semantic-search.md) | bi-encoder، cosine، FAISS، ثم cross-encoder re-ranking مقاس | bilingual case search | Recall@k وMRR + اختبار cross-lingual + فرق الجودة/الزمن |
 | 5 | التقييم وتحليل الأخطاء | [يوم 3: M6](../day-03/03-evaluation-error-analysis.md) | task metrics، slices، CIs، behavioural tests، taxonomy | `EVALUATION_REPORT.md` وmodel cards | نتائج قابلة لإعادة الإنتاج + 3 إصلاحات مرتبة |
 | 6 | تحسين الاستدلال والذاكرة | [يوم 4: M7](../day-04/README.md) | batching/length، ONNX، INT8 حيث يدعم، benchmark منضبط | optimized serving path | latency/memory/quality tax قبل وبعد |
-| 7 | مشروع عربي/إنجليزي مكتمل | [الأيام 1–4](../day-04/04-capstone-assembly-demo.md) | تجميع المكونات، API، README، demo، وامتداد واحد مقاس | مستودع Bayan عام | [validator + rubric + tag](../day-04/05-lab-gates-submission.md) `submission-v1.0` |
+| تكامل | مشروع عربي/إنجليزي مكتمل | [الأيام 1–4](../day-04/04-capstone-assembly-demo.md) | تجميع LO1–LO6، API، README، demo، وامتداد واحد مقاس | مستودع Bayan عام | [validator + rubric + tag](../day-04/05-lab-gates-submission.md) `submission-v1.0` |
 
 ## التدرّج حسب المستوى | Level differentiation
 
@@ -24,7 +24,7 @@
 
 ## تغطية القياس | Assessment coverage
 
-| مكوّن التقييم | LO1 | LO2 | LO3 | LO4 | LO5 | LO6 | LO7 |
+| مكوّن التقييم | LO1 | LO2 | LO3 | LO4 | LO5 | LO6 | تكامل المشروع |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | المختبرات 35% | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | العملي 15% | ✓ |  | ✓ | ✓ | ✓ | ✓ |  |

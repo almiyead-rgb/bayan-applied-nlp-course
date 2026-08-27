@@ -2,9 +2,9 @@
 
 ## الفكرة | Purpose
 
-**بيان** نظام تعليمي ثنائي اللغة يساعد فريق خدمة عامة على فهم ملاحظات المستفيدين بالعربية والإنجليزية. المطلوب ليس منتجًا حكوميًا حقيقيًا، بل مشروعًا آمنًا وقابلًا للقياس يثبت نواتج التعلم السبعة.
+**بيان** نظام تعليمي ثنائي اللغة يساعد فريق خدمة عامة على فهم ملاحظات المستفيدين بالعربية والإنجليزية. المطلوب ليس منتجًا حكوميًا حقيقيًا، بل مشروعًا آمنًا وقابلًا للقياس يدمج ويثبت نواتج التعلم الرسمية الستة.
 
-**Bayan** is a bilingual educational system for analysing Arabic and English citizen feedback. It is not a production government service; it is a safe, measurable capstone demonstrating all seven learning outcomes.
+**Bayan** is a bilingual educational system for analysing Arabic and English citizen feedback. It is not a production government service; it is a safe, measurable capstone integrating and demonstrating all six official learning outcomes.
 
 ## قصة المستخدم | User story
 
