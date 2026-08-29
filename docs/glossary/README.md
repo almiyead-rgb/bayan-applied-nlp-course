@@ -2,6 +2,19 @@
 
 يُعرّف المصطلح عند أول استخدام بالعربية والإنجليزية. التعريف المبسط للبدء، والملاحظة التقنية للدقة.
 
+## قواميس الأيام | Daily glossaries
+
+القاموس العام أدناه مناسب للبحث السريع عبر البرنامج. أما قواميس الأيام فتتبع ترتيب الشرح، وتضيف النطق والتعريف الإنجليزي والشرح العربي ومثالًا لكل مصطلح:
+
+| اليوم | القاموس | النطاق |
+|---|---|---|
+| 1 | [Day 1 Glossary](../../day-01/GLOSSARY.md) | Text · Unicode · Preprocessing · Tokenisation · Embeddings · Attention · Transformers |
+| 2 | [Day 2 Glossary](../../day-02/GLOSSARY.md) | Fine-tuning · Classification · Metrics · NER · BIO alignment · Extractive QA |
+| 3 | [Day 3 Glossary](../../day-03/GLOSSARY.md) | Arabic NLP · CAMeL Tools · Semantic search · FAISS · Evaluation · Error analysis |
+| 4 | [Day 4 Glossary](../../day-04/GLOSSARY.md) | Benchmarking · ONNX · INT8 · FastAPI · Git · Final submission |
+
+> للشرح والمراجعة اليومية ابدأ بقاموس اليوم، وللبحث عن مصطلح من أي يوم استخدم الجدول العام التالي.
+
 | المصطلح العربي | English | تعريف مبسط | ملاحظة تقنية |
 |---|---|---|---|
 | معالجة اللغات الطبيعية | Natural Language Processing (NLP) | جعل الحاسوب يحلل اللغة أو ينتج مخرجات منها | مجال يجمع اللغة والحوسبة والتعلم الآلي |

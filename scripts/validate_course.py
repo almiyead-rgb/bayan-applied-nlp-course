@@ -34,6 +34,8 @@ EXTRA_NOTEBOOK_EVIDENCE = {
 }
 REQUIRED_PUBLIC_FILES = {
     "README.md", "START_HERE.md", "COURSE_GUIDE.md",
+    "day-01/GLOSSARY.md", "day-02/GLOSSARY.md",
+    "day-03/GLOSSARY.md", "day-04/GLOSSARY.md",
     "docs/00-course-spec.md", "docs/01-outcomes-map.md",
     "docs/02-verified-runs.md", "docs/03-capstone-spec.md",
     "assessments/README.md", "assessments/pa-01/starter_buggy.py",
@@ -45,6 +47,28 @@ PRIVATE_DIRECTORIES = {"private", "internal", "instructor", "trainer", "solution
 PRIVATE_PREFIXES = ("instructor_", "trainer_", "internal_")
 TEXT_SUFFIXES = {".md", ".py", ".txt", ".yml", ".yaml", ".json", ".csv", ".ipynb"}
 LINK_PATTERN = re.compile(r"!?(?:\[[^\]]*\])\(([^)]+)\)")
+DAILY_GLOSSARY_TERMS = {
+    "day-01/GLOSSARY.md": {
+        "Natural Language Processing (NLP)", "Unicode", "PII masking",
+        "Tokenisation", "Token fertility", "Embedding", "Attention",
+        "Query (Q)", "Key (K)", "Value (V)", "Transformer", "Reproducibility",
+    },
+    "day-02/GLOSSARY.md": {
+        "Pretraining", "Fine-tuning", "TF-IDF", "Data leakage", "Macro-F1",
+        "Named Entity Recognition (NER)", "BIO scheme", "Label alignment",
+        "Strict entity-level F1", "Extractive QA", "No-answer", "Gate B",
+    },
+    "day-03/GLOSSARY.md": {
+        "Arabic morphology", "Clitic", "Arabizi", "CAMeL Tools",
+        "Sentence embedding", "Bi-encoder", "Cross-encoder", "FAISS",
+        "Recall@k", "Mean Reciprocal Rank (MRR@k)", "Bootstrap", "Error taxonomy",
+    },
+    "day-04/GLOSSARY.md": {
+        "Benchmark", "Performance budget", "p95 latency", "Throughput", "ONNX Runtime (ORT)",
+        "Dynamic INT8 quantisation", "Numerical parity", "Quality tax", "FastAPI",
+        "Canary test", "`PROJECT_ARTIFACT`", "Release tag",
+    },
+}
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -117,6 +141,40 @@ def validate_text_and_links(files: set[str], errors: list[str]) -> tuple[int, in
             elif not resolved.exists():
                 fail(errors, f"{relative}: missing local link target: {raw_target}")
     return markdown_count, link_count
+
+
+def validate_daily_glossaries(errors: list[str]) -> None:
+    expected_header = (
+        "| English term | Pronunciation | English explanation | "
+        "الشرح بالعربية | Example |"
+    )
+    for relative, required_terms in DAILY_GLOSSARY_TERMS.items():
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        if expected_header not in text:
+            fail(errors, f"{relative}: missing the bilingual glossary table contract")
+        rows = [
+            line for line in text.splitlines()
+            if line.startswith("| ")
+            and line != expected_header
+            and not re.fullmatch(r"\|[-:| ]+\|", line)
+        ]
+        if len(rows) < 50:
+            fail(errors, f"{relative}: expected at least 50 explained glossary terms, found {len(rows)}")
+        for line in rows:
+            if len(line.split("|")) != 7:
+                fail(errors, f"{relative}: glossary row does not have five columns: {line}")
+                continue
+            cells = [cell.strip() for cell in line.strip("|").split("|")]
+            if len(cells) != 5 or any(not cell for cell in cells):
+                fail(errors, f"{relative}: glossary row contains an empty field: {line}")
+        missing_terms = sorted(
+            term for term in required_terms if f"| {term} |" not in text
+        )
+        if missing_terms:
+            fail(errors, f"{relative}: missing core daily terms: {missing_terms}")
+        day_readme = ROOT / Path(relative).parent / "README.md"
+        if "(GLOSSARY.md)" not in day_readme.read_text(encoding="utf-8"):
+            fail(errors, f"{day_readme.relative_to(ROOT)}: daily glossary is not linked")
 
 
 def output_text(output: dict) -> str:
@@ -316,6 +374,7 @@ def main() -> int:
         fail(errors, f"Files above the 10 MiB public limit: {oversized}")
 
     markdown_count, link_count = validate_text_and_links(files, errors)
+    validate_daily_glossaries(errors)
     notebook_count, code_cells, output_cells = validate_notebooks(errors)
     validate_data(errors)
     starter_files = validate_starter(errors)

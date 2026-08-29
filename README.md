@@ -27,7 +27,7 @@ A specialist applied program with a shared readiness refresher, progressing from
 | [اليوم الرابع · Day 4](day-04/README.md) | القياس والتحسين وONNX وINT8 والخدمة والتسليم النهائي |
 | [تجهيز البيئة · Setup hub](docs/setup/README.md) | GitHub وColab وفحص الجاهزية وحل الأعطال |
 | [الأدوات المجانية · Free tools](docs/tools/free-tools.md) | ما هو إلزامي ومجاني، وما هو اختياري أو مدفوع |
-| [قاموس المصطلحات · Glossary](docs/glossary/README.md) | تعريفات عربية/إنجليزية مبسطة وتقنية |
+| [قاموس المصطلحات · Glossary](docs/glossary/README.md) | قاموس عام + أربعة قواميس يومية بالنطق والشرح الإنجليزي والعربي والأمثلة |
 | [نتائج التشغيل الموثقة](docs/02-verified-runs.md) | ما شُغّل فعليًا، النتائج المحفوظة، وحدود كل رقم |
 | [التقييم والاجتياز](docs/policies/assessment-and-completion.md) | الأوزان ومتطلبات الإكمال وإصدار الجهة المنظمة |
 | [حزمة التقييم](assessments/README.md) | PA‑1 وPA‑2 وتعليمات الاختبار القصير بلا مفاتيح إجابة |
@@ -35,6 +35,17 @@ A specialist applied program with a shared readiness refresher, progressing from
 | [النزاهة والخصوصية](docs/policies/integrity-and-privacy.md) | البيانات المسموحة والممنوعة |
 | [مشروع بيان](docs/03-capstone-spec.md) | نطاق المشروع ومراحله ومخرجاته |
 | [المصادر الرسمية](docs/references/official-sources.md) | الروابط الأولية المعتمدة للمحتوى والتجهيز |
+
+## قواميس الأيام | Daily glossaries
+
+| اليوم | افتح القاموس | استخدمه عند مراجعة |
+|---|---|---|
+| 1 | [قاموس اليوم الأول](day-01/GLOSSARY.md) | النص وUnicode والمعالجة وTokenisation وAttention وTransformers |
+| 2 | [قاموس اليوم الثاني](day-02/GLOSSARY.md) | Fine-tuning والتصنيف والمقاييس وNER وBIO وQA |
+| 3 | [قاموس اليوم الثالث](day-03/GLOSSARY.md) | العربية وCAMeL Tools والبحث الدلالي وFAISS والتقييم |
+| 4 | [قاموس اليوم الرابع](day-04/GLOSSARY.md) | Benchmark وONNX وINT8 وFastAPI وGit والتسليم |
+
+كل صف داخل هذه القواميس يعرض المصطلح بالإنجليزية، ونطقه التقريبي، وتعريفًا بالإنجليزية، وشرحًا مبسطًا بالعربية، ومثالًا من مسار «بيان».
 
 ## الوصول والتنزيل | Access and downloads
 
