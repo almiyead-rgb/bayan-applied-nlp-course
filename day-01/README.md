@@ -95,7 +95,7 @@ flowchart LR
 
 ## قاموس اليوم
 
-[Unicode](../docs/glossary/README.md#قاموس-معالجة-اللغات-الطبيعية--nlp-glossary) · Token · Subword · Vocabulary · Fertility · Embedding · Attention · Query · Key · Value · Encoder · Checkpoint
+[افتح قاموس اليوم الأول](GLOSSARY.md) واتركه في تبويب مستقل أثناء الشرح والمختبر. يضم المصطلح الإنجليزي، والنطق، والتعريف بالإنجليزية، والشرح العربي، ومثالًا تطبيقيًا لكل مفهوم في المعالجة وTokenisation وAttention وTransformers. يبقى [قاموس الدورة الكامل](../docs/glossary/README.md) مرجعًا جامعًا عبر الأيام الأربعة.
 
 ## مراجع اليوم
 

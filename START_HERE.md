@@ -110,6 +110,6 @@ CPU/GPU:
 2. [إعداد GitHub](docs/setup/github.md)
 3. [إعداد Colab وDrive](docs/setup/colab.md)
 4. [الأدوات المجانية والاختيارية](docs/tools/free-tools.md)
-5. [قاموس المصطلحات](docs/glossary/README.md)
+5. [قاموس المصطلحات العام](docs/glossary/README.md)، ثم قاموس يومك: [1](day-01/GLOSSARY.md) · [2](day-02/GLOSSARY.md) · [3](day-03/GLOSSARY.md) · [4](day-04/GLOSSARY.md)
 6. [خريطة الأيام الأربعة](README.md#خريطة-الأيام--four-day-journey)
 7. [طريقة التسليم النهائي](docs/policies/submission.md)
