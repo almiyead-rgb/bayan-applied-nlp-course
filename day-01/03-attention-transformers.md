@@ -1,19 +1,41 @@
 # 3. Attention وTransformer  
 # Attention and Transformer Encoders
 
-## المشكلة التي يحلها Attention
+## الفكرة في دقيقة واحدة
 
-في جملة «لم تتأخر الخدمة»، معنى «تتأخر» يتأثر بـ«لم». يحتاج كل موضع إلى جمع معلومات من مواضع أخرى. self-attention يبني هذا المزج مباشرة.
+اقرأ:
 
-## 3.1 Q وK وV
+```text
+الطلب لم يصل اليوم
+```
 
-لكل token representation نحسب ثلاثة إسقاطات:
+لفهم كلمة **«يصل»**، يحتاج النموذج إلى ملاحظة **«لم»** لأنها تغيّر المعنى.
+**Self-Attention** تسمح لكل Token أن تنظر إلى Tokens الأخرى، وتعطي كل واحدة وزنًا، ثم تمزج معلوماتها.
 
-- **Query (Q):** ما المعلومات التي أبحث عنها؟
-- **Key (K):** ما نوع المعلومات التي أقدمها؟
-- **Value (V):** ما المحتوى الذي سينتقل إذا حصلت على وزن؟
+> **Attention = قارن الكلمات، أعطها أوزانًا، ثم اجمع المعلومات المهمة.**
 
-التشبيه يساعد على البداية لكنه ليس تعريفًا رياضيًا. التعريف:
+---
+
+## 3.1 ما معنى Q وK وV؟
+
+| الرمز | الاسم | المعنى البسيط |
+|---|---|---|
+| **Q** | Query | ما المعلومة التي أبحث عنها؟ |
+| **K** | Key | ما المعلومة التي أقدمها للمطابقة؟ |
+| **V** | Value | ما المحتوى الذي سأمرره؟ |
+
+عند معالجة «يصل»:
+
+1. «يصل» ترسل **Q**.
+2. جميع Tokens تعرض **K**.
+3. النموذج يقارن Q مع كل K.
+4. يستخدم الأوزان لجمع المعلومات من **V**.
+
+> **احفظيها هكذا:** Q تسأل، K تطابق، V تنقل المعلومة.
+
+---
+
+## 3.2 شرح المعادلة دون تعقيد
 
 $$
 \operatorname{Attention}(Q,K,V)
@@ -23,22 +45,60 @@ $$
 \right)V
 $$
 
-هذه معادلة scaled dot-product attention في ورقة [Attention Is All You Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need).
+نقرأها في أربع خطوات:
 
-## 3.2 خطوة بخطوة
+| الخطوة | العملية | معناها |
+|---:|---|---|
+| 1 | $QK^\top$ | قارن كل Query بجميع Keys لتحصل على Scores. |
+| 2 | $\div\sqrt{d_k}$ | خفّض تضخم الأرقام حتى يبقى التعلم مستقرًا. |
+| 3 | Softmax | حوّل Scores إلى أوزان موجبة مجموعها 1. |
+| 4 | $\times V$ | اجمع Values حسب الأوزان لتنتج تمثيلًا سياقيًا. |
 
-لنفترض sequence من 4 tokens وdimension يساوي 4:
+> **الخلاصة:** قارن → قسّم → وزّع الأوزان → امزج المعلومات.
 
-| العملية | Shape |
-|---|---|
-| $Q$ | $4 \times 4$ |
-| $K^\top$ | $4 \times 4$ |
-| scores $QK^\top$ | $4 \times 4$ |
-| softmax weights | $4 \times 4$ |
-| $V$ | $4 \times 4$ |
-| output | $4 \times 4$ |
+هذه هي **Scaled Dot-Product Attention** من ورقة [Attention Is All You Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need).
 
-كل صف في weights يجيب: إلى أي keys ينظر query الحالي؟ مجموع الصف يساوي 1، إلا إذا كانت الخوارزمية/القناع لهما معالجة خاصة.
+### لماذا نقسم على $\sqrt{d_k}$؟
+
+عندما يكبر عدد الأبعاد، قد تكبر Scores كثيرًا فيصبح Softmax حادًا جدًا ويصعب التعلم. القسمة على $\sqrt{d_k}$ تبقي القيم أكثر استقرارًا.
+
+> نقسم على **بُعد الرأس** $\sqrt{d_k}$، وليس على $d_k$ ولا على $\sqrt{d_{model}}$.
+
+---
+
+## 3.3 مثال صغير
+
+هذه أوزان تعليمية محتملة عندما تعالج Token «يصل»:
+
+| Token | الوزن |
+|---|---:|
+| الطلب | 0.10 |
+| لم | 0.55 |
+| يصل | 0.25 |
+| اليوم | 0.10 |
+| **المجموع** | **1.00** |
+
+الوزن الأعلى لـ«لم» يعني أن معلوماتها ستؤثر أكثر في التمثيل الجديد لـ«يصل».
+
+> الأرقام توضيحية؛ الأوزان الحقيقية تختلف حسب النموذج والطبقة والرأس والسياق.
+
+### Shapes في المثال
+
+إذا كان لدينا 4 Tokens وكان $d_k=4$:
+
+```text
+Q, K, V        = [4, 4]
+Scores/Weights = [4, 4]
+Output         = [4, 4]
+```
+
+- الصف يمثل Query الحالية.
+- العمود يمثل Key التي تنظر إليها.
+- مجموع كل صف بعد Softmax يساوي 1.
+
+---
+
+## 3.4 تطبيق مختصر
 
 ```python
 import numpy as np
@@ -49,97 +109,185 @@ k = np.eye(4)
 v = np.arange(16, dtype=float).reshape(4, 4)
 
 output, weights = scaled_dot_product_attention(q, k, v)
+
+assert weights.shape == (4, 4)
 assert output.shape == (4, 4)
 assert np.allclose(weights.sum(axis=-1), 1.0)
+
 print(weights.round(3))
 ```
 
-## 3.3 لماذا نقسم على (sqrt{d_k})؟
+الكود يثبت ثلاثة أشياء: شكل الأوزان صحيح، شكل الناتج صحيح، ومجموع كل صف يساوي 1.
 
-عندما يكبر (d_k)، قد تكبر dot products فيدخل softmax منطقة شديدة الحدة وتضعف gradients. scaling يثبت حجم scores نسبيًا. لا يعني ذلك أن كل head يصبح متساويًا؛ بل يمنع تضخمًا منهجيًا بسبب dimension.
+---
 
-## 3.4 ما وظيفة Mask؟
+## 3.5 ما وظيفة Mask؟
 
-القناع يمنع مواضع من المشاركة:
+Mask تقول للنموذج: **لا تستخدم هذه المواضع.**
 
-- **Padding mask:** يمنع الحشو من التأثير.
-- **Causal mask:** يمنع token من رؤية المستقبل في decoder.
-- **Task mask:** قيد خاص بالمهمة.
+| النوع | الاستخدام |
+|---|---|
+| Padding mask | يمنع `[PAD]` من التأثير في النص الحقيقي. |
+| Causal mask | يمنع Decoder من رؤية Tokens المستقبلية. |
 
-في دالة الدورة، `True` يعني **اسمح بالمشاركة**، وهو متسق مع boolean mask في PyTorch `scaled_dot_product_attention`. انتبه: [توثيق PyTorch الرسمي](https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html) ينبه إلى اختلاف معنى boolean mask في بعض واجهات `MultiheadAttention`. اقرأ عقد الدالة، لا تعتمد على الذاكرة.
+الترتيب الصحيح:
 
-## 3.5 Multi-head Attention
+```text
+Scores → Mask → Softmax → Weights → Output
+```
 
-بدل مساحة واحدة كبيرة، نقسم التمثيل إلى رؤوس. كل head يتعلم projections مختلفة، ثم تجمع النتائج:
+نطبق Mask **قبل Softmax**. وفي دالة الدورة، `True` تعني: اسمح لهذا الموضع بالمشاركة. قد تختلف الدلالة بين بعض الواجهات، لذلك راجع [عقد دالة PyTorch](https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html).
 
-$$
-\operatorname{MultiHead}(Q,K,V)
-=
-\operatorname{Concat}(head_1,\ldots,head_h)W^O
-$$
+---
 
-هذا لا يضمن أن كل رأس يمثل قاعدة لغوية قابلة للتسمية، لكنه يسمح بمساحات تفاعل متعددة.
+## 3.6 Multi-Head Attention
 
-### شرط shape
+بدل تشغيل Attention في مساحة واحدة، نقسم التمثيل إلى عدة رؤوس، ثم ندمج النتائج:
 
-إذا كان `d_model=12` و`num_heads=3`، فـ`head_dim=4`. يجب أن يقبل `d_model` القسمة على عدد الرؤوس في البناء المعتاد.
+```text
+Split → Attention in each head → Concatenate → Project
+```
 
-## 3.6 أين الموضع؟
+مثال الدورة:
 
-self-attention وحده لا يعرف ترتيب الكلمات؛ يحتاج positional information. أضاف Transformer الأصلي positional encodings إلى token embeddings. نماذج حديثة قد تستخدم آليات موضعية مختلفة، لكن الفكرة الثابتة: لا بد من تمثيل الترتيب.
+```text
+d_model = 12
+heads = 3
+head_dim = 12 ÷ 3 = 4
+```
 
-## 3.7 كتلة Encoder
+وفي BERT-base:
+
+```text
+768 = 12 heads × 64 dimensions
+```
+
+تعدد الرؤوس يسمح بتعلم أنماط تفاعل مختلفة، لكنه لا يضمن أن لكل رأس تفسيرًا لغويًا واضحًا.
+
+---
+
+## 3.7 لماذا نضيف معلومات الموضع؟
+
+Attention وحدها لا تعرف ترتيب الكلمات. لذلك يضيف Transformer معلومات موضعية.
+
+```text
+المدير شكر الموظف
+الموظف شكر المدير
+```
+
+الكلمات نفسها تقريبًا، لكن الترتيب غيّر المعنى. **Positional Information** تساعد النموذج على معرفة من جاء أولًا.
+
+---
+
+## 3.8 كتلة Transformer Encoder
 
 ```mermaid
 flowchart TD
-    A["Token + position representations"] --> B["Multi-head self-attention"]
-    B --> C["Residual + LayerNorm"]
-    C --> D["Feed-forward network"]
-    D --> E["Residual + LayerNorm"]
-    E --> F["Contextual representations"]
+    A["Token + Position"] --> B["Multi-Head Self-Attention"]
+    B --> C["Residual Add + LayerNorm"]
+    C --> D["Feed-Forward Network"]
+    D --> E["Residual Add + LayerNorm"]
+    E --> F["Contextual Representations"]
 ```
 
-- **Residual connection:** يضيف input إلى transformation ويساعد تدفق المعلومات.
-- **LayerNorm:** يثبت تمثيل كل مثال/موضع وفق تصميم الطبقة.
-- **FFN:** شبكة تطبق على كل موضع مع weights مشتركة عبر المواضع.
-- **Stack:** تكرار الكتلة يبني تمثيلات أعمق.
+| الجزء | دوره ببساطة |
+|---|---|
+| Attention | يجمع السياق من Tokens الأخرى. |
+| Residual | يحافظ على مسار للمعلومة الأصلية. |
+| LayerNorm | يساعد على استقرار القيم. |
+| Feed-Forward Network | يحوّل تمثيل كل موضع بعد جمع السياق. |
 
-## 3.8 Encoder أم Decoder؟
+تكرار هذه الكتلة يبني تمثيلات أعمق. BERT هو مكدس من Encoder blocks، ثم نضيف إليه Task Head مناسبًا للمهمة. راجع [ورقة BERT](https://arxiv.org/abs/1810.04805).
 
-| العائلة | كيف ترى السياق؟ | أمثلة استخدام |
-|---|---|---|
-| Encoder | السياق في الاتجاهين عادةً | classification، NER، embeddings |
-| Decoder | causal؛ الماضي فقط عند التوليد | text generation |
-| Encoder–Decoder | encoder للمدخل وdecoder للمخرج | translation، summarisation |
+---
 
-برنامجنا يركز على encoder models لأنها مناسبة لمهام BERT المستهدفة ومقتصدة في مهام التصنيف المنظمة.
+## 3.9 أي عائلة نختار؟
 
-## 3.9 أين يقع BERT؟
+| العائلة | مناسبة عادةً لـ |
+|---|---|
+| Encoder | Classification، NER، Embeddings |
+| Decoder | Text generation |
+| Encoder–Decoder | Translation، Summarisation |
 
-BERT اختصار **Bidirectional Encoder Representations from Transformers**. قدمت [ورقة BERT الأصلية](https://arxiv.org/abs/1810.04805) pretraining ثنائي الاتجاه باستخدام masked language modelling، ثم fine-tuning لمهام متعددة. اليوم نفهم البنية؛ في اليوم الثاني نكيّفها للتصنيف وNER وQA.
+يركز البرنامج على Encoder models لأنها مناسبة لمهام التصنيف وNER وExtractive QA التي سنطبقها.
 
-## 3.10 التعقيد
+---
 
-self-attention الكامل يبني مصفوفة $n \times n$ لطول sequence (n)، لذلك كلفة جزء attention في الطول تربيعية تقريبًا (O(n^2)). أول تحسين مجاني ليس شراء جهاز؛ بل اختيار طول مدخل مبني على البيانات، وتقليل padding، وchunking عندما يلزم.
+## 3.10 لماذا يصبح النص الطويل مكلفًا؟
 
-## 3.11 هل attention تفسير؟
+لطول تسلسل يساوي $n$، تبني Attention مصفوفة $n\times n$، لذلك تزداد الكلفة تقريبًا مع $O(n^2)$.
 
-يمكن عرض weights لفهم ما حسبته طبقة معينة، لكن لا تقدمها كبرهان سببي بأن token هو سبب القرار. أظهرت أبحاث مثل [Jain & Wallace, 2019](https://aclanthology.org/N19-1357/) أن attention القياسي لا ينبغي معاملته تلقائيًا كتفسير موثوق. في الدورة نسمي الشكل **visualisation of weights** لا **proof of reasoning**.
+```text
+128 Tokens → 1×
+256 Tokens → 4×
+512 Tokens → 16×
+```
 
-## نشاط shapes
+لهذا نقيس أطوال البيانات، ونقلل Padding، ونستخدم Chunking عند الحاجة.
 
-أكمل:
+---
 
-- batch = 2
-- sequence = 8
-- d_model = 12
-- heads = 3
-- head_dim = ?
-- shape بعد split heads = ?
-- score matrix لكل head = ?
+## 3.11 هل Attention تفسّر القرار؟
 
-الإجابة التي تستطيع الدفاع عنها يجب أن تذكر ترتيب الأبعاد الذي اخترته، مثل `[batch, heads, sequence, head_dim]`.
+Attention maps مفيدة لفحص الأوزان واكتشاف أخطاء مثل انتباه النموذج إلى `[PAD]`. لكنها لا تثبت وحدها أن Token معينة **سببت** القرار.
+
+> **Attention map = أوزان حسبها رأس محدد.**
+> **Attention map ≠ تفسير سببي كامل.**
+
+راجع مناقشة [Jain & Wallace, 2019](https://aclanthology.org/N19-1357/).
+
+---
+
+## أكثر الأخطاء شيوعًا
+
+1. القسمة على قيمة غير $\sqrt{d_k}$.
+2. تطبيق Mask بعد Softmax.
+3. نسيان Padding mask.
+4. الخلط بين صف Query وعمود Key.
+5. نسيان معلومات الموضع.
+6. تقديم Attention heatmap كتفسير نهائي.
+
+---
+
+## الخلاصة
+
+```text
+Tokens
+→ Q, K, V
+→ QKᵀ / √dₖ
+→ Mask
+→ Softmax
+→ Weighted mix of V
+→ Contextual representations
+```
+
+- Q تسأل، K تطابق، V تنقل المعلومة.
+- Softmax يحول Scores إلى أوزان مجموعها 1.
+- Mask تطبق قبل Softmax.
+- Multi-Head تكرر الفكرة في عدة رؤوس.
+- معلومات الموضع تحفظ ترتيب الكلمات.
+- Encoder block تجمع Attention وResidual وLayerNorm وFFN.
+
+## سؤال تحقق سريع
+
+إذا كان `d_model=12` و`heads=3`:
+
+```text
+head_dim = 4
+shape after split = [batch, 3, sequence, 4]
+scores = [batch, 3, sequence, sequence]
+```
+
+## الخطوة التالية
+
+شغّل [Notebook 02 — Attention & Transformers](../notebooks/02_attention_transformers.ipynb)، وتأكد من ظهور:
+
+```text
+DAY1_NOTEBOOK2_CORE=PASS
+```
+
+ثم انتقل إلى [بوابة اليوم الأول](04-labs-checkpoint.md).
 
 ## English recap
 
-Self-attention computes scaled similarities between queries and keys, applies a mask and softmax, then mixes values. Multi-head attention repeats the idea in several learned subspaces. An encoder block combines self-attention, residual paths, normalisation, and a feed-forward network. Attention weights are useful internals, not automatic causal explanations.
+Self-attention compares queries with keys, scales and masks the scores, applies softmax, and uses the resulting weights to mix values. A Transformer encoder combines multi-head attention, residual paths, LayerNorm, and a feed-forward network to create contextual token representations.
