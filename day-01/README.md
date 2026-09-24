@@ -2,7 +2,7 @@
 # Day 1 — From Text to Tensor
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت | Time:** 08:30–13:30 · **المسار الأساسي:** CPU · **المشروع:** بوابة بيان A
+**الوقت | Time:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **المسار الأساسي:** CPU · **المشروع:** بوابة بيان A
 
 ## سؤال اليوم | Driving question
 
@@ -36,17 +36,17 @@ flowchart LR
 
 ## الجدول | Schedule
 
-| الوقت | الموضوع | ما ستنتجه |
-|---|---|---|
-| 08:30–09:20 | انطلاقة البرنامج: لماذا أُعيد بناء NLP؟ + مشروع بيان + [خط النص](01-text-preprocessing.md) | خريطة المشروع + مخاطر corpus أولية |
-| 09:20–09:30 | استراحة | — |
-| 09:30–10:20 | [المعالجة والترميز والتضمينات](01-text-preprocessing.md) + [تفاصيل tokenisation](02-tokenization-embeddings.md) | عقد نسختين + fertility + token IDs |
-| 10:20–10:30 | استراحة | — |
-| 10:30–11:20 | Lab 1: [Notebook 01](../notebooks/01_text_processing_tokenization.ipynb) | pipeline ثنائي اللغة + golden tests + قرار tokenizer |
-| 11:20–11:30 | استراحة | — |
-| 11:30–12:20 | [Attention وTransformers](03-attention-transformers.md) | attention matrix + encoder map |
-| 12:20–12:40 | استراحة طويلة/صلاة | احفظ نقطة استعادة |
-| 12:40–13:30 | Lab 2: [Notebook 02](../notebooks/02_attention_transformers.ipynb) + [Gate A](04-labs-checkpoint.md) | parameter audit + forward/heatmap + commit |
+| الفترة | المدة | English | العربية |
+|---|---:|---|---|
+| 1 | 60 min | Bayan story, readiness and the NLP journey | قصة بيان، الجاهزية ورحلة معالجة اللغة |
+| 2 | 60 min | Unicode, privacy and two text copies | Unicode والخصوصية ونسختا النص |
+| 3 | 60 min | Tokenisation, fertility and embeddings | الترميز وكثافته والتضمينات |
+| 4 | 60 min | Q/K/V, attention and tensor shapes | الاستعلام والمفتاح والقيمة والانتباه وأشكال المصفوفات |
+| 5 | 60 min | Transformer encoder and a guided reading of saved outputs | مشفر المحوّل وقراءة موجّهة للمخرجات المحفوظة |
+| 6 | 60 min | Dedicated lab + A | لاب مستقل + A |
+
+التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+
 
 ## دفاتر اليوم | Notebooks
 

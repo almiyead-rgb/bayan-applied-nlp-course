@@ -1,0 +1,27 @@
+{
+  "result": "PORTAL_ACCEPTANCE_PASS",
+  "count": 19,
+  "checks": [
+    "56_source_documents_and_unique_routes",
+    "seven_labs_eight_application_notebooks_plus_doctor",
+    "source_hash_integrity",
+    "sanitised_reference_HTML",
+    "internal_reader_routes",
+    "desktop_layout",
+    "four_day_navigation",
+    "three_language_modes",
+    "personal_progress_and_next_step",
+    "local_storage_reload_persistence",
+    "all_daily_plans_and_colab_links",
+    "Arabic_English_search",
+    "empty_search_state",
+    "glossary_reader_and_table_direction",
+    "reader_anchor_navigation",
+    "mobile_and_tablet_no_horizontal_overflow",
+    "missing_route_recovery",
+    "explicit_progress_reset",
+    "no_JavaScript_runtime_errors"
+  ],
+  "browser_mode": "local_HTTP_origin",
+  "scope": "Portal only; original ML training notebooks were not rerun."
+}

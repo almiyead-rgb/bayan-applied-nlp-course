@@ -1,6 +1,10 @@
 # معالجة اللغات الطبيعية التطبيقية  
 # Applied Natural Language Processing
 
+> **بوابة بيان التفاعلية | Bayan learning portal:** [افتح الموقع · Open website](https://almiyead-rgb.github.io/bayan-applied-nlp-course/) · [خطة التنفيذ 24 ساعة · Delivery plan](docs/04-delivery-plan.md).
+> English and Arabic, four guided days, original-source reader, searchable glossary and local personal progress. · عربية وإنجليزية، أربعة أيام موجّهة، قارئ للمصادر الأصلية، بحث في المصطلحات وتقدم شخصي محلي.
+> Website deployment status is shown in [Bayan learning portal Actions](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/learning-portal.yml). The source files below remain available independently. · تعرض صفحة Actions حالة نشر الموقع؛ وتبقى الملفات أدناه متاحة بصورة مستقلة.
+
 [![Quality checks](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/quality.yml)
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri<br>
@@ -8,7 +12,7 @@
 **المستوى | Level:** Specialist · تخصصي<br>
 **المتطلب السابق | Prerequisite:** `SDA-AIE-112` أو ما يعادله في Python وأساسيات تعلم الآلة<br>
 **السياق التدريبي | Training context:** أكاديمية سدايا · SDAIA Academy<br>
-**المدة | Duration:** 4 أيام × 5 ساعات تدريبية اسمية = 20 ساعة<br>
+**المدة | Duration:** 4 أيام × 6 ساعات تعلم = 24 ساعة — يوميًا: 5 ساعات شرح + ساعة لاب<br>
 **البيئة | Environment:** Google Colab Free + GitHub
 
 برنامج تخصصي تطبيقي يبدأ بفحص جاهزية ومراجعة تأسيسية مشتركة، ثم ينتقل من معالجة النصوص إلى بناء مشروع **بيان**: نظام NLP ثنائي اللغة يجمع التصنيف، والتعرف على الكيانات، والإجابة الاستخراجية عن الأسئلة، والبحث الدلالي، والتقييم، وتحسين الاستدلال.

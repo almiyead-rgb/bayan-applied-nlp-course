@@ -1,5 +1,7 @@
 # ابدأ من هنا | START HERE
 
+
+[بوابة المتدرب التفاعلية · Interactive learner portal](https://almiyead-rgb.github.io/bayan-applied-nlp-course/) · [خطة 24 ساعة · 24-hour plan](docs/04-delivery-plan.md)
 **إعداد وتقديم:** ميعاد المري · **Prepared and delivered by:** Meaad Al-Marri
 
 هذه الصفحة هي نقطة البداية للمشارك في برنامج `SDA-AIE-211` التخصصي. يفترض البرنامج إكمال `SDA-AIE-112` أو امتلاك أساس مكافئ في Python وتعلم الآلة. اتبع الخطوات بالترتيب؛ لا تحتاج تثبيت Python محليًا لأن التطبيق الأساسي يتم داخل المتصفح باستخدام Google Colab.

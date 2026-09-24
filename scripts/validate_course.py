@@ -339,10 +339,10 @@ def validate_accreditation_contract(errors: list[str]) -> None:
             "≥100", "≤40 ms", "16", "Required measured extension",
         ],
         "docs/policies/assessment-and-completion.md": [
-            "90/100", "+5", "80/100", "08:30–08:45", "09:50–10:20",
+            "90/100", "+5", "80/100", "300 دقيقة", "60 دقيقة",
         ],
         "day-04/README.md": [
-            "08:30–08:45", "09:50–10:20", "تجميع بيان I", "عروض بيان",
+            "300 دقيقة", "60 دقيقة", "تجميع بيان I", "عروض بيان",
         ],
         "templates/PROJECT_SUMMARY.template.json": [
             '"sentiment"', '"extension"', '"evidence"',

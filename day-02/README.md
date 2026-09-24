@@ -2,7 +2,7 @@
 # Day 2 — Make the Model Yours
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت:** 08:30–13:30 · **البيئة:** Google Colab Free + GitHub
+**الوقت:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **البيئة:** Google Colab Free + GitHub
 
 > **السؤال المحوري:** كيف نحول مشفرًا لغويًا عامًا إلى ثلاثة نماذج تحل مهامًا محددة، من دون تسرب بيانات أو أرقام مضللة؟
 >
@@ -38,20 +38,17 @@
 
 ## جدول اليوم
 
-| الوقت | الجلسة | الناتج |
-|---|---|---|
-| 08:30–09:20 | [Fine-tuning والتصنيف](01-fine-tuning-classification.md) | baseline + split contract |
-| 09:20–09:30 | استراحة | حفظ نقطة التقدم |
-| 09:30–10:20 | [مختبر التصنيف](../notebooks/03_text_classification.ipynb) | تدريب فعلي + metric card |
-| 10:20–10:30 | استراحة | فحص GPU/CPU والحفظ |
-| 10:30–11:20 | [NER ومحاذاة BIO](02-ner-label-alignment.md) + [QA](03-extractive-qa.md) | alignment + span/null rules |
-| 11:20–11:30 | استراحة | نقطة استعادة |
-| 11:30–12:20 | [مختبر NER وQA](../notebooks/04_ner_and_qa.ipynb) | training smoke + tests |
-| 12:20–12:40 | استراحة طويلة/صلاة | حفظ Drive وGitHub |
-| 12:40–13:20 | [مقدمة نماذج العربية](04-arabic-models-intro.md) | model landscape + decision note |
-| 13:20–13:30 | [Gate B](05-labs-checkpoint.md) | commit + evidence + exit ticket |
+| الفترة | المدة | English | العربية |
+|---|---:|---|---|
+| 1 | 60 min | Pretraining, fine-tuning and task heads | التدريب المسبق والضبط الدقيق ورؤوس المهام |
+| 2 | 60 min | TF-IDF baseline, honest splits and macro-F1 | خط أساس TF-IDF والتقسيم السليم وmacro-F1 |
+| 3 | 60 min | NER, BIO labels and subword alignment | الكيانات ووسوم BIO ومحاذاة الوحدات الجزئية |
+| 4 | 60 min | Extractive QA, valid spans and no-answer | الأسئلة الاستخراجية والمقاطع الصالحة وعدم وجود إجابة |
+| 5 | 60 min | Arabic model choices and a guided trace of the training notebooks | اختيار النماذج العربية وتتبع موجّه لدفاتر التدريب |
+| 6 | 60 min | Dedicated lab + B | لاب مستقل + B |
 
-إجمالي التعلم 250 دقيقة والاستراحات 50 دقيقة.
+التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+
 
 ## خط الأنابيب الذي سنبنيه
 

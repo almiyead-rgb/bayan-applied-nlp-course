@@ -1,9 +1,12 @@
 # مواصفات البرنامج | Course Specification
 
-**الإصدار | Version:** 1.1 — Final accreditation alignment
+**الإصدار | Version:** 2.0 — Instructor-directed delivery update; scientific scope unchanged
 
 **مصدر الحقيقة | Source of truth:** هذا الملف يحكم المدة، النطاق، التقييم، والاجتياز. عند التعارض تُصحّح الملفات الأخرى لتطابقه.  
 This file governs duration, scope, assessment, and completion requirements. Conflicting files must be corrected to match it.
+
+> تحديث المدة بتوجيه المدربة بتاريخ 24 سبتمبر 2026؛ ليس ادعاء اعتماد جديد. الأهداف والأوزان ومتطلبات المشروع الأصلية محفوظة.
+> Duration updated at the instructor’s request on 24 September 2026; no new accreditation is claimed. Original outcomes, weights and project requirements remain.
 
 ## الهوية | Identity
 
@@ -13,7 +16,7 @@ This file governs duration, scope, assessment, and completion requirements. Conf
 | المدربة | ميعاد المري | Instructor | Meaad Al-Marri |
 | رمز البرنامج | `SDA-AIE-211` | Program code | `SDA-AIE-211` |
 | النمط | حضوري + Google Colab | Mode | In person + Google Colab |
-| المدة | 4 أيام × 5 ساعات تدريبية اسمية = 20 ساعة | Duration | 4 days × 5 nominal learning hours = 20 hours |
+| المدة | 4 أيام × 6 ساعات تعلم صافية = 24 ساعة | Duration | 4 days × 6 net learning hours = 24 hours |
 | السعة | حتى 20 متدربًا | Capacity | Up to 20 learners |
 | المستوى | تخصصي | Level | Specialist |
 | المتطلب السابق | `SDA-AIE-112` أو ما يعادله | Prerequisite | `SDA-AIE-112` or equivalent foundations |
@@ -63,20 +66,14 @@ The learner demonstrates the six official outcomes through the bilingual Bayan c
 
 ## الجدول اليومي الثابت | Fixed daily timetable
 
-| الوقت | المدة | الاستخدام |
-|---|---:|---|
-| 08:30–09:20 | 50 دقيقة | مفهوم + عرض عملي |
-| 09:20–09:30 | 10 دقائق | استراحة |
-| 09:30–10:20 | 50 دقيقة | ممارسة موجّهة |
-| 10:20–10:30 | 10 دقائق | استراحة |
-| 10:30–11:20 | 50 دقيقة | مختبر |
-| 11:20–11:30 | 10 دقائق | استراحة |
-| 11:30–12:20 | 50 دقيقة | مختبر/مشروع |
-| 12:20–12:40 | 20 دقيقة | استراحة طويلة/صلاة |
-| 12:40–13:30 | 50 دقيقة | بوابة إنجاز + حفظ نقطة الاستعادة |
+| الفترة | المدة | النشاط | Activity |
+|---|---:|---|---|
+| 1–5 | 300 دقيقة | خمس فترات شرح وأمثلة وعروض توضيحية | Five explanation and demonstration blocks |
+| 6 | 60 دقيقة | لاب مستقل لتنفيذ Core وحفظ الدليل | Dedicated Core execution and evidence lab |
 
-إجمالي اليوم: **5 فترات تدريبية اسمية**؛ كل فترة `50` دقيقة تعلم و`10` دقائق مرونة، أي **250 دقيقة تعلم مباشر + 50 دقيقة انتقال/استراحة = 5 ساعات اسمية**.<br>
-Daily total: **5 nominal learning periods** of `50` learning minutes plus `10` buffer minutes: **250 direct learning minutes + 50 transition/break minutes = 5 nominal hours**.
+**اليوم: 300 دقيقة شرح + 60 دقيقة لاب = 6 ساعات تعلم صافية؛ البرنامج: 24 ساعة.** الاستراحات والتجهيز ونوافذ التقييم منفصلة ومعلنة؛ ليست محسوبة ضمن 24 ساعة. راجع [خطة التنفيذ](04-delivery-plan.md) للتفاصيل وحدود تقدير وقت اللاب.
+
+**Daily: 300 minutes of explanation + 60 lab minutes = 6 net learning hours; course: 24 hours.** Breaks, setup and assessment windows are separately scheduled. Lab timings are targets, not verified clean-runtime benchmarks.
 
 ## خريطة الأيام | Four-day arc
 

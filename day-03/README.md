@@ -2,7 +2,7 @@
 # Day 3 — Arabic, Search, and Truth
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت:** 08:30–13:30 · **البيئة:** Google Colab Free + GitHub
+**الوقت:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **البيئة:** Google Colab Free + GitHub
 
 > **السؤال المحوري:** كيف نبني بحثًا دلاليًا عربيًا/إنجليزيًا، ثم نثبت بصدق أين ينجح وأين يضعف؟
 >
@@ -41,22 +41,17 @@
 
 ## جدول اليوم | Schedule
 
-| الوقت | الجلسة | الناتج المرئي |
-|---|---|---|
-| 08:30–09:20 | Lab 4: [العربية وCAMeL Tools](01-arabic-nlp-camel-tools.md) + [Notebook 05](../notebooks/05_arabic_nlp.ipynb) | profile + golden tests + مقارنة نموذجين |
-| 09:20–09:30 | استراحة | حفظ أول نقطة تقدم |
-| 09:30–10:20 | [البحث الدلالي](02-semantic-search.md) | bi-encoder/CE + embedding → FAISS → ranking |
-| 10:20–10:30 | استراحة | إبقاء runtime مفتوحًا |
-| 10:30–11:20 | Lab 5: [Notebook 06](../notebooks/06_semantic_search.ipynb) | bilingual retrieval + reranking + Recall/MRR |
-| 11:20–11:30 | استراحة | حفظ manifest وmetrics |
-| 11:30–12:20 | [التقييم وتحليل الأخطاء](03-evaluation-error-analysis.md) | metrics + slices + CI + taxonomy |
-| 12:20–12:40 | استراحة طويلة/صلاة | حفظ Drive وتحرير الذاكرة إن لزم |
-| 12:40–13:20 | Lab 6: [Notebook 07](../notebooks/07_evaluation_error_analysis.ipynb) | sliced report + behavioural tests + fixes |
-| 13:20–13:30 | [Gate C](04-labs-checkpoint.md) | تقارير + commits + exit ticket |
+| الفترة | المدة | English | العربية |
+|---|---:|---|---|
+| 1 | 60 min | Arabic morphology, dialects and safe normalisation | صرف العربية واللهجات والتطبيع الآمن |
+| 2 | 60 min | CAMeL Tools and the measured Arabic-model comparison | أدوات CAMeL والمقارنة المقاسة بين النماذج العربية |
+| 3 | 60 min | Sentence embeddings, cosine and FAISS | تضمينات الجمل وتشابه جيب التمام وFAISS |
+| 4 | 60 min | Re-ranking, Recall/MRR and no-answer decisions | إعادة الترتيب وRecall/MRR وقرار عدم وجود إجابة |
+| 5 | 60 min | Sliced evaluation, uncertainty and error analysis | التقييم بالشرائح وعدم اليقين وتحليل الأخطاء |
+| 6 | 60 min | Dedicated lab + C | لاب مستقل + C |
 
-**نافذة PA‑1:** يستغرق [التقييم العملي الأول](../assessments/pa-01/README.md) 30 دقيقة. يعلن المنظم إن كان في ذيل اليوم الثالث أو في نافذة self-paced مراقبة؛ لا يُقتطع من Core بصمت.
+التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
 
-إجمالي التعلم 250 دقيقة والاستراحات 50 دقيقة. إذا تأخر تنزيل النموذج، يستمر الصف في Notebook 07 لأنه لا يحتاج checkpoint جديدًا.
 
 ## خط بيان اليوم | Today’s Bayan pipeline
 

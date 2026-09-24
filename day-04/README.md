@@ -2,7 +2,7 @@
 # Day 4 — Measure, Optimise, Test, and Ship
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت:** 08:30–13:30 · **البيئة:** Google Colab Free + GitHub
+**الوقت:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **البيئة:** Google Colab Free + GitHub
 
 > **السؤال المحوري:** كيف نحوّل نموذجًا يعمل في notebook إلى مسار استدلال مقاس، وخدمة مختبرة، ومشروع يستطيع مراجع جديد إعادة تشغيله؟
 >
@@ -41,21 +41,19 @@
 
 ## جدول اليوم | Schedule
 
-| الوقت | الجلسة | الناتج المرئي |
-|---|---|---|
-| 08:30–08:45 | [الاختبار القصير](../assessments/quiz/README.md) | 10 إجابات فردية مغلقة المراجع |
-| 08:45–09:20 | [تحسين الاستدلال والخدمة](01-benchmark-before-optimization.md) + عرض النتائج المحفوظة | budget + measurement contract + ladder |
-| 09:20–09:30 | استراحة | حفظ البيئة والميزانية |
-| 09:30–09:50 | Lab 7: [Notebook 08](../notebooks/08_optimization_serving.ipynb) و[ONNX/INT8](02-onnx-int8-decision.md) | benchmark + parity + TestClient + Gate D evidence |
-| 09:50–10:20 | [PA‑2](../assessments/pa-02/README.md) | مراجعة تقرير منافس وقرار شحن |
-| 10:20–10:30 | استراحة | حفظ baseline قبل أي تغيير |
-| 10:30–11:20 | [تجميع بيان I](04-capstone-assembly-demo.md) | classifier + NER/QA + search + evaluation evidence map |
-| 11:20–11:30 | استراحة | الاحتفاظ بنسخة FP32 للرجوع |
-| 11:30–12:20 | [تجميع بيان II + المراجعة النظيرة](04-capstone-assembly-demo.md) | cold-clone review + canaries + إغلاق Gate D/E |
-| 12:20–12:40 | استراحة طويلة/صلاة | حفظ التقارير وإغلاق artefacts الكبيرة |
-| 12:40–13:30 | [عروض بيان والتقييم والختام](05-lab-gates-submission.md) | 5 دقائق لكل زوج، سؤال دليل إلزامي، rubric مباشر |
+| الفترة | المدة | English | العربية |
+|---|---:|---|---|
+| 1 | 60 min | Performance budgets, warm-up and latency percentiles | ميزانية الأداء والإحماء ومئينات زمن الاستجابة |
+| 2 | 60 min | Length, padding and batching | طول النص والحشو والتجميع |
+| 3 | 60 min | ONNX, INT8, parity and quality cost | ONNX وINT8 والتكافؤ وكلفة الجودة |
+| 4 | 60 min | FastAPI contracts, TestClient and canaries | عقود FastAPI وTestClient وفحوص canary |
+| 5 | 60 min | Guided Bayan assembly, evidence review and delivery walkthrough | شرح تجميع بيان ومراجعة الأدلة وخطوات التسليم |
+| 6 | 60 min | Dedicated lab + D / E | لاب مستقل + D / E |
 
-إجمالي التعلم/التقييم 250 دقيقة والاستراحات 50 دقيقة، مطابق لخطة اليوم الرابع الرسمية ذات 30% شرح و70% تطبيق. عند السعة القصوى (20 متدربًا) يعمل المشاركون في 10 أزواج؛ العرض **5 دقائق إجمالًا لكل زوج** (4 دقائق demo + دقيقة سؤال الدليل). يبقى مستودع ودليل كل متدرب قابلين للتقييم الفردي، ويجب أن يجيب كل مشارك عن سؤال تحقق واحد أثناء العرض أو spot-check معلن.
+التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+
+تشمل العروض التوضيحية **تجميع بيان I** وII. تُنظّم **عروض بيان** المقيمة في نافذة منفصلة معلنة؛ خمس دقائق لكل زوج، مع حفظ متطلبات الدليل والتحقق الفردي.
+
 
 صفحات [ONNX وINT8](02-onnx-int8-decision.md) و[FastAPI وcanaries](03-fastapi-serving-canaries.md) مرجعان قبل الحصة وأثناء المشروع. خلال العرض تستخدم المدربة النتائج المحفوظة بدل انتظار تنزيل/تصدير حي، ثم يقيس الطالب `PROJECT_ARTIFACT` في نسخته لإغلاق Gate D.
 
