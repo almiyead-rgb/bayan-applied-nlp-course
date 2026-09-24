@@ -8,6 +8,9 @@ permissions:
 concurrency:
   group: bayan-project-guide-revision
   cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -50,10 +53,8 @@ jobs:
               p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content,encoding='utf-8')
           for name,digest in u['after'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
           for p in parts:p.unlink()
-          (root/'.github/workflows/revision-snapshot.yml').unlink(missing_ok=True)
-          (root/'.github/workflows/revision-apply.yml').unlink()
           (pathlib.Path('/tmp')/'bayan-revision-paths.json').write_text(json.dumps(sorted(allowed)))
-          print('REVISION_PAYLOAD_AND_SOURCE_HASHES=PASS; temporary transport removed')
+          print('REVISION_PAYLOAD_AND_SOURCE_HASHES=PASS; temporary content transport removed')
           PY
       - name: Verify scientific-source preservation
         run: |
@@ -83,16 +84,20 @@ jobs:
           python tools/test_learning_portal.py
           cp /tmp/bayan-pytest.txt _site/unit-test-results.txt
           cp /tmp/bayan-course-gate.txt _site/course-validation-results.txt
-      - name: Commit verified source and generated artifacts on revision branch
+      - name: Commit verified non-workflow content on revision branch
         run: |
           cp _site/index.html docs/index.html
           cp _site/acceptance-report.json portal/acceptance-report.json
           cp _site/source-manifest.json portal/source-manifest.json
+          git restore --source=HEAD -- .github/workflows
           python - <<'PY'
           import json,pathlib,subprocess
           paths=json.loads(pathlib.Path('/tmp/bayan-revision-paths.json').read_text())
+          paths=[p for p in paths if not p.startswith('.github/workflows/')]
           subprocess.run(['git','add','--',*paths,'student-starter','downloads','docs/index.html','portal/acceptance-report.json','portal/source-manifest.json'],check=True)
           subprocess.run(['git','add','-u','.github'],check=True)
+          changed=subprocess.check_output(['git','diff','--cached','--name-only','--','.github/workflows'],text=True).strip()
+          assert not changed,'Workflow changes must be published separately using the authorized connector'
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
