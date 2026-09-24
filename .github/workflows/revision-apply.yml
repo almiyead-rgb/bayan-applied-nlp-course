@@ -5,9 +5,6 @@ on:
     paths: ['.github/bayan-revision.part*.b64', '.github/workflows/revision-apply.yml']
 permissions:
   contents: write
-concurrency:
-  group: bayan-project-guide-revision
-  cancel-in-progress: false
 defaults:
   run:
     shell: bash
@@ -22,69 +19,55 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - name: Apply allowlisted checksum-verified first-party text changes
+      - name: Materialise verified first-party revision
         run: |
           python - <<'PY'
           import base64,hashlib,json,lzma,pathlib,subprocess
-          root=pathlib.Path('.')
-          parts=sorted(root.glob('.github/bayan-revision.part*.b64'))
+          parts=sorted(pathlib.Path('.github').glob('bayan-revision.part*.b64'))
           assert len(parts)==5
           blob=base64.b64decode(''.join(p.read_text().strip() for p in parts),validate=True)
           assert hashlib.sha256(blob).hexdigest()=='75eccdd07406da65db14980a76c79ddbd8a841ed5e7762a4130142db29e83b15'
           u=json.loads(lzma.decompress(blob))
-          allowed={'.github/workflows/learning-portal.yml','.github/workflows/quality.yml','.gitignore','COURSE_GUIDE.md','README.md','START_HERE.md','assessments/README.md','assessments/pa-01/README.md','assessments/pa-02/README.md','assessments/quiz/README.md','day-01/README.md','day-02/README.md','day-03/README.md','day-04/04-capstone-assembly-demo.md','day-04/README.md','docs/00-course-spec.md','docs/01-outcomes-map.md','docs/03-capstone-spec.md','docs/04-delivery-plan.md','docs/learner-workflow.md','docs/policies/assessment-and-completion.md','docs/policies/integrity-and-privacy.md','docs/policies/submission.md','docs/pre-submission-checklist.md','docs/presentation-guide.md','docs/project-walkthrough.md','docs/setup/github.md','portal/README.md','portal/app.js','portal/course.json','portal/styles.css','portal/template.html','scripts/build_student_starter.py','scripts/export_submission.py','scripts/preflight_submission.py','scripts/validate_course.py','templates/DEMO_SCRIPT_TEMPLATE.md','templates/PROJECT_README_TEMPLATE.md','tools/build_learning_portal.py','tools/test_learning_portal.py','tools/test_preflight.py'}
-          assert set(u['paths'])==allowed
-          assert set(u['before'])==set(u['after'])==allowed
+          allowed=set('''.github/workflows/learning-portal.yml .github/workflows/quality.yml .gitignore COURSE_GUIDE.md README.md START_HERE.md assessments/README.md assessments/pa-01/README.md assessments/pa-02/README.md assessments/quiz/README.md day-01/README.md day-02/README.md day-03/README.md day-04/04-capstone-assembly-demo.md day-04/README.md docs/00-course-spec.md docs/01-outcomes-map.md docs/03-capstone-spec.md docs/04-delivery-plan.md docs/learner-workflow.md docs/policies/assessment-and-completion.md docs/policies/integrity-and-privacy.md docs/policies/submission.md docs/pre-submission-checklist.md docs/presentation-guide.md docs/project-walkthrough.md docs/setup/github.md portal/README.md portal/app.js portal/course.json portal/styles.css portal/template.html scripts/build_student_starter.py scripts/export_submission.py scripts/preflight_submission.py scripts/validate_course.py templates/DEMO_SCRIPT_TEMPLATE.md templates/PROJECT_README_TEMPLATE.md tools/build_learning_portal.py tools/test_learning_portal.py tools/test_preflight.py'''.split())
+          assert set(u['paths'])==set(u['before'])==set(u['after'])==allowed
           assert set(u['edits'])|set(u['files'])==allowed
           assert u['baseline']=='e01807982e0fffd32d819ab0a3771267e06a23c9'
           subprocess.run(['git','merge-base','--is-ancestor',u['baseline'],'HEAD'],check=True)
           for name,digest in u['before'].items():
-              p=root/name
-              if digest is None: assert not p.exists(),name
-              else: assert hashlib.sha256(p.read_bytes()).hexdigest()==digest,name
+              p=pathlib.Path(name)
+              if digest is None:assert not p.exists(),name
+              else:assert hashlib.sha256(p.read_bytes()).hexdigest()==digest,name
           for name,edits in u['edits'].items():
-              p=root/name
-              lines=p.read_text(encoding='utf-8').splitlines(keepends=True)
-              for a,z,t in reversed(edits):
-                  assert 0<=a<=z<=len(lines),name
-                  lines[a:z]=t.splitlines(keepends=True)
+              p=pathlib.Path(name);lines=p.read_text().splitlines(keepends=True)
+              for a,z,t in reversed(edits):lines[a:z]=t.splitlines(keepends=True)
               p.write_text(''.join(lines),encoding='utf-8')
-          for name,content in u['files'].items():
-              p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content,encoding='utf-8')
-          for name,digest in u['after'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
+          for name,text in u['files'].items():
+              p=pathlib.Path(name);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text,encoding='utf-8')
+          for name,digest in u['after'].items():assert hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest()==digest,name
           for p in parts:p.unlink()
-          (pathlib.Path('/tmp')/'bayan-revision-paths.json').write_text(json.dumps(sorted(allowed)))
-          print('REVISION_PAYLOAD_AND_SOURCE_HASHES=PASS; temporary content transport removed')
-          PY
-      - name: Verify scientific-source preservation
-        run: |
-          python - <<'PY'
-          import subprocess
+          for name in ['revision-snapshot.yml','revision-apply.yml']:pathlib.Path('.github/workflows',name).unlink(missing_ok=True)
+          pathlib.Path('/tmp/bayan-revision-paths.json').write_text(json.dumps(sorted(allowed)))
           paths=['notebooks','data','src','tests',':(glob)requirements*.txt']
-          changed=subprocess.check_output(['git','diff','--name-only','ee7c7d8bf3a17c9989b37a3fdd337f3fc3730d7e','--',*paths],text=True).strip()
-          assert not changed,changed
-          print('SCIENTIFIC_SOURCE_PRESERVED=PASS')
+          assert not subprocess.check_output(['git','diff','--name-only','ee7c7d8bf3a17c9989b37a3fdd337f3fc3730d7e','--',*paths],text=True).strip()
+          print('REVISION_HASHES_AND_SCIENTIFIC_PRESERVATION=PASS')
           PY
-      - name: Install test and browser dependencies
+      - name: Install test dependencies
         run: |
           python -m pip install numpy pytest -r portal/requirements.txt
           python -m playwright install --with-deps chromium
-      - name: Test scientific contracts, preflight and safe export
+      - name: Run all unit and acceptance tests
         env:
           PYTHONPATH: src
-        run: python -m pytest -q tests tools/test_preflight.py | tee /tmp/bayan-pytest.txt
-      - name: Build learner starter and validate course
         run: |
+          python -m pytest -q tests tools/test_preflight.py | tee /tmp/bayan-pytest.txt
           python scripts/build_student_starter.py
           python scripts/validate_course.py | tee /tmp/bayan-course-gate.txt
-      - name: Build and fully test browser experience
-        run: |
           node --check portal/app.js
           python tools/build_learning_portal.py
           python tools/test_learning_portal.py
           cp /tmp/bayan-pytest.txt _site/unit-test-results.txt
           cp /tmp/bayan-course-gate.txt _site/course-validation-results.txt
-      - name: Commit verified non-workflow content on revision branch
+      - name: Commit verified content using contents permission only
         run: |
           cp _site/index.html docs/index.html
           cp _site/acceptance-report.json portal/acceptance-report.json
@@ -92,16 +75,14 @@ jobs:
           git restore --source=HEAD -- .github/workflows
           python - <<'PY'
           import json,pathlib,subprocess
-          paths=json.loads(pathlib.Path('/tmp/bayan-revision-paths.json').read_text())
-          paths=[p for p in paths if not p.startswith('.github/workflows/')]
+          paths=[p for p in json.loads(pathlib.Path('/tmp/bayan-revision-paths.json').read_text()) if not p.startswith('.github/workflows/')]
           subprocess.run(['git','add','--',*paths,'student-starter','downloads','docs/index.html','portal/acceptance-report.json','portal/source-manifest.json'],check=True)
           subprocess.run(['git','add','-u','.github'],check=True)
-          changed=subprocess.check_output(['git','diff','--cached','--name-only','--','.github/workflows'],text=True).strip()
-          assert not changed,'Workflow changes must be published separately using the authorized connector'
+          assert not subprocess.check_output(['git','diff','--cached','--name-only','--','.github/workflows'],text=True).strip()
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'feat(bayan): add project architecture, 100-point assessment and one-shot learner hand-in'
+          git commit -m 'feat(bayan): project architecture, 100-point rubric and one-shot learner hand-in'
           git push origin HEAD:revision/bayan-project-guide-20260924
           git rev-parse HEAD > _site/source-commit.txt
       - uses: actions/upload-artifact@v4
