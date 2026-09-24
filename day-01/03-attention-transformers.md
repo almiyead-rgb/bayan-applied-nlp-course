@@ -1,6 +1,15 @@
 # 3. Attention وTransformer  
 # Attention and Transformer Encoders
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t07"><h3 class="pair"><span class="en" lang="en" dir="ltr">Self-attention and Q/K/V</span><span class="ar" lang="ar" dir="rtl">الانتباه الذاتي وQ/K/V</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Follow the queries, keys, scores and weighted values visually.</p><p class="ar" lang="ar" dir="rtl">تتبع الاستعلامات والمفاتيح والدرجات والقيم الموزونة بصريًا.</p></div><p><strong lang="en" dir="ltr">Attention in Transformers, Step-by-Step</strong><br><span class="micro">3Blue1Brown · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Visual intuition supports the numerical lab; attention weights are not causal proof of a decision.</p><p class="ar" lang="ar" dir="rtl">الفهم المرئي يدعم اللاب العددي؛ أوزان الانتباه ليست برهانًا سببيًا على القرار.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">What changes when an attention mask hides one token?</p><p class="ar" lang="ar" dir="rtl">ما الذي يتغير عندما يخفي قناع الانتباه رمزًا؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<div class="card youtube-topic youtube-t08"><h3 class="pair"><span class="en" lang="en" dir="ltr">Transformer architecture</span><span class="ar" lang="ar" dir="rtl">معمارية المحوّل</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Connect attention, residual paths, normalisation and feed-forward layers.</p><p class="ar" lang="ar" dir="rtl">اربط الانتباه بالمسارات المتبقية والتطبيع والطبقات الأمامية.</p></div><p><strong lang="en" dir="ltr">Transformer Neural Networks, Clearly Explained!</strong><br><span class="micro">StatQuest · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=zxQyTK8quyY" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Trace one sentence through the encoder block.</p><p class="ar" lang="ar" dir="rtl">تتبع جملة واحدة داخل كتلة المشفر.</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## الفكرة في دقيقة واحدة
 
 اقرأ:

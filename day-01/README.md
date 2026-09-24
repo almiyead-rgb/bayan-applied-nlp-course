@@ -4,6 +4,14 @@
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
 **المسار:** رحلة تعلم تطبيقية · **البيئة:** Google Colab Free + GitHub
 
+<!-- BAYAN_YOUTUBE_START -->
+## فيديوهات هذا اليوم | Videos for this day
+
+[▶ افتح فيديوهات اليوم 1 حسب الموضوع · Open Day 1 video companions](VIDEOS.md)
+
+توجد أزرار المشاهدة كذلك داخل الدروس التفصيلية في موضع الموضوع. · Direct video buttons also appear in the related detailed lessons.
+<!-- BAYAN_YOUTUBE_END -->
+
 ## سؤال اليوم | Driving question
 
 > كيف تتحول جملة مثل «الخدمة ممتازة» إلى مصفوفات يستطيع Transformer معالجتها، وما الذي قد يفسد في الطريق؟

@@ -1,6 +1,13 @@
 # 1. Benchmark قبل التحسين
 # Benchmark Before Optimisation
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t20"><h3 class="pair"><span class="en" lang="en" dir="ltr">Benchmark before changing</span><span class="ar" lang="ar" dir="rtl">قِس قبل التغيير</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Compare a baseline and optimised versions using measured results.</p><p class="ar" lang="ar" dir="rtl">قارن خط الأساس والنسخ المحسنة بنتائج مقاسة.</p></div><p><strong lang="en" dir="ltr">Accelerate Transformer Inference on CPU with Optimum and ONNX</strong><br><span class="micro">Julien Simon · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=_AKFDOnrZz8" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Shared with the ONNX topic: watch once. Complete warm-up, tail-percentile and project-artifact checks in the course lab; no cloud account is needed.</p><p class="ar" lang="ar" dir="rtl">مشترك مع موضوع ONNX؛ شاهده مرة واحدة. أكمل فحوص الإحماء والقيم الطرفية وناتج المشروع في اللاب؛ لا يلزم حساب سحابي.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">What must stay constant for a fair before/after comparison?</p><p class="ar" lang="ar" dir="rtl">ما الذي يجب تثبيته لعدالة المقارنة قبل التحسين وبعده؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## الفكرة
 
 **التحسين بلا baseline تخمين.** نثبت workload والبيئة والميزانية أولًا، ثم نغيّر عاملًا واحدًا ونقارن.

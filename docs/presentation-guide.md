@@ -4,6 +4,13 @@
 
 **The ten points are included in the project total of 100. Assessment is individual even when practice was collaborative.**
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t26"><h3 class="pair"><span class="en" lang="en" dir="ltr">Present your own evidence</span><span class="ar" lang="ar" dir="rtl">اعرض أدلتك الشخصية</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Improve visual clarity and structure for your individual presentation.</p><p class="ar" lang="ar" dir="rtl">حسّن الوضوح البصري وتسلسل عرضك الفردي.</p></div><p><strong lang="en" dir="ltr">How to Speak</strong><br><span class="micro">MIT OpenCourseWare · Patrick Winston · English audio / الصوت بالإنجليزية</span></p><div class="pair"><p class="en" lang="en" dir="ltr">Suggested segment 13:24–36:30; stop at the end shown.</p><p class="ar" lang="ar" dir="rtl">المقطع المقترح 13:24–36:30؛ توقف عند النهاية المحددة.</p></div><p><a class="button primary" href="https://www.youtube.com/watch?v=Unzc731iCUY&amp;t=804s" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">General speaking support only. Bayan’s five-part presentation and its ten-point rubric remain the requirements.</p><p class="ar" lang="ar" dir="rtl">دعم لمهارة العرض فقط. مواصفات بيان ذات الأقسام الخمسة وسلّم العشر درجات هي المرجع.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Can you trace one quality metric and one performance metric to your own reports?</p><p class="ar" lang="ar" dir="rtl">هل تستطيع تتبع مقياس جودة ومقياس أداء إلى تقاريرك؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## الشكل المطلوب | Format
 
 | English | العربية |

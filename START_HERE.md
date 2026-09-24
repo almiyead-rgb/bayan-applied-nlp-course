@@ -10,6 +10,12 @@
 
 This is the starting point for every learner. Follow it in order. The required path runs in the browser through Google Colab, so local Python installation is not required.
 
+<!-- BAYAN_YOUTUBE_START -->
+## تعلم بالمشاهدة | Learn with video
+
+[▶ افتح فيديوهات YouTube المرتبة حسب الرحلة · Open the topic-matched YouTube videos](docs/youtube-start.md)
+<!-- BAYAN_YOUTUBE_END -->
+
 ## قبل الدورة بـ24–48 ساعة | Before the course
 
 - [ ] لدي حساب Google أستطيع فتح Drive وColab به.

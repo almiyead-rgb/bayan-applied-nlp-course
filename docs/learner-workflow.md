@@ -15,6 +15,11 @@
 
 ## 2. أنشئ مستودعك الشخصي | Create your own repository
 
+<!-- BAYAN_YOUTUBE_STEP_2 -->
+<div class="card youtube-topic youtube-t02"><h3 class="pair"><span class="en" lang="en" dir="ltr">Your repository and README</span><span class="ar" lang="ar" dir="rtl">مستودعك وملف README</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Create your own repository and recognise the role of README and gitignore.</p><p class="ar" lang="ar" dir="rtl">أنشئ مستودعك وافهم دور README وملف gitignore.</p></div><p><strong lang="en" dir="ltr">GitHub for Beginners #1: Create Your First Repository</strong><br><span class="micro">Ben Day · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=5A9oLJRLVl4" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Where will your own notebook, code and evidence be stored?</p><p class="ar" lang="ar" dir="rtl">أين ستحفظ دفترك وكودك وأدلتك الشخصية؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- /BAYAN_YOUTUBE_STEP_2 -->
+
 | Step | English | العربية |
 |---|---|---|
 | 1 | Sign in to your own GitHub account, open **New repository** and select your account as owner. | ادخل حسابك في GitHub وافتح **New repository** واختر حسابك مالكًا. |
@@ -27,6 +32,11 @@
 [إنشاء المستودع — GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository) · [رفع الملفات — GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
 
 ## 3. افتح نسختك في Colab وشغّلها | Open and run your Colab copy
+
+<!-- BAYAN_YOUTUBE_STEP_3 -->
+<div class="card youtube-topic youtube-t01"><h3 class="pair"><span class="en" lang="en" dir="ltr">Colab essentials</span><span class="ar" lang="ar" dir="rtl">أساسيات Colab</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">See cells, runtime and outputs before your first lab.</p><p class="ar" lang="ar" dir="rtl">شاهد الخلايا وبيئة التشغيل والمخرجات قبل أول لاب.</p></div><p><strong lang="en" dir="ltr">Get started with Google Colaboratory</strong><br><span class="micro">TensorFlow · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=inN8seMm7UI" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">What is saved in a notebook, and what lives only in the runtime?</p><p class="ar" lang="ar" dir="rtl">ما الذي يُحفظ في الدفتر، وما الذي يوجد في الجلسة المؤقتة فقط؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- /BAYAN_YOUTUBE_STEP_3 -->
 
 | Step | English | العربية |
 |---|---|---|
@@ -43,6 +53,11 @@
 The notebook and runtime files are different things. Preserve your reports and private project model before ending the runtime. Follow the [model handoff guide](setup/colab.md) for Day 2 → Day 4.
 
 ## 4. احفظ دفاترك والكود والمخرجات | Save notebooks, code and outputs
+
+<!-- BAYAN_YOUTUBE_STEP_4 -->
+<div class="card youtube-topic youtube-t03"><h3 class="pair"><span class="en" lang="en" dir="ltr">Save your own Colab work</span><span class="ar" lang="ar" dir="rtl">حفظ عملك الشخصي في Colab</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Use this walkthrough when making and saving your own copy.</p><p class="ar" lang="ar" dir="rtl">استعن بالشرح عند إنشاء نسختك الشخصية وحفظها.</p></div><p><strong lang="en" dir="ltr">Colab 101: Your Ultimate Beginner’s Guide!</strong><br><span class="micro">Sam Witteveen · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=Ii6gs9zADEA" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Colab orientation, not the complete Bayan export procedure. Follow the linked learner guide for separate code and report files.</p><p class="ar" lang="ar" dir="rtl">مدخل لاستخدام Colab، وليس شرحًا كاملًا لتصدير بيان. اتبع دليل المتدرب لحفظ ملفات الكود والتقارير المنفصلة.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Does saving the notebook upload all generated reports to GitHub?</p><p class="ar" lang="ar" dir="rtl">هل حفظ الدفتر يرفع تلقائيًا جميع التقارير إلى GitHub؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- /BAYAN_YOUTUBE_STEP_4 -->
 
 | Step | English | العربية |
 |---|---|---|
@@ -154,6 +169,11 @@ files.download(str(out))
 استخدم نسخة `PROJECT` أعلاه فقط عندما تكون **أحدث نسخة رفعتها بالفعل**. إذا كان عملك أحدث في مجلد آخر فحدد ذلك المجلد بدلًا منها. فك ZIP وارفع محتوياته، لا ZIP وحده. تحقق من أن `README.md` ظاهر في جذر المستودع.
 
 ## 8. بوابة الإرسال النهائي | Final hand-in gate
+
+<!-- BAYAN_YOUTUBE_STEP_8 -->
+<div class="card youtube-topic youtube-t25"><h3 class="pair"><span class="en" lang="en" dir="ltr">Verify and freeze your submission</span><span class="ar" lang="ar" dir="rtl">تحقق وثبّت نسخة التسليم</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Revisit Colab when needed, then see how a release records a version.</p><p class="ar" lang="ar" dir="rtl">راجع Colab عند الحاجة ثم شاهد كيف يثبت الإصدار نسخة العمل.</p></div><p><strong lang="en" dir="ltr">Getting Started with GitHub Releases</strong><br><span class="micro">Tugdual Grall · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=Gw2vB18X3sQ" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>شرح إضافي عند الحاجة · More explanation when needed</summary><p><strong lang="en" dir="ltr">Colab 101: Your Ultimate Beginner’s Guide!</strong><br><span class="micro">Sam Witteveen · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=Ii6gs9zADEA" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p></details><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Only release/versioning basics. Maven/Packages/Actions demonstrations are not assignments. Run Bayan’s validators and follow its one-shot policy.</p><p class="ar" lang="ar" dir="rtl">أساسيات الإصدار والنسخ فقط؛ أمثلة Maven وPackages وActions ليست تكليفات. شغّل فواحـص بيان واتبع سياسة التصحيح الواحد.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Which commit SHA is graded after your one final submission?</p><p class="ar" lang="ar" dir="rtl">أي بصمة Commit تُصحح بعد إرسالك النهائي الواحد؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- /BAYAN_YOUTUBE_STEP_8 -->
 
 راجع [قائمة ما قبل التسليم](pre-submission-checklist.md) و[سلم 100 درجة](policies/assessment-and-completion.md) و[العرض](presentation-guide.md). أنشئ `submission-v1.0` وأرسل رابط المستودع ورابط الإصدار وSHA النهائي بالطريقة الخاصة التي تحددها المدربة. **التصحيح مرة واحدة؛ لا تقبل نسخة معدلة بعد الإرسال.**
 

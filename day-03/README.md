@@ -8,6 +8,14 @@
 >
 > **Driving question:** How do we build bilingual semantic search and produce evidence that shows both strengths and weaknesses?
 
+<!-- BAYAN_YOUTUBE_START -->
+## فيديوهات هذا اليوم | Videos for this day
+
+[▶ افتح فيديوهات اليوم 3 حسب الموضوع · Open Day 3 video companions](VIDEOS.md)
+
+توجد أزرار المشاهدة كذلك داخل الدروس التفصيلية في موضع الموضوع. · Direct video buttons also appear in the related detailed lessons.
+<!-- BAYAN_YOUTUBE_END -->
+
 ## قبل البدء | Entry gate
 
 يجب أن تكون [بوابة اليوم الثاني Gate B](../day-02/05-labs-checkpoint.md) مكتملة:

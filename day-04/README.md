@@ -8,6 +8,14 @@
 >
 > **Driving question:** How do we turn a working notebook into measured inference, a tested service, and a reproducible submission?
 
+<!-- BAYAN_YOUTUBE_START -->
+## فيديوهات هذا اليوم | Videos for this day
+
+[▶ افتح فيديوهات اليوم 4 حسب الموضوع · Open Day 4 video companions](VIDEOS.md)
+
+توجد أزرار المشاهدة كذلك داخل الدروس التفصيلية في موضع الموضوع. · Direct video buttons also appear in the related detailed lessons.
+<!-- BAYAN_YOUTUBE_END -->
+
 ## قبل البدء | Entry gate
 
 يجب أن تكون [بوابة اليوم الثالث Gate C](../day-03/04-labs-checkpoint.md) مكتملة:

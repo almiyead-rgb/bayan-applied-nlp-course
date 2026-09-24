@@ -1,6 +1,13 @@
 # 1. النص وUnicode والمعالجة  
 # Text, Unicode, and Preprocessing
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t04"><h3 class="pair"><span class="en" lang="en" dir="ltr">Unicode and text preparation</span><span class="ar" lang="ar" dir="rtl">Unicode وتجهيز النص</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Understand character encoding before examining Arabic text.</p><p class="ar" lang="ar" dir="rtl">افهم ترميز الحروف قبل فحص النص العربي.</p></div><p><strong lang="en" dir="ltr">Characters, Symbols and the Unicode Miracle</strong><br><span class="micro">Computerphile · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=MijmeoH9LT4" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Encoding concepts only; Arabic normalisation and privacy masking are demonstrated in the course lab.</p><p class="ar" lang="ar" dir="rtl">يشرح ترميز الحروف؛ تطبيع العربية وإخفاء المعرّفات يُطبقان في لاب الدورة.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Why should you retain a protected display copy before normalisation?</p><p class="ar" lang="ar" dir="rtl">لماذا تحتفظ بنسخة عرض محمية قبل التطبيع؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## لماذا يبدأ NLP قبل النموذج؟
 
 قد ترى العين نصين متطابقين بينما يراهما الحاسوب سلسلتين مختلفتين. وقد يحذف “تنظيف” غير مدروس معلومة يحتاجها النموذج. لذلك المعالجة ليست تجميلًا؛ إنها **عقد بيانات** يجب أن يطابق التدريب والتقييم والخدمة.

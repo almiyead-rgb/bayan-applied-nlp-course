@@ -1,5 +1,12 @@
 # Google Colab وDrive | Colab and Drive
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t01"><h3 class="pair"><span class="en" lang="en" dir="ltr">Colab essentials</span><span class="ar" lang="ar" dir="rtl">أساسيات Colab</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">See cells, runtime and outputs before your first lab.</p><p class="ar" lang="ar" dir="rtl">شاهد الخلايا وبيئة التشغيل والمخرجات قبل أول لاب.</p></div><p><strong lang="en" dir="ltr">Get started with Google Colaboratory</strong><br><span class="micro">TensorFlow · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=inN8seMm7UI" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">What is saved in a notebook, and what lives only in the runtime?</p><p class="ar" lang="ar" dir="rtl">ما الذي يُحفظ في الدفتر، وما الذي يوجد في الجلسة المؤقتة فقط؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## ما هو Colab؟
 
 Google Colab خدمة Jupyter Notebook مستضافة تعمل في المتصفح ومناسبة للتعلم الآلي. يمكن استخدامها مجانًا دون إعداد محلي.

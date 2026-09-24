@@ -1,6 +1,13 @@
 # 5. Lab 7 وبوابتا Gate D وGate E
 # Lab 7, Gate D, and Gate E
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t25"><h3 class="pair"><span class="en" lang="en" dir="ltr">Verify and freeze your submission</span><span class="ar" lang="ar" dir="rtl">تحقق وثبّت نسخة التسليم</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Revisit Colab when needed, then see how a release records a version.</p><p class="ar" lang="ar" dir="rtl">راجع Colab عند الحاجة ثم شاهد كيف يثبت الإصدار نسخة العمل.</p></div><p><strong lang="en" dir="ltr">Getting Started with GitHub Releases</strong><br><span class="micro">Tugdual Grall · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=Gw2vB18X3sQ" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>شرح إضافي عند الحاجة · More explanation when needed</summary><p><strong lang="en" dir="ltr">Colab 101: Your Ultimate Beginner’s Guide!</strong><br><span class="micro">Sam Witteveen · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=Ii6gs9zADEA" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p></details><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Only release/versioning basics. Maven/Packages/Actions demonstrations are not assignments. Run Bayan’s validators and follow its one-shot policy.</p><p class="ar" lang="ar" dir="rtl">أساسيات الإصدار والنسخ فقط؛ أمثلة Maven وPackages وActions ليست تكليفات. شغّل فواحـص بيان واتبع سياسة التصحيح الواحد.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Which commit SHA is graded after your one final submission?</p><p class="ar" lang="ar" dir="rtl">أي بصمة Commit تُصحح بعد إرسالك النهائي الواحد؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## الملفات | Files
 
 1. [08 — Optimisation and Serving](../notebooks/08_optimization_serving.ipynb)

@@ -1,5 +1,12 @@
 # تجميع بيان وعرضه | Assemble and present Bayan
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t24"><h3 class="pair"><span class="en" lang="en" dir="ltr">Connect the NLP pipeline</span><span class="ar" lang="ar" dir="rtl">ربط مسار معالجة اللغة</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Follow preprocessing, model inference and postprocessing; then connect Bayan’s branches.</p><p class="ar" lang="ar" dir="rtl">تتبع المعالجة والاستدلال وتجهيز المخرج ثم اربط فروع بيان.</p></div><p><strong lang="en" dir="ltr">What Happens Inside the Pipeline Function?</strong><br><span class="micro">Hugging Face · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=1pedAIvTWXk" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">One pipeline building block, not the full Bayan architecture. Use the project diagram for the parallel task and search branches.</p><p class="ar" lang="ar" dir="rtl">لبنة واحدة لا معمارية بيان الكاملة. استخدم مخطط المشروع لفروع المهام والبحث.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Which components are prepared offline and which run for each request?</p><p class="ar" lang="ar" dir="rtl">أي المكونات تُجهز مسبقًا وأيها يعمل لكل طلب؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## اربط ما بنيته | Connect your existing work
 
 اربط المعالجة بنماذج الموضوع والمشاعر والكيانات والأسئلة وبالبحث الدلالي. تحقق من الإصدارات والوسوم واتساق المعالجة، ثم افحص الخدمة وسجل القياس الفعلي. لا تبدأ مشروعًا ثانيًا ولا تنسخ SYSTEMS_SMOKE بوصفه قياس المشروع.

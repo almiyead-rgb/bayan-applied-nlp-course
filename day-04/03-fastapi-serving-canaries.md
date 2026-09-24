@@ -1,6 +1,13 @@
 # 3. FastAPI وعقد الخدمة وCanaries
 # FastAPI, Service Contracts, and Canaries
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t23"><h3 class="pair"><span class="en" lang="en" dir="ltr">FastAPI: from model to service</span><span class="ar" lang="ar" dir="rtl">FastAPI: من النموذج إلى الخدمة</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Trace a request, input validation and a model response.</p><p class="ar" lang="ar" dir="rtl">تتبع الطلب والتحقق من المدخل واستجابة النموذج.</p></div><p><strong lang="en" dir="ltr">Deploy ML Models with FastAPI, Docker, and Heroku</strong><br><span class="micro">AssemblyAI · Patrick Loeber · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=h5wLuVDr0oc" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">Use the FastAPI section only. Docker and Heroku are not required. Follow the course for local TestClient and canary tests.</p><p class="ar" lang="ar" dir="rtl">استخدم قسم FastAPI فقط. لا يلزم Docker أو Heroku؛ اتبع الدورة لاختبارات TestClient المحلية والاختبارات الحارسة.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">How will you test one valid Arabic input and one rejected input?</p><p class="ar" lang="ar" dir="rtl">كيف تختبر مدخلًا عربيًا صالحًا وآخر مرفوضًا؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## من دالة إلى خدمة
 
 النموذج ينتج logits، لكن المستفيد يحتاج عقدًا ثابتًا:

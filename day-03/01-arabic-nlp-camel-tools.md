@@ -1,6 +1,13 @@
 # 1. معالجة العربية باستخدام CAMeL Tools
 # Arabic NLP with CAMeL Tools
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t14"><h3 class="pair"><span class="en" lang="en" dir="ltr">Arabic variation and CAMeL context</span><span class="ar" lang="ar" dir="rtl">تنوع العربية ومدخل أدوات CAMeL</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Understand Arabic morphology, clitics and dialect variation before selecting a profile.</p><p class="ar" lang="ar" dir="rtl">افهم الصرف واللواصق واللهجات قبل اختيار ملف المعالجة.</p></div><p><strong lang="en" dir="ltr">A Short Introduction to Arabic Natural Language Processing</strong><br><span class="micro">Nizar Habash · JSALT · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=vQL5CUlbw0k" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><div class="callout warning"><div class="pair"><p class="en" lang="en" dir="ltr">A conceptual lecture, not a step-by-step CAMeL Tools tutorial. The CAMeL implementation remains in Notebook 05.</p><p class="ar" lang="ar" dir="rtl">محاضرة مفاهيمية وليست شرحًا تنفيذيًا كاملًا لأدوات CAMeL. التنفيذ في الدفتر 05.</p></div></div><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Which Arabic variation could change your tokenizer’s behaviour?</p><p class="ar" lang="ar" dir="rtl">أي اختلاف في العربية قد يغير سلوك المرمّز؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## الفكرة الأولى: العربية ليست «نصًا يحتاج تنظيفًا أكثر»
 
 العربية تضع قرارات هندسية مختلفة أمام pipeline:

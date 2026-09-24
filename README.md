@@ -19,6 +19,12 @@
 
 A specialist applied program with a shared readiness refresher, progressing from text processing to **Bayan**, a bilingual NLP project combining classification, NER, extractive QA, semantic search, evaluation, and inference optimisation.
 
+<!-- BAYAN_YOUTUBE_START -->
+## تعلم بالمشاهدة | Learn with video
+
+[▶ افتح فيديوهات YouTube المرتبة حسب الرحلة · Open the topic-matched YouTube videos](docs/youtube-videos.md)
+<!-- BAYAN_YOUTUBE_END -->
+
 ## المشروع والتقييم في صفحة واحدة | Project and assessment
 
 | المحور / Category | الدرجة / Points |

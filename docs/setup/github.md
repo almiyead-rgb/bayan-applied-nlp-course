@@ -1,5 +1,12 @@
 # GitHub خطوة بخطوة | GitHub Setup
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t02"><h3 class="pair"><span class="en" lang="en" dir="ltr">Your repository and README</span><span class="ar" lang="ar" dir="rtl">مستودعك وملف README</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Create your own repository and recognise the role of README and gitignore.</p><p class="ar" lang="ar" dir="rtl">أنشئ مستودعك وافهم دور README وملف gitignore.</p></div><p><strong lang="en" dir="ltr">GitHub for Beginners #1: Create Your First Repository</strong><br><span class="micro">Ben Day · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=5A9oLJRLVl4" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">Where will your own notebook, code and evidence be stored?</p><p class="ar" lang="ar" dir="rtl">أين ستحفظ دفترك وكودك وأدلتك الشخصية؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## ما هو المستودع؟ | Repository
 
 المستودع (Repository) مجلد مشروع يحتفظ بالملفات وتاريخ تغييراتها. الـCommit لقطة موثقة لحالة المشروع في لحظة معينة. يوضح [دليل GitHub الرسمي](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) أن README يظهر تلقائيًا في واجهة المستودع ويشرح المشروع.

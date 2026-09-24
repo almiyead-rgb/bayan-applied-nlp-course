@@ -1,6 +1,13 @@
 # 2. التعرف على الكيانات ومحاذاة BIO
 # NER and BIO Label Alignment
 
+<!-- BAYAN_YOUTUBE_START -->
+### شاهد الفكرة ثم طبّقها | Video companions
+
+<div class="card youtube-topic youtube-t12"><h3 class="pair"><span class="en" lang="en" dir="ltr">NER and label alignment</span><span class="ar" lang="ar" dir="rtl">الكيانات ومحاذاة الوسوم</span></h3><div class="pair"><p class="en" lang="en" dir="ltr">Watch token classification, then align word labels with subwords.</p><p class="ar" lang="ar" dir="rtl">شاهد تصنيف الرموز ثم حاذِ وسوم الكلمات مع الوحدات الجزئية.</p></div><p><strong lang="en" dir="ltr">What Is Token Classification?</strong><br><span class="micro">Hugging Face · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=wVHdVlPScxA" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><p><strong lang="en" dir="ltr">Preprocessing for Token Classification</strong><br><span class="micro">Hugging Face · English audio / الصوت بالإنجليزية</span></p><p><a class="button primary" href="https://www.youtube.com/watch?v=iY2AZYdZAr0" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube · شاهد على YouTube ↗</a></p><details><summary>بعد المشاهدة: اربط الفكرة ببيان · Connect it to Bayan</summary><div class="pair"><p class="en" lang="en" dir="ltr">How do you handle a word split into two subwords and a special token?</p><p class="ar" lang="ar" dir="rtl">كيف تتعامل مع كلمة انقسمت إلى جزأين ورمز خاص؟</p></div><div class="pair"><p class="en" lang="en" dir="ltr">Self-check, not a graded task.</p><p class="ar" lang="ar" dir="rtl">سؤال للفهم الذاتي، وليس تكليفًا بدرجة.</p></div></details></div>
+
+<!-- BAYAN_YOUTUBE_END -->
+
 ## ما هو NER؟
 
 Named Entity Recognition يحدد span في النص ويعطيه نوعًا. مخطط بيان التعليمي:

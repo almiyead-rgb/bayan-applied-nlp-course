@@ -8,6 +8,14 @@
 >
 > **Driving question:** How do we adapt a general language encoder to three tasks without leakage or misleading metrics?
 
+<!-- BAYAN_YOUTUBE_START -->
+## فيديوهات هذا اليوم | Videos for this day
+
+[▶ افتح فيديوهات اليوم 2 حسب الموضوع · Open Day 2 video companions](VIDEOS.md)
+
+توجد أزرار المشاهدة كذلك داخل الدروس التفصيلية في موضع الموضوع. · Direct video buttons also appear in the related detailed lessons.
+<!-- BAYAN_YOUTUBE_END -->
+
 ## قبل البدء
 
 يجب أن تكون بوابة اليوم الأول A مكتملة:
