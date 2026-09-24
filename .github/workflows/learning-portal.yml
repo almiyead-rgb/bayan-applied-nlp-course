@@ -3,7 +3,7 @@ name: Bayan learning portal
 on:
   push:
     branches: [main]
-    paths-ignore: ['docs/index.html', 'portal/acceptance-report.json', 'portal/source-manifest.json']
+    paths-ignore: ['docs/index.html', 'portal/acceptance-report.json', 'portal/source-manifest.json', 'portal/video-link-check.json', 'portal/video-acceptance.json']
   workflow_dispatch:
 
 permissions:
@@ -28,36 +28,27 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - name: Apply versioned homepage presentation placement once
+      - name: Generate topic-matched declarative YouTube companions
         run: |
+          python tools/build_video_companions.py --sources
           python - <<'PY'
-          import json
-          from pathlib import Path
-          config_path = Path('portal/course.json')
-          config = json.loads(config_path.read_text(encoding='utf-8'))
-          if config['version'] == '2.1.0':
-              app_path = Path('portal/app.js')
-              app = app_path.read_text(encoding='utf-8')
-              previous = '${projectIntro()}${architecturePanel()}${assessmentPanel()}${submissionNotice()}${guideCards()}'
-              updated = '${projectIntro()}${architecturePanel()}${assessmentPanel()}${presentationPreview()}${submissionNotice()}${guideCards()}'
-              assert app.count(previous) == 1, 'Unexpected homepage source; review rather than overwrite.'
-              app_path.write_text(app.replace(previous, updated, 1), encoding='utf-8')
-              config['version'] = '2.1.1'
-              config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-              print('Presentation specifications now appear on the homepage and project page.')
-          else:
-              print('Versioned homepage migration already applied or not applicable.')
+          import hashlib,json,pathlib,subprocess
+          paths=json.loads(pathlib.Path('portal/video-source-report.json').read_text())['paths']
+          before={p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest() for p in paths}
+          subprocess.run(['python','tools/build_video_companions.py','--sources'],check=True)
+          assert all(hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()==h for p,h in before.items())
+          print('VIDEO_GENERATION_IDEMPOTENCE=PASS')
           PY
-      - name: Preserve original scientific content
+      - name: Preserve original scientific implementation and existing frontend
         run: |
           python - <<'PY'
           import subprocess
           protected=['notebooks','data','src','tests',':(glob)requirements*.txt']
           changed=subprocess.check_output(['git','diff','--name-only','ee7c7d8bf3a17c9989b37a3fdd337f3fc3730d7e','--',*protected],text=True).strip()
-          assert not changed,'Scientific content changed: '+changed
+          assert not changed,'Scientific implementation changed: '+changed
           print('SCIENTIFIC_CONTENT_PRESERVED=PASS')
           PY
-      - name: Validate the existing course release gate and preflight helper
+      - name: Validate course and student starter
         run: |
           python -m pip install numpy pytest
           PYTHONPATH=src python -m pytest -q tests tools/test_preflight.py
@@ -68,23 +59,35 @@ jobs:
         run: |
           python -m pip install -r portal/requirements.txt
           python -m playwright install --with-deps chromium
-      - name: Build and test the learner portal
+      - name: Build and test the original portal and video companions
         run: |
           node --check portal/app.js
           python tools/build_learning_portal.py
+          python tools/build_video_companions.py --navigation _site/index.html
           python tools/test_learning_portal.py
           python tools/test_portal_content_contract.py _site/index.html --report _site/content-contract.json
-      - name: Store verified source, compiled site and audit reports
+          python tools/test_video_companions.py
+      - name: Check public YouTube identifier and title metadata
+        run: python tools/check_video_links.py --out _site/video-link-check.json
+      - name: Store verified guides, site and audit reports
         run: |
           cp _site/index.html docs/index.html
           cp _site/acceptance-report.json portal/acceptance-report.json
           cp _site/source-manifest.json portal/source-manifest.json
           cp _site/content-contract.json portal/content-contract.json
-          git add portal/app.js portal/course.json docs/index.html portal/acceptance-report.json portal/source-manifest.json portal/content-contract.json
+          cp _site/video-acceptance.json portal/video-acceptance.json
+          cp _site/video-link-check.json portal/video-link-check.json
+          python - <<'PY'
+          import json,pathlib,subprocess
+          paths=json.loads(pathlib.Path('portal/video-source-report.json').read_text())['paths']
+          assert all(p.endswith('.md') and not pathlib.Path(p).is_absolute() and '..' not in pathlib.Path(p).parts for p in paths)
+          subprocess.run(['git','add','--',*paths],check=True)
+          PY
+          git add docs/index.html portal/acceptance-report.json portal/source-manifest.json portal/content-contract.json portal/video-source-report.json portal/video-acceptance.json portal/video-link-check.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'build(portal): verify learner content and publish homepage presentation brief'
+            git commit -m 'feat(videos): publish topic-matched YouTube guides and verified course navigation'
             git push origin HEAD:main
           fi
       - name: Check actual GitHub Pages configuration
@@ -98,25 +101,22 @@ jobs:
             if [ "$KIND" = 'workflow' ]; then
               echo 'ready=true' >> "$GITHUB_OUTPUT"
               echo '{"ready_for_deployment":true,"source":"workflow","live_site_verified":false}' > _site/deployment-readiness.json
-              echo 'Build and browser acceptance passed. Pages is configured for Actions; deployment follows.' >> "$GITHUB_STEP_SUMMARY"
             else
               echo 'ready=false' >> "$GITHUB_OUTPUT"
-              echo '{"ready_for_deployment":false,"reason":"Select GitHub Actions as the Pages source","live_site_verified":false}' > _site/deployment-readiness.json
-              echo 'Build passed. Select Settings > Pages > Source > GitHub Actions, then run this workflow to publish.' >> "$GITHUB_STEP_SUMMARY"
+              echo '{"ready_for_deployment":false,"reason":"Select GitHub Actions as Pages source","live_site_verified":false}' > _site/deployment-readiness.json
             fi
           else
-            echo 'PAGES_SOURCE=unavailable'
             cat "$RUNNER_TEMP/bayan-pages-error.txt"
             echo 'ready=false' >> "$GITHUB_OUTPUT"
-            echo '{"ready_for_deployment":false,"reason":"Pages configuration unavailable; owner activation required","live_site_verified":false}' > _site/deployment-readiness.json
-            echo 'Build and browser acceptance passed. Pages is unavailable through this workflow token. An owner must enable Settings > Pages > Source > GitHub Actions, then run this workflow. No live-site claim is made.' >> "$GITHUB_STEP_SUMMARY"
+            echo '{"ready_for_deployment":false,"reason":"Pages unavailable; owner activation required","live_site_verified":false}' > _site/deployment-readiness.json
           fi
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: bayan-learning-portal
           path: _site/
           retention-days: 30
-          if-no-files-found: error
+          if-no-files-found: warn
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site/
