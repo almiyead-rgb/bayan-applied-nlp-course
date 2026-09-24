@@ -1,0 +1,49 @@
+name: Bayan learning portal
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bayan-learning-portal
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preserve auditable source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: bayan-source-snapshot
+          path: |
+            README.md
+            START_HERE.md
+            COURSE_GUIDE.md
+            day-01/
+            day-02/
+            day-03/
+            day-04/
+            docs/
+            notebooks/
+            tools/
+            scripts/
+            tests/
+            assessments/
+            data/
+            downloads/
+            requirements*
+          retention-days: 7
+          if-no-files-found: error
+      - name: Portal source availability
+        run: |
+          if test -f tools/build_learning_portal.py; then
+            echo 'Portal builder present.'
+          else
+            echo 'Source snapshot preserved; portal implementation follows in the next reviewed commit.'
+          fi
