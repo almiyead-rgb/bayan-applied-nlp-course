@@ -20,16 +20,21 @@
 | 🔵 استكشاف | مقارنة إعدادين، slice إضافي، أو ضبط عدد مرشحي re-ranking | قرار تقني مدعوم بقياس |
 | 🟣 تميّز | Arabizi، drift، ANN scale، أو ضبط/استبدال cross-encoder | إضافة مستقلة لا تكسر المسار الأساسي |
 
-> مسارات المستوى أعلاه تخص عمل المختبرات. R7 في المشروع يتطلب امتدادًا واحدًا مقاسًا للجميع؛ مهام التميّز الإضافية هي وحدها bonus.
+> مسارات المستوى أعلاه تخص عمل المختبرات. R7 في المشروع يتطلب امتدادًا واحدًا مقاسًا للجميع؛ مهام التميّز الإضافية هي وحدها optional enrichment.
 
 ## تغطية القياس | Assessment coverage
 
-| مكوّن التقييم | LO1 | LO2 | LO3 | LO4 | LO5 | LO6 | تكامل المشروع |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| المختبرات 35% | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| العملي 15% | ✓ |  | ✓ | ✓ | ✓ | ✓ |  |
-| الاختبار 10% | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| المشروع 40% | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ |
+| المعايير / Criteria | Outcomes | Points |
+|---|---|---:|
+| T1 | LO1 | 12 |
+| T2 | LO2 | 6 |
+| T3 | LO3, LO5 | 18 |
+| T4 | LO4, LO5 | 10 |
+| T5 | LO5 | 10 |
+| T6 | LO6 | 10 |
+| T7 | measured extension / integration | 4 |
+| A1–A5 | documentation, evidence and submission | 20 |
+| P1–P5 | individual demonstration and understanding | 10 |
+| **Total** | **six scientific outcomes retained** | **100** |
 
-> لا يُعد الهدف مغطى لمجرد ذكره في الشرائح؛ يجب أن ينتج عنه **سلوك قابل للملاحظة ودليل قابل للفحص**.  
-> An outcome is not covered merely because it appears on a slide; it needs observable performance and inspectable evidence.
+[التفاصيل ودرجات كل بند](policies/assessment-and-completion.md). الأدلة هي أساس التصحيح؛ لا يمنح ذكر الهدف وحده نقاطًا. المواد التدريبية PA والاختبار القصير للممارسة، ولا توجد لها أوزان مستقلة في هذا الإصدار.

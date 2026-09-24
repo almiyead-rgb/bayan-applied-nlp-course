@@ -2,7 +2,7 @@
 # Day 4 — Measure, Optimise, Test, and Ship
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **البيئة:** Google Colab Free + GitHub
+**المسار:** رحلة تعلم تطبيقية · **البيئة:** Google Colab Free + GitHub
 
 > **السؤال المحوري:** كيف نحوّل نموذجًا يعمل في notebook إلى مسار استدلال مقاس، وخدمة مختبرة، ومشروع يستطيع مراجع جديد إعادة تشغيله؟
 >
@@ -39,23 +39,23 @@
 
 [افتح قاموس اليوم الرابع](GLOSSARY.md) واتركه في تبويب مستقل. يغطي Benchmark وLatency وThroughput وONNX وINT8 وParity وFastAPI وCanaries وGit والتسليم، مع النطق والتعريف الإنجليزي والشرح العربي ومثال لكل مصطلح. يمكن الرجوع كذلك إلى [قاموس الدورة الكامل](../docs/glossary/README.md).
 
-## جدول اليوم | Schedule
+## رحلة اليوم | Learning journey
 
-| الفترة | المدة | English | العربية |
-|---|---:|---|---|
-| 1 | 60 min | Performance budgets, warm-up and latency percentiles | ميزانية الأداء والإحماء ومئينات زمن الاستجابة |
-| 2 | 60 min | Length, padding and batching | طول النص والحشو والتجميع |
-| 3 | 60 min | ONNX, INT8, parity and quality cost | ONNX وINT8 والتكافؤ وكلفة الجودة |
-| 4 | 60 min | FastAPI contracts, TestClient and canaries | عقود FastAPI وTestClient وفحوص canary |
-| 5 | 60 min | Guided Bayan assembly, evidence review and delivery walkthrough | شرح تجميع بيان ومراجعة الأدلة وخطوات التسليم |
-| 6 | 60 min | Dedicated lab + D / E | لاب مستقل + D / E |
+| English topic | الموضوع والشرح بالعربية |
+|---|---|
+| **Benchmark before changing** — Define the workload and performance budget; separate warm-up and record device, repetitions, latency, throughput and observed memory. | **القياس قبل التغيير** — نحدد عبء العمل وميزانية الأداء، ونفصل الإحماء ونسجل الجهاز والتكرارات والزمن ومعدل المعالجة والذاكرة المرصودة. |
+| **ONNX and INT8** — Export, check numerical or prediction parity, and measure the quality and speed cost of quantisation. Keep a rollback path. | **ONNX وINT8** — نصدّر النموذج ونفحص التكافؤ العددي أو التنبؤي، ثم نقيس أثر التكميم على الجودة والسرعة مع الاحتفاظ بمسار تراجع. |
+| **API contract and canaries** — Connect project components through the documented service interface and test valid Arabic/English input, rejected input and preprocessing consistency. | **عقد الخدمة والاختبارات الحارسة** — نربط المكونات بواجهة الخدمة الموثقة، ونختبر طلبًا عربيًا وإنجليزيًا ومدخلًا مرفوضًا واتساق المعالجة مع النموذج. |
+| **Integration and measured extension** — Assemble previous lab outputs, evaluate the actual project artifact and measure one bounded extension against a baseline. | **التكامل والامتداد المقاس** — نجمع مخرجات اللابات السابقة ونقيّم ناتج المشروع الفعلي ونقيس امتدادًا محدودًا واحدًا مقارنة بخط أساس. لا نبدأ مشروعًا جديدًا. |
+| **Evidence, presentation and submission** — Trace every number to a report, explain one limitation, practise the individual demo and validate the exact commit you will submit once. | **الأدلة والعرض والتسليم** — نربط كل رقم بتقرير، ونشرح قيدًا معروفًا، ونتدرب على العرض الفردي ونفحص نسخة الـCommit التي سنرسلها مرة واحدة. |
 
-التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+**Architecture:** Actual project artifact → Benchmark → ONNX / INT8 → Parity + quality + API tests → Evidence → release
 
-تشمل العروض التوضيحية **تجميع بيان I** وII. تُنظّم **عروض بيان** المقيمة في نافذة منفصلة معلنة؛ خمس دقائق لكل زوج، مع حفظ متطلبات الدليل والتحقق الفردي.
+**المسار المعماري:** ناتج المشروع الفعلي ← قياس ← ONNX / INT8 ← تكافؤ + جودة + اختبارات الخدمة ← أدلة ← إصدار التسليم
 
+**الدليل:** قياس المشروع + خدمة مختبرة + تقارير + فاحص ناجح + submission-v1.0
 
-صفحات [ONNX وINT8](02-onnx-int8-decision.md) و[FastAPI وcanaries](03-fastapi-serving-canaries.md) مرجعان قبل الحصة وأثناء المشروع. خلال العرض تستخدم المدربة النتائج المحفوظة بدل انتظار تنزيل/تصدير حي، ثم يقيس الطالب `PROJECT_ARTIFACT` في نسخته لإغلاق Gate D.
+[المشروع وهيكله](../docs/project-walkthrough.md) · [التشغيل والحفظ خطوة بخطوة](../docs/learner-workflow.md) · [تقييم 100 درجة](../docs/policies/assessment-and-completion.md)
 
 ## خط بيان اليوم | Today’s Bayan delivery path
 

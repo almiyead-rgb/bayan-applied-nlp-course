@@ -1,3 +1,5 @@
+> **قبل البدء:** [خطوات Colab وGitHub بالتفصيل](docs/learner-workflow.md) · [سيناريو المشروع](docs/project-walkthrough.md) · [التقييم 70 + 20 + 10](docs/policies/assessment-and-completion.md). التصحيح مرة واحدة بعد التسليم؛ راجع [قائمة الفحص](docs/pre-submission-checklist.md) قبل الإرسال.
+
 # ابدأ من هنا | START HERE
 
 

@@ -2,7 +2,7 @@
 # Day 1 — From Text to Tensor
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت | Time:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **المسار الأساسي:** CPU · **المشروع:** بوابة بيان A
+**المسار:** رحلة تعلم تطبيقية · **البيئة:** Google Colab Free + GitHub
 
 ## سؤال اليوم | Driving question
 
@@ -34,19 +34,23 @@ flowchart LR
 8. رسم Transformer encoder block وشرح دور كل جزء.
 9. تسليم بوابة بيان A باختبارات خضراء وقرار tokenizer.
 
-## الجدول | Schedule
+## رحلة اليوم | Learning journey
 
-| الفترة | المدة | English | العربية |
-|---|---:|---|---|
-| 1 | 60 min | Bayan story, readiness and the NLP journey | قصة بيان، الجاهزية ورحلة معالجة اللغة |
-| 2 | 60 min | Unicode, privacy and two text copies | Unicode والخصوصية ونسختا النص |
-| 3 | 60 min | Tokenisation, fertility and embeddings | الترميز وكثافته والتضمينات |
-| 4 | 60 min | Q/K/V, attention and tensor shapes | الاستعلام والمفتاح والقيمة والانتباه وأشكال المصفوفات |
-| 5 | 60 min | Transformer encoder and a guided reading of saved outputs | مشفر المحوّل وقراءة موجّهة للمخرجات المحفوظة |
-| 6 | 60 min | Dedicated lab + A | لاب مستقل + A |
+| English topic | الموضوع والشرح بالعربية |
+|---|---|
+| **The Bayan problem** — Turn Arabic and English feedback into an inspectable analysis. Distinguish a teaching prototype from a service that makes real decisions. | **مشكلة بيان** — نحوّل ملاحظات عربية وإنجليزية إلى تحليل يمكن فحصه. نحدد المستفيد وما ينتجه المشروع، ونفصل النموذج التعليمي عن خدمة تتخذ قرارات حقيقية. |
+| **Text, Unicode and privacy** — Inspect text encoding, keep a safe display copy and create a model copy with documented masking and normalisation. | **النص وUnicode والخصوصية** — نفحص ترميز النص، ونحتفظ بنسخة عرض آمنة، وننشئ نسخة للنموذج مع إخفاء المعرّفات وتوثيق التطبيع. لا ننشر نصًا شخصيًا خامًا. |
+| **Tokens and embeddings** — Compare words and subwords; measure fragmentation and truncation. Token IDs are vocabulary positions, while embeddings are learned vectors. | **الترميز والتضمينات** — نميّز الكلمات والوحدات الجزئية ونقيس التجزئة والقطع. رقم الرمز موضع في القاموس؛ أما التضمين فهو متجه عددي متعلّم. |
+| **Attention and Q/K/V** — Trace a small attention computation: queries compare with keys, and the resulting weights combine values. Check tensor shapes and masks. | **الانتباه وQ/K/V** — نتتبع حسابًا صغيرًا: تقارن الاستعلامات بالمفاتيح، وتستخدم الأوزان الناتجة لدمج القيم. نفحص أبعاد المصفوفات وأقنعة الانتباه. |
+| **Transformer encoder** — Connect multi-head attention, residual paths, normalisation and feed-forward layers; inspect a real forward pass and explain the limits of attention visualisation. | **مشفر المحوّل** — نربط الانتباه متعدد الرؤوس بالمسارات المتبقية والتطبيع والطبقات الأمامية، ونفحص تمريرًا فعليًا مع توضيح حدود تفسير خرائط الانتباه. |
 
-التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+**Architecture:** Synthetic AR/EN text → Privacy + profile → Tokens → vectors → Encoder + attention checks
 
+**المسار المعماري:** نص عربي/إنجليزي اصطناعي ← حماية + معالجة موثقة ← رموز ← تمثيل عددي ← مشفر + فحوص الانتباه
+
+**الدليل:** اختبارات المعالجة + قرار الترميز + فحوص الانتباه + commit
+
+[المشروع وهيكله](../docs/project-walkthrough.md) · [التشغيل والحفظ خطوة بخطوة](../docs/learner-workflow.md) · [تقييم 100 درجة](../docs/policies/assessment-and-completion.md)
 
 ## دفاتر اليوم | Notebooks
 

@@ -77,8 +77,8 @@ flowchart TD
 | A — ingest | نهاية اليوم 1 | golden preprocessing tests خضراء + قرار tokenizer |
 | B — tasks | نهاية اليوم 2 | baseline موثق + مسارات classification/NER/QA تعمل |
 | C — search & truth | نهاية اليوم 3 | search metrics + sliced evaluation + taxonomy |
-| D — ship | [اليوم 4، الجلسة 4](../day-04/05-lab-gates-submission.md) | API tests + benchmark قبل/بعد + canaries على `PROJECT_ARTIFACT` |
-| E — submit | [اليوم 4، الجلسة 5](../day-04/05-lab-gates-submission.md) | validator + demo + tag `submission-v1.0` |
+| D — ship | [اليوم الرابع](../day-04/05-lab-gates-submission.md) | API tests + benchmark قبل/بعد + canaries على `PROJECT_ARTIFACT` |
+| E — submit | [اليوم الرابع](../day-04/05-lab-gates-submission.md) | validator + demo + tag `submission-v1.0` |
 
 ## ملفات التسليم | Deliverables
 
@@ -90,6 +90,7 @@ flowchart TD
 - `EVALUATION_REPORT.md`: metrics، slices، uncertainty، errors، fixes.
 - `MODEL_CARD.md` (قسم كامل لكل artefact أو بطاقات منفصلة مرتبطة منه) و`DATA_CARD.md`.
 - `PROJECT_SUMMARY.json` و`SUBMISSION.yml` بصيغ قابلة للفحص.
+- `PRESENTATION.md`: خطة العرض وروابط أمثلته وأدلته الشخصية.
 - 9 notebooks المطلوبة، و`src/bayan`، و`tests`، ومخرجات عيّنة صغيرة.
 - رابط Colab لكل notebook ولقطة badge الاختبارات في README.
 
@@ -107,23 +108,23 @@ flowchart TD
 
 ## العرض | Demo
 
-**5 دقائق إجمالًا لكل زوج** عند السعة القصوى، مع بقاء أدلة كل مشارك قابلة للتقييم الفردي:
+عرض فردي من خمسة أقسام: المشكلة والمعمارية والتطبيق والدليل والقرار. حتى خمس شرائح، وخمس دقائق عرض ودقيقتان للتحقق الفردي. الدرجة 10 داخل مجموع 100.
 
-1. 20 ثانية: المشكلة والحدود.
-2. 80 ثانية: مثال عربي وآخر إنجليزي.
-3. 50 ثانية: البحث الدلالي.
-4. 50 ثانية: رقم تقييم ورقم أداء مع مصدرهما.
-5. 40 ثانية: خطأ معروف وقرار هندسي.
-6. 60 ثانية: سؤال التحقق الإلزامي: **لماذا نثق بهذا الرقم؟ | Why should we trust this number?**
+An individual five-part walkthrough covers the problem, architecture, demonstration, evidence and decision. Up to five slides, five minutes of presentation and two minutes of verification. The 10 presentation points are included in 100.
 
-عند وجود 20 متدربًا يكون ترتيب العرض لـ10 أزواج متتابعة، وتكون المشاريع مفتوحة مسبقًا لتجنب وقت تبديل الأجهزة. يجيب كل مشارك عن سؤال تحقق واحد أثناء العرض أو spot-check معلن.
+[مواصفات العرض ومعاييره](presentation-guide.md) · [التقييم التقني والإداري والعرض](policies/assessment-and-completion.md)
 
 ## امتداد المشروع الإلزامي | Required measured extension
 
-اختر واحدة بعد اكتمال R1–R7: dialect router، encoder برأسين، تحسين جودة البحث، batch endpoint، أو QA على مستندات طويلة. يجب قياس الفائدة والتكلفة وذكر baseline؛ وجود feature بلا تقييم لا يحقق المتطلب.
+اختر واحدة بعد إكمال المتطلبات الأساسية R1–R6؛ بها تستكمل R7: dialect router، encoder برأسين، تحسين جودة البحث، batch endpoint، أو QA على مستندات طويلة. يجب قياس الفائدة والتكلفة وذكر baseline؛ وجود feature بلا تقييم لا يحقق المتطلب.
 
-**مهام bonus للمنتهين مبكرًا:** zero-shot showdown، Arabizi lane، drift tripwire، أو مقارنة HNSW/IVF مع Flat على corpus موسع. يطبق bonus الرسمي حتى `+5` نقاط فقط إذا بلغت المتطلبات الإلزامية `80/100` على الأقل، ولا تتجاوز الدرجة `100`.
+**امتدادات إضافية اختيارية:** zero-shot، Arabizi، drift، أو مقارنة HNSW/IVF. تبقى للتوسع بعد الامتداد المقاس الإلزامي؛ لا تضيف نقاطًا خارج مجموع التقييم 100.
+
 
 ## تعريف الإنجاز | Definition of done
 
 المشروع منجز عندما يمكن لمراجع جديد فتح README، تشغيل مسار smoke على Colab Free أو CPU، مشاهدة الاختبارات، تتبع كل رقم إلى artefact، وفهم القيود دون شرح شفهي من صاحبه.
+
+## إرشادات المشروع الحالية | Current project guidance
+
+[السيناريو والهيكل مع الشرح](project-walkthrough.md) · [الفحص قبل الإرسال](pre-submission-checklist.md) · [سياسة التسليم مرة واحدة](policies/submission.md)

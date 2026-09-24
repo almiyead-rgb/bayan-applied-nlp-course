@@ -24,12 +24,10 @@ The **Bayan learning portal** workflow builds and tests the site and publishes a
 
 تبني آلية **Bayan learning portal** الموقع وتفحصه وتنتج نسخة قابلة للتنزيل. يجري النشر عندما يكون مصدر Pages مضبوطًا على **GitHub Actions**. عند عدم التفعيل، يختار مالك المستودع **Settings → Pages → Source → GitHub Actions** ثم يشغّل الآلية. يعرض ملخص التنفيذ الحالة الفعلية؛ نجاح البناء وحده لا يعني أن الموقع منشور.
 
-## Preservation | الحفاظ على المحتوى
+## Preservation and scope | الحفظ والنطاق
 
-The update preserves lesson bodies, the nine notebooks, datasets, executable NLP source, technical tests, starter ZIP and assessment thresholds. Delivery-only documentation now uses 300 explanation minutes and 60 dedicated lab minutes per day. Assessment windows and breaks are explicitly outside the 24 net learning hours. See the [delivery plan](../docs/04-delivery-plan.md).
+Scientific notebooks, datasets, shared NLP implementation and existing scientific unit tests are preserved. The instructor-directed v2.1 update changes the assessment and learner guidance: 70 technical +20 administrative +10 presentation =100; one final assessment; narrative day journeys without detailed times. Student templates, validation helpers and the starter ZIP are regenerated consistently.
 
-يحافظ التحديث على الدروس والدفاتر التسعة والبيانات والكود العلمي والاختبارات التقنية وحزمة البداية وحدود التقييم. يستخدم تنظيم التنفيذ 300 دقيقة شرح و60 دقيقة لاب يوميًا، وتُعلن نوافذ التقييم والاستراحات خارج 24 ساعة تعلم صافية. راجع [خطة التنفيذ](../docs/04-delivery-plan.md).
+تبقى الدفاتر العلمية والبيانات والتنفيذ العلمي واختباراته محفوظة. يحدّث الإصدار 2.1 التقييم والإرشادات بتوجيه المدربة: 70 تقنية و20 إدارية و10 عرض =100؛ وتصحيح واحد؛ ورحلة أيام دون تقسيم زمني مفصل. تعاد توليد القوالب والفواحـص الإضافية وحزمة البداية بصورة متسقة.
 
-Portal acceptance tests do not rerun ML training. A hosted-Colab clean-account rehearsal and lab duration measurement remain operational checks before teaching. No new accreditation or production-readiness claim is made.
-
-لا تعيد اختبارات الواجهة تدريب النماذج. تبقى تجربة Colab المستضافة بحساب نظيف وقياس مدة اللاب فحصين تشغيليين قبل التدريس. لا يدّعي التحديث اعتمادًا جديدًا أو جاهزية إنتاجية.
+Portal/preflight tests do not rerun model training or establish authorship. No new accreditation claim is made.

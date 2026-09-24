@@ -24,6 +24,7 @@ TEMPLATE_MAP = {
     "DATA_CARD_TEMPLATE.md": "DATA_CARD.md",
     "PROJECT_SUMMARY.template.json": "PROJECT_SUMMARY.json",
     "SUBMISSION.template.yml": "SUBMISSION.yml",
+    "DEMO_SCRIPT_TEMPLATE.md": "PRESENTATION.md",
 }
 COPY_DIRECTORIES = ("notebooks", "src", "tests", "data", "assessments")
 COPY_FILES = (
@@ -33,23 +34,7 @@ COPY_FILES = (
     "requirements-day4.txt",
 )
 
-GETTING_STARTED = """# ابدأ مشروع بيان | Start your Bayan repository
-
-هذه الحزمة هي نقطة بدء المتدرب الرسمية لبرنامج `SDA-AIE-211`.
-
-1. فك الضغط وارفع **محتويات** المجلد إلى مستودع GitHub عام باسم `bayan-nlp-YOUR-GITHUB-USERNAME`.
-2. استبدل كل `FILL_ME` و`TODO` و`YOUR_USERNAME` في ملفات الجذر.
-3. افتح الدفاتر بالترتيب `00` إلى `08`. تحتوي النسخ على نتائج مرجعية محفوظة؛ نفّذ خلاياك واحفظ نتائجك أنت قبل التسليم.
-4. شغّل `PYTHONPATH=src python -m pytest -q`.
-5. شغّل `PYTHONPATH=src python scripts/validate_submission.py .` قبل إنشاء الوسم النهائي.
-
-ملاحظة: `assessments/pa-01/starter_buggy.py` معطوب **عن قصد**؛ أمر PA‑1 يبدأ بثلاث حالات FAIL ثم يصل إلى PASS بعد إصلاحك. لا يدخل هذا السيناريو في أمر pytest العام.
-
-المصدر العام الكامل والتعليمات المحدثة:
-https://github.com/almiyead-rgb/bayan-applied-nlp-course
-
-لا ترفع أوزان النماذج أو مفاتيح API أو بيانات أشخاص. استخدم بيانات الدورة الاصطناعية فقط.
-"""
+GETTING_STARTED = '# ابدأ مشروع بيان | Start your Bayan repository\n\nحزمة البداية التعليمية لبرنامج SDA-AIE-211 بإعداد ميعاد المري. التقييم 70 تقنية + 20 إدارية + 10 عرض = 100. التصحيح مرة واحدة بعد الإرسال؛ صحح وافحص قبل التسليم.\n\nUse this scaffold for your own work. Save and run your own nine notebooks, upload actual outputs and code, complete the required reports and PRESENTATION.md, then validate your final release. No edited replacement is accepted after hand-in.\n\n1. فك ZIP وارفع محتوياته مع المجلدات إلى مستودعك الشخصي العام على main؛ لا ترفع ZIP فقط.\n2. استبدل حقول القالب في ملفات الجذر بمعلوماتك الفعلية، لا بمخرجات منسوخة.\n3. احفظ نسخك في Drive وشغّل الخلايا بالترتيب، ثم احفظ notebooks/00–08 في GitHub بأسمائها المطلوبة.\n4. احفظ التقارير وتعديلات src/bayan منفصلة؛ حفظ الدفتر لا يحفظ جميع ملفات runtime.\n5. شغّل: PYTHONPATH=src python -m pytest -q tests\n6. شغّل: python scripts/validate_submission.py .\n7. شغّل: python scripts/preflight_submission.py . --report reports/preflight.json\n8. افحص الروابط والخصوصية والعرض، ثم أنشئ submission-v1.0 وأعد الفحص مع --require-tag.\n\nتظهر حزمة البداية فشلًا متوقعًا قبل ملء حقول الطالب. لا تغيّر الفاحص لكي يمر. أنشطة PA تدريبية دون درجة مستقلة؛ كود PA-1 معطوب عمدًا ولا يدخل pytest العام.\n\nFull step-by-step learner guide / الدليل الكامل:\nhttps://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/learner-workflow.md\n\nRubric / التقييم:\nhttps://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/policies/assessment-and-completion.md\n\nDo not upload model weights, secrets or real personal data. / لا تنشر الأوزان أو الأسرار أو البيانات الشخصية الحقيقية.\n'
 
 GITIGNORE = """# Model and runtime artefacts
 *.bin
@@ -109,7 +94,8 @@ def main() -> None:
 
     scripts_directory = STARTER / "scripts"
     scripts_directory.mkdir()
-    shutil.copy2(ROOT / "scripts" / "validate_submission.py", scripts_directory)
+    for name in ("validate_submission.py", "preflight_submission.py", "export_submission.py"):
+        shutil.copy2(ROOT / "scripts" / name, scripts_directory)
     (STARTER / "reports").mkdir()
     (STARTER / "reports" / "README.md").write_text(REPORTS_README, encoding="utf-8")
     (STARTER / "sample_outputs").mkdir()

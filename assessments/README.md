@@ -1,23 +1,17 @@
-# حزمة التقييم | Assessment Package
+# أنشطة الممارسة | Practice activities
 
-هذه الحزمة تكمل نظام التقييم الرسمي لبرنامج `SDA-AIE-211`. تعرض مواد المتدرب وتعليمات التسليم فقط؛ لا تنشر مفاتيح الإجابة أو نموذج التصحيح الداخلي.
+تدعم PA-1 وPA-2 والاختبار القصير الفهم والاستعداد للمشروع. في إصدار **BAYAN-100-v2.1** لا تمنح هذه الأنشطة وزنًا مستقلًا؛ التقييم النهائي هو **70 تقنية + 20 إدارية + 10 للعرض = 100**.
 
-| المكوّن | الزمن | الوزن من الدرجة النهائية | ما يسلّمه المتدرب |
-|---|---:|---:|---|
-| [PA‑1: تشخيص مسار NLP](pa-01/README.md) | 30 دقيقة | ضمن 15% المشتركة | كود مصحح + canaries خضراء + مذكرة تشخيص |
-| [PA‑2: مراجعة تقرير منافس](pa-02/README.md) | 30 دقيقة | ضمن 15% المشتركة | قرار مراجعة مدعوم بالدليل |
-| [الاختبار القصير](quiz/README.md) | 15 دقيقة | 10% | 10 إجابات وفق النموذج الذي توفره الجهة |
+PA-1, PA-2 and the quiz support learning and project readiness. They have no separate weight in this version. Final assessment is **70 technical + 20 administrative + 10 presentation = 100**.
 
-وزن PA‑1 وPA‑2 **مجتمعين** هو 15%؛ تعلن الجهة المنظمة توزيع الدرجة بينهما قبل التقييم. ينفذ PA‑1 في نافذة مراقبة معلنة بعد تعلم اليوم الثالث، وPA‑2 والاختبار في نوافذ معلنة لليوم الرابع؛ خارج 300 دقيقة الشرح و60 دقيقة اللاب اليومية. تبقى المدد 30 و30 و15 دقيقة على التوالي. لا يفترض المتدرب إعادة محاولة غير معلنة.
+| Activity | الغرض | Purpose |
+|---|---|---|
+| [PA-1](pa-01/README.md) | تشخيص أخطاء واختبار الإصلاح | Diagnose defects and verify repairs |
+| [PA-2](pa-02/README.md) | مراجعة تقرير ومصداقية القياس | Review measurement claims |
+| [Quiz](quiz/README.md) | التحقق من فهم المفاهيم | Check conceptual understanding |
 
-## قواعد مشتركة
+ملف `starter_buggy.py` معطوب عمدًا ومفصول عن اختبارات المشروع؛ لا تغيّر canaries لكي تمر. وثّق ما تعلمته، ولا تنشر إجابات زملائك أو تنسبها إلى نفسك.
 
-1. استخدم بيانات السيناريو الاصطناعية فقط.
-2. لا تغيّر canary أو معيار القبول كي يمر الكود.
-3. وثّق التشخيص، والتغيير، والدليل؛ النتيجة بلا تفسير لا تكفي.
-4. اذكر أي مساعدة أو مرجع وفق [سياسة النزاهة والخصوصية](https://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/policies/integrity-and-privacy.md).
-5. سلّم الملفات بالأسماء المحددة وفي الموعد الذي تعلنه الجهة المنظمة.
+The PA-1 starter intentionally fails; it is separate from the project tests. Do not weaken canaries. Document your understanding and respect authorship.
 
-> وجود كود معطوب داخل مجلد PA‑1 مقصود لأغراض التقييم، ومعزول عن كود الدورة والدفاتر التي اجتازت فحوص الإصدار.
-
-الوزن وشروط الاجتياز الكاملة: [سياسة التقييم](https://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/policies/assessment-and-completion.md).
+[سياسة التقييم الحالية](https://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/policies/assessment-and-completion.md)

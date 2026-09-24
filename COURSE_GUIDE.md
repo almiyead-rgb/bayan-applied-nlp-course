@@ -33,16 +33,11 @@
 
 لا تحصل على نقاط لمجرد تشغيل خلية؛ المطلوب أن تفسر النتيجة والقرار.
 
-## جدول اليوم | Daily rhythm
+## رحلة التعلم | Learning journey
 
-| الفترة | المدة | النشاط | Activity |
-|---|---:|---|---|
-| 1–5 | 300 دقيقة | خمس فترات شرح وأمثلة وعروض توضيحية | Five explanation and demonstration blocks |
-| 6 | 60 دقيقة | لاب مستقل لتنفيذ Core وحفظ الدليل | Dedicated Core execution and evidence lab |
+أربعة أيام متدرجة، ولكل يوم مفاهيم وتطبيق ودليل. [افتح رحلة الأيام دون جدول زمني تفصيلي](docs/04-delivery-plan.md).
 
-**اليوم: 300 دقيقة شرح + 60 دقيقة لاب = 6 ساعات تعلم صافية؛ البرنامج: 24 ساعة.** الاستراحات والتجهيز ونوافذ التقييم منفصلة ومعلنة؛ ليست محسوبة ضمن 24 ساعة. راجع [خطة التنفيذ](docs/04-delivery-plan.md) للتفاصيل وحدود تقدير وقت اللاب.
-
-**Daily: 300 minutes of explanation + 60 lab minutes = 6 net learning hours; course: 24 hours.** Breaks, setup and assessment windows are separately scheduled. Lab timings are targets, not verified clean-runtime benchmarks.
+Four progressive days, each with concepts, practice and evidence. Open the journey guide for topic summaries.
 
 ## محتوى الأيام | Day-by-day
 
@@ -98,29 +93,19 @@
 
 ## التقييم | Assessment
 
-| المكوّن | الوزن | ماذا يثبت؟ |
-|---|---:|---|
-| المختبرات 1–7 | 35% | التطبيق اليومي والاختبارات والـcommits |
-| تقييمان عمليان | 15% | التشخيص والمراجعة بالدليل |
-| اختبار قصير | 10% | فهم المفاهيم والقرارات |
-| مشروع بيان | 40% | التكامل والتقييم والتوثيق والعرض |
+**70 تقنية + 20 إدارية + 10 للعرض = 100 درجة إجمالًا.** العرض داخل المئة. تُقيّم نسخة التسليم مرة واحدة ولا تقبل نسخة معدلة بعد الإرسال. تبقى الأنشطة والاختبارات القصيرة للممارسة دون وزن مستقل.
 
-التفاصيل في [التقييم والاجتياز](docs/policies/assessment-and-completion.md).
+**70 technical + 20 administrative + 10 presentation = 100 total.** The presentation is included. The submitted version is graded once; later replacements are not accepted. Practice activities and quizzes have no separate weight.
 
-مواد المتدرب القابلة للتسليم في [حزمة التقييم](assessments/README.md): PA‑1 لتشخيص ثلاثة عقود تقنية، وPA‑2 لمراجعة تقرير منافس، وتعليمات اختبار مغلق من 10 أسئلة. لا توجد مفاتيح إجابة في المستودع العام.
+[سلم التقييم الكامل | Full rubric](docs/policies/assessment-and-completion.md) · [متطلبات العرض | Presentation](docs/presentation-guide.md)
 
-## شروط الاجتياز المختصرة | Completion summary
+## شروط الاجتياز | Completion requirements
 
-- 70/100 فأعلى إجمالًا.
-- 70/100 فأعلى في مشروع بيان.
-- مستودع GitHub عام مكتمل.
-- اجتياز فاحص التسليم.
-- tag نهائي `submission-v1.0`.
-- لا مخالفة نزاهة أو خصوصية.
+الحد الأدنى **70/100** مع الأدلة الإلزامية والتسليم الصحيح وعدم ثبوت مخالفة نزاهة أو خصوصية. التميز من **90/100** بعد استيفاء الشروط، بلا نقاط خارج المئة. `submission-v1.0` وSHA النهائي يحددان النسخة التي ستصحح مرة واحدة.
 
-الحضور، والتيسيرات، وإعادة المحاولة، وإصدار الشهادة/الشارة تخضع لما تعلنه الجهة المنظمة للدفعة؛ لا يفترض هذا الدليل نسبة غير منشورة رسميًا.
+A minimum of **70/100**, mandatory evidence, valid hand-in and no established integrity/privacy violation are required. Distinction starts at **90/100** after those conditions; no extra bonus is added. The final tag and recorded SHA identify the single assessed version.
 
-**التميّز:** `90/100` فأعلى بعد استيفاء شروط الاجتياز. يمكن لمهام bonus إضافة حتى `+5` نقاط (الدرجة لا تتجاوز `100`) فقط إذا بلغت المتطلبات الإلزامية للمشروع `80/100` على الأقل.
+إصدار الشهادة والحضور والتيسيرات الإدارية تخضع لإجراءات الجهة المنظمة. لا يُقدّم تعديل السلم باعتباره اعتمادًا جديدًا.
 
 ## سير العمل اليومي | Daily workflow
 

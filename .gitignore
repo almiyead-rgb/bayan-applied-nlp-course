@@ -58,3 +58,6 @@ tmp/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Generated learning portal (published separately in docs/index.html)
+_site/

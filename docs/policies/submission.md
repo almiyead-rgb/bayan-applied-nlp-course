@@ -2,7 +2,7 @@
 
 ## قاعدة التسليم
 
-يسلّم كل متدرب **مستودع GitHub عامًا باسمه**، حتى عند التعاون في الأنشطة الصفية. الرابط هو دليل المشروع؛ ملفات Drive وحدها ليست تسليمًا.
+يسلّم كل متدرب **مستودع GitHub عامًا بحسابه الشخصي**، حتى عند التعاون في الأنشطة الصفية. الرابط هو دليل المشروع؛ ملفات Drive وحدها ليست تسليمًا.
 
 ## اسم المستودع
 
@@ -25,6 +25,7 @@ MODEL_CARD.md
 DATA_CARD.md
 PROJECT_SUMMARY.json
 SUBMISSION.yml
+PRESENTATION.md
 notebooks/
 src/bayan/
 tests/
@@ -126,7 +127,7 @@ PYTHONPATH=src python scripts/validate_submission.py . \
 - [ ] جميع الروابط تعمل في نافذة خاصة بلا صلاحيات إضافية.
 - [ ] README يشرح التشغيل من الصفر.
 - [ ] notebooks تفتح وتعمل بالترتيب.
-- [ ] نتائجك موسومة `MEASURED`.
+- [ ] نتائجك موسومة وفق حقيقتها: `MEASURED_SMOKE` للعينة المصغرة وقياس المشروع الفعلي موثق؛ لا تنسخ نتائج مرجعية.
 - [ ] لا password أو token أو email شخصي أو PII.
 - [ ] الاختبارات خضراء.
 - [ ] `PROJECT_SUMMARY.json` صالح.
@@ -150,4 +151,38 @@ PYTHONPATH=src python scripts/validate_submission.py . \
 PYTHONPATH=src python scripts/validate_submission.py . --require-tag
 ```
 
-بعد الوسم لا تعدّل النتائج وتدّعي أنها النسخة نفسها؛ أي تصحيح لاحق يحتاج tag جديدًا إذا سُمح بإعادة التسليم.
+## سياسة التقييم مرة واحدة | One final assessment
+
+**يسلّم المتدرب مرة واحدة للتصحيح. لا تقبل تعديلات أو إعادة تسليم بعد إرسال الرابط النهائي إلى المدربة.** قبل الإرسال يجوز الفحص والإصلاح والتجربة؛ لا ترسل نسخة تجريبية للتقييم ثم تطلب استبدالها.
+
+**One final submission is assessed once. No edited replacement or resubmission is accepted after the final hand-in.** Before sending, test and correct your work as needed.
+
+أرسل عبر قناة التسليم الخاصة المعلنة: رابط المستودع، ورابط إصدار `submission-v1.0`، وبصمة **Commit SHA الكاملة** التي يشير إليها الوسم، ورابط `PRESENTATION.md` أو العرض. لا ترسل رابط `file:///C:/...` أو رابط المدربة أو رابطًا خاصًا يتطلب طلب صلاحية.
+
+Send the repository URL, `submission-v1.0` release URL, the full commit SHA resolved by the tag, and the presentation link through the announced private hand-in route. Do not submit a local computer path, the instructor's URL or an inaccessible private share.
+
+تثبت المدربة نسخة SHA المستلمة وقت التسليم. قد يسمح GitHub تقنيًا بتعديل `main` أو نقل الوسم، لكن التعديل اللاحق **لا يدخل في التصحيح**؛ المرجع هو SHA المسجل لا رأس الفرع المتغير. حفظ الإقرار ليس قفلًا تقنيًا للمستودع.
+
+The instructor captures the received SHA. GitHub may technically allow branch changes or tag moves, but later changes are outside assessment. The recorded commit, not the moving branch head, defines the assessed version. An acknowledgement is not a technical repository lock.
+
+إقرار التسليم: «راجعت المتطلبات الإدارية والتقنية والعرض، وهذه نسختي النهائية التي تُقيّم مرة واحدة، وأفهم أنه لا يسمح باستبدالها أو تعديلها لأغراض إعادة التصحيح بعد الإرسال».
+
+Acknowledgement: “I reviewed the administrative, technical and presentation requirements. This is my final version for one assessment; I understand that no replacement or amendment for regrading is accepted after hand-in.”
+
+## تحقق من أن الوسم يطابق نسختك | Verify the tag target
+
+في نسخة Git المستنسخة حديثًا من مستودعك، وبعد نشر الإصدار:
+
+```bash
+git fetch origin --tags
+python scripts/preflight_submission.py . --require-tag
+python scripts/validate_submission.py . --require-tag
+git rev-parse HEAD
+git rev-parse 'submission-v1.0^{commit}'
+```
+
+يجب أن تتطابق البصمتان عند تثبيت النسخة النهائية. لا تعِد كتابة نتيجة الفحص النهائية داخل الوسم نفسه بعد إنشائه؛ أرسل SHA والروابط الصحيحة. الفاحص يفحص النسخة المحلية؛ راجع الإصدار العام أيضًا.
+
+Both SHAs must match for the final frozen version. Do not mutate the release to insert a post-tag report; hand in the verified SHA and links. Local checks do not replace a public release check.
+
+[دليل المبتدئ للتشغيل والحفظ](../learner-workflow.md) · [قائمة الفحص](../pre-submission-checklist.md) · [سُلّم 100 درجة](assessment-and-completion.md) · [العرض](../presentation-guide.md)
