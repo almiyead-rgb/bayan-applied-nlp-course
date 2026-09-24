@@ -1,0 +1,26 @@
+{
+  "result": "PORTAL_CONTENT_CONTRACT_PASS",
+  "count": 14,
+  "checks": [
+    "100_total_including_10_presentation_points",
+    "unique_rubric_ids_and_item_totals",
+    "four_ordered_days",
+    "bilingual_daily_topics_examples_and_architecture",
+    "scenario_presentation_workflow_and_policy_guides_present",
+    "no_superseded_assessment_percentages",
+    "narrative_days_without_clock_schedules",
+    "owner_brand_image_embedded_for_offline_use",
+    "owner_brand_image_matches_supplied_asset",
+    "beginner_run_export_readme_attribution_and_final_revision_steps",
+    "runnable_python_guidance_blocks_present",
+    "learner_workflow_python_syntax",
+    "one_shot_policy_with_evidence_based_integrity_notice",
+    "no_machine_specific_student_links"
+  ],
+  "rubric_totals": {
+    "administrative": 20,
+    "technical": 70,
+    "presentation": 10
+  },
+  "scope": "Learner content and syntax only; no grading, authorship inference or ML rerun."
+}
