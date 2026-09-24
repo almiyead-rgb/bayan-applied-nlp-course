@@ -1,16 +1,20 @@
 name: Bayan learning portal
+
 on:
   push:
     branches: [main]
     paths-ignore: ['docs/index.html', 'portal/acceptance-report.json', 'portal/source-manifest.json']
   workflow_dispatch:
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
 concurrency:
   group: bayan-learning-portal
   cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,37 +28,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply checksum-verified first-party portal update once
-        shell: bash
-        run: |
-          python - <<'PY'
-          import base64, hashlib, json, lzma, pathlib, subprocess
-          root=pathlib.Path('.')
-          parts=sorted(root.glob('.github/portal-update.part*.b64'))
-          if not parts:
-              print('Source update already materialised; building tracked source files.')
-          else:
-              assert len(parts)==3
-              blob=base64.b64decode(''.join(p.read_text().strip() for p in parts),validate=True)
-              assert hashlib.sha256(blob).hexdigest()=='53c0e2ce8088d7cec13b18c1a2d67a406c5c26a81695cec677833c412400dc8d'
-              update=json.loads(lzma.decompress(blob))
-              allowed={'COURSE_GUIDE.md','README.md','START_HERE.md','assessments/README.md','day-01/README.md','day-02/README.md','day-03/README.md','day-04/README.md','docs/00-course-spec.md','docs/04-delivery-plan.md','docs/policies/assessment-and-completion.md','portal/README.md','portal/app.js','portal/course.json','portal/requirements.txt','portal/styles.css','portal/template.html','scripts/validate_course.py','tools/build_learning_portal.py','tools/test_learning_portal.py'}
-              assert set(update['paths'])==allowed
-              assert set(update['files'])<=allowed
-              subprocess.run(['git','merge-base','--is-ancestor',update['baseline'],'HEAD'],check=True)
-              patch=update['patch'].encode()
-              subprocess.run(['git','apply','--check','-'],input=patch,check=True)
-              subprocess.run(['git','apply','-'],input=patch,check=True)
-              for name,content in update['files'].items():
-                  p=root/name
-                  assert not p.exists(),f'Refusing to replace a new-source path: {name}'
-                  p.parent.mkdir(parents=True,exist_ok=True)
-                  p.write_text(content,encoding='utf-8')
-              for name,digest in update['hashes'].items():
-                  assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
-              for p in parts:p.unlink()
-              print('20 allowlisted source and delivery-document files verified. Temporary transport parts removed.')
-          PY
       - name: Preserve original scientific content
         run: |
           python - <<'PY'
@@ -75,18 +48,41 @@ jobs:
           node --check portal/app.js
           python tools/build_learning_portal.py
           python tools/test_learning_portal.py
-      - name: Store tested source, compiled site and audit reports
+      - name: Store verified compiled site and audit reports
         run: |
           cp _site/index.html docs/index.html
           cp _site/acceptance-report.json portal/acceptance-report.json
           cp _site/source-manifest.json portal/source-manifest.json
-          git add COURSE_GUIDE.md README.md START_HERE.md assessments/README.md day-01/README.md day-02/README.md day-03/README.md day-04/README.md docs/00-course-spec.md docs/04-delivery-plan.md docs/policies/assessment-and-completion.md docs/index.html portal scripts/validate_course.py tools/build_learning_portal.py tools/test_learning_portal.py
-          git add -u .github
+          git add docs/index.html portal/acceptance-report.json portal/source-manifest.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'feat(bayan): publish verified bilingual learner portal and 24-hour delivery plan'
+            git commit -m 'build(portal): refresh verified learner site and audit reports'
             git push origin HEAD:main
+          fi
+      - name: Check actual GitHub Pages configuration
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" > "$RUNNER_TEMP/bayan-pages.json" 2> "$RUNNER_TEMP/bayan-pages-error.txt"; then
+            KIND=$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("build_type",""))' "$RUNNER_TEMP/bayan-pages.json")
+            echo "PAGES_SOURCE=$KIND"
+            if [ "$KIND" = 'workflow' ]; then
+              echo 'ready=true' >> "$GITHUB_OUTPUT"
+              echo '{"ready_for_deployment":true,"source":"workflow","live_site_verified":false}' > _site/deployment-readiness.json
+              echo 'Build and browser acceptance passed. Pages is configured for Actions; deployment follows.' >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo 'ready=false' >> "$GITHUB_OUTPUT"
+              echo '{"ready_for_deployment":false,"reason":"Select GitHub Actions as the Pages source","live_site_verified":false}' > _site/deployment-readiness.json
+              echo 'Build passed. Select Settings > Pages > Source > GitHub Actions, then run this workflow to publish.' >> "$GITHUB_STEP_SUMMARY"
+            fi
+          else
+            echo 'PAGES_SOURCE=unavailable'
+            cat "$RUNNER_TEMP/bayan-pages-error.txt"
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo '{"ready_for_deployment":false,"reason":"Pages configuration unavailable; owner activation required","live_site_verified":false}' > _site/deployment-readiness.json
+            echo 'Build and browser acceptance passed. Pages is unavailable through this workflow token. An owner must enable Settings > Pages > Source > GitHub Actions, then run this workflow. No live-site claim is made.' >> "$GITHUB_STEP_SUMMARY"
           fi
       - uses: actions/upload-artifact@v4
         with:
@@ -97,24 +93,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site/
-      - name: Check actual GitHub Pages configuration
-        id: pages
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if gh api "repos/${GITHUB_REPOSITORY}/pages" > "$RUNNER_TEMP/bayan-pages.json" 2> "$RUNNER_TEMP/bayan-pages-error.txt"; then
-            KIND=$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("build_type",""))' "$RUNNER_TEMP/bayan-pages.json")
-            if [ "$KIND" = 'workflow' ]; then
-              echo 'ready=true' >> "$GITHUB_OUTPUT"
-              echo 'Build and browser acceptance passed. Pages is configured for Actions; deployment follows.' >> "$GITHUB_STEP_SUMMARY"
-            else
-              echo 'ready=false' >> "$GITHUB_OUTPUT"
-              echo 'Build passed. Select Settings > Pages > Source > GitHub Actions, then run this workflow to publish.' >> "$GITHUB_STEP_SUMMARY"
-            fi
-          else
-            echo 'ready=false' >> "$GITHUB_OUTPUT"
-            echo 'Build and browser acceptance passed. Pages is not available through this workflow token. An owner must enable Settings > Pages > Source > GitHub Actions, then run this workflow. No live-site claim is made.' >> "$GITHUB_STEP_SUMMARY"
-          fi
   deploy:
     if: needs.build.outputs.pages_ready == 'true'
     needs: build
