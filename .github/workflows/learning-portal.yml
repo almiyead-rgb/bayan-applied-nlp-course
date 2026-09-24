@@ -28,6 +28,26 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
+      - name: Apply versioned homepage presentation placement once
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          config_path = Path('portal/course.json')
+          config = json.loads(config_path.read_text(encoding='utf-8'))
+          if config['version'] == '2.1.0':
+              app_path = Path('portal/app.js')
+              app = app_path.read_text(encoding='utf-8')
+              previous = '${projectIntro()}${architecturePanel()}${assessmentPanel()}${submissionNotice()}${guideCards()}'
+              updated = '${projectIntro()}${architecturePanel()}${assessmentPanel()}${presentationPreview()}${submissionNotice()}${guideCards()}'
+              assert app.count(previous) == 1, 'Unexpected homepage source; review rather than overwrite.'
+              app_path.write_text(app.replace(previous, updated, 1), encoding='utf-8')
+              config['version'] = '2.1.1'
+              config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+              print('Presentation specifications now appear on the homepage and project page.')
+          else:
+              print('Versioned homepage migration already applied or not applicable.')
+          PY
       - name: Preserve original scientific content
         run: |
           python - <<'PY'
@@ -53,16 +73,18 @@ jobs:
           node --check portal/app.js
           python tools/build_learning_portal.py
           python tools/test_learning_portal.py
-      - name: Store verified compiled site and audit reports
+          python tools/test_portal_content_contract.py _site/index.html --report _site/content-contract.json
+      - name: Store verified source, compiled site and audit reports
         run: |
           cp _site/index.html docs/index.html
           cp _site/acceptance-report.json portal/acceptance-report.json
           cp _site/source-manifest.json portal/source-manifest.json
-          git add docs/index.html portal/acceptance-report.json portal/source-manifest.json
+          cp _site/content-contract.json portal/content-contract.json
+          git add portal/app.js portal/course.json docs/index.html portal/acceptance-report.json portal/source-manifest.json portal/content-contract.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'build(portal): refresh verified learner site and audit reports'
+            git commit -m 'build(portal): verify learner content and publish homepage presentation brief'
             git push origin HEAD:main
           fi
       - name: Check actual GitHub Pages configuration
