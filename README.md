@@ -1,7 +1,7 @@
 # معالجة اللغات الطبيعية التطبيقية  
 # Applied Natural Language Processing
 
-> **بوابة بيان التفاعلية | Bayan learning portal:** [افتح الموقع · Open website](https://almiyead-rgb.github.io/bayan-applied-nlp-course/) · [خطة التنفيذ 24 ساعة · Delivery plan](docs/04-delivery-plan.md).
+> **بوابة بيان التفاعلية | Bayan learning portal:** [افتح الموقع · Open website](https://almiyead-rgb.github.io/bayan-applied-nlp-course/) · [رحلة الأيام · Learning journey](docs/04-delivery-plan.md).
 > English and Arabic, four guided days, original-source reader, searchable glossary and local personal progress. · عربية وإنجليزية، أربعة أيام موجّهة، قارئ للمصادر الأصلية، بحث في المصطلحات وتقدم شخصي محلي.
 > Website deployment status is shown in [Bayan learning portal Actions](https://github.com/almiyead-rgb/bayan-applied-nlp-course/actions/workflows/learning-portal.yml). The source files below remain available independently. · تعرض صفحة Actions حالة نشر الموقع؛ وتبقى الملفات أدناه متاحة بصورة مستقلة.
 
@@ -12,12 +12,25 @@
 **المستوى | Level:** Specialist · تخصصي<br>
 **المتطلب السابق | Prerequisite:** `SDA-AIE-112` أو ما يعادله في Python وأساسيات تعلم الآلة<br>
 **السياق التدريبي | Training context:** أكاديمية سدايا · SDAIA Academy<br>
-**المدة | Duration:** 4 أيام × 6 ساعات تعلم = 24 ساعة — يوميًا: 5 ساعات شرح + ساعة لاب<br>
+**المدة | Duration:** 4 أيام · 24 ساعة تعلم · رحلة مفاهيم وتطبيق ومشروع<br>
 **البيئة | Environment:** Google Colab Free + GitHub
 
 برنامج تخصصي تطبيقي يبدأ بفحص جاهزية ومراجعة تأسيسية مشتركة، ثم ينتقل من معالجة النصوص إلى بناء مشروع **بيان**: نظام NLP ثنائي اللغة يجمع التصنيف، والتعرف على الكيانات، والإجابة الاستخراجية عن الأسئلة، والبحث الدلالي، والتقييم، وتحسين الاستدلال.
 
 A specialist applied program with a shared readiness refresher, progressing from text processing to **Bayan**, a bilingual NLP project combining classification, NER, extractive QA, semantic search, evaluation, and inference optimisation.
+
+## المشروع والتقييم في صفحة واحدة | Project and assessment
+
+| المحور / Category | الدرجة / Points |
+|---|---:|
+| المتطلبات التقنية / Technical | 70 |
+| المتطلبات الإدارية / Administrative | 20 |
+| العرض الفردي / Presentation | 10 |
+| **الإجمالي / Total** | **100** |
+
+**التصحيح مرة واحدة بعد الإرسال النهائي. العرض داخل المئة، وليس إضافة إليها.**
+
+[سيناريو بيان ومعماريته وهيكل الملفات](docs/project-walkthrough.md) · [المعايير والنقاط التفصيلية](docs/policies/assessment-and-completion.md) · [مواصفات العرض](docs/presentation-guide.md) · [خطوات Colab وGitHub والتصدير](docs/learner-workflow.md) · [قائمة ما قبل التسليم](docs/pre-submission-checklist.md)
 
 ## ابدأ هنا | Start here
 
@@ -54,7 +67,7 @@ A specialist applied program with a shared readiness refresher, progressing from
 ## الوصول والتنزيل | Access and downloads
 
 - [تنزيل ملفات الدورة كاملة من `main`](https://github.com/almiyead-rgb/bayan-applied-nlp-course/archive/refs/heads/main.zip).
-- [تنزيل حزمة بداية الطالب الجاهزة](downloads/bayan-student-starter.zip) — `75` ملفًا، تشمل الدفاتر التسعة والمصدر والاختبارات والقوالب وحزمة التقييم في أسمائها النهائية.
+- [تنزيل حزمة بداية الطالب الجاهزة](downloads/bayan-student-starter.zip) — تشمل الدفاتر التسعة والمصدر والاختبارات والقوالب وحزمة التقييم في أسمائها النهائية.
 - [استعراض حزمة بداية الطالب قبل تنزيلها](student-starter/GETTING_STARTED.md).
 - [قيمة SHA-256 للحزمة](downloads/SHA256SUMS.txt).
 

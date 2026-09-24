@@ -1,8 +1,8 @@
 {
   "result": "PORTAL_ACCEPTANCE_PASS",
-  "count": 19,
+  "count": 27,
   "checks": [
-    "56_source_documents_and_unique_routes",
+    "source_documents_and_unique_routes",
     "seven_labs_eight_application_notebooks_plus_doctor",
     "source_hash_integrity",
     "sanitised_reference_HTML",
@@ -12,7 +12,14 @@
     "three_language_modes",
     "personal_progress_and_next_step",
     "local_storage_reload_persistence",
-    "all_daily_plans_and_colab_links",
+    "daily_topic_explanations_architecture_and_colab_links",
+    "embedded_owner_image",
+    "home_project_scenario_and_branched_architecture",
+    "100_point_rubric_on_home",
+    "one_shot_integrity_notice",
+    "individual_presentation_and_file_structure",
+    "own_colab_link_generator_validation",
+    "self_review_not_grading_or_submission",
     "Arabic_English_search",
     "empty_search_state",
     "glossary_reader_and_table_direction",
@@ -20,7 +27,8 @@
     "mobile_and_tablet_no_horizontal_overflow",
     "missing_route_recovery",
     "explicit_progress_reset",
-    "no_JavaScript_runtime_errors"
+    "no_JavaScript_runtime_errors",
+    "offline_file_URL_project_and_day_navigation"
   ],
   "browser_mode": "local_HTTP_origin",
   "scope": "Portal only; original ML training notebooks were not rerun."

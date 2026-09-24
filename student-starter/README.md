@@ -1,6 +1,6 @@
 # Bayan — Bilingual Applied NLP Project
 
-**Student:** FILL_ME  
+**Learner ID / GitHub username:** FILL_ME  
 **GitHub:** FILL_ME  
 **Final release:** FILL_ME
 
@@ -108,11 +108,44 @@ flowchart LR
 
 ```bash
 PYTHONPATH=src python scripts/validate_submission.py . --require-tag
+PYTHONPATH=src python scripts/preflight_submission.py . --require-tag
 ```
 
 - Validator status: FILL_ME
 - CI badge/link: FILL_ME
 - Release `submission-v1.0`: FILL_ME
+
+## Presentation | العرض
+
+See `PRESENTATION.md`. FILL_ME: link your own examples and reports.
+
+## My contribution | مساهمتي
+
+- My change and file: FILL_ME
+- Reason and evidence: FILL_ME
+
+## AI assistance | الاستعانة بالأدوات
+
+FILL_ME: tool, assistance, verification and source credits—or honestly state none.
+
+## Training context | السياق التدريبي
+
+This educational project was developed during Applied Natural Language Processing
+with Transformers (SDA-AIE-211) in the SDAIA Academy training context.
+أُنجز هذا المشروع التعليمي ضمن دورة معالجة اللغات الطبيعية باستخدام المحولات
+(SDA-AIE-211) في السياق التدريبي لأكاديمية سدايا.
+
+Academy | الأكاديمية: [SDAIA Academy](https://github.com/SDAIAAcademy)  
+Trainer | المدربة: Meaad Al-Marri — ميعاد المري  
+Course source: https://github.com/almiyead-rgb/bayan-applied-nlp-course  
+#SDAIAAcademy
+
+This attribution does not claim Academy endorsement or ownership of third-party assets.
+لا يدعي هذا النسب اعتماد المشروع أو تملك أصول الأطراف الأخرى.
+
+## Final hand-in acknowledgement | إقرار التسليم النهائي
+
+FILL_ME: confirm you reviewed all requirements and understand this version is graded once, with no edited replacement after hand-in. Final tag: `submission-v1.0`.
 
 ## License and acknowledgements
 

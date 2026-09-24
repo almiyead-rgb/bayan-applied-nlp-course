@@ -1,104 +1,1123 @@
 {
   "id": "SDA-AIE-211",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "baseline": "ee7c7d8bf3a17c9989b37a3fdd337f3fc3730d7e",
   "repository": "https://github.com/almiyead-rgb/bayan-applied-nlp-course",
-  "instructor": ["Meaad Al-Marri", "ميعاد المري"],
+  "instructor": [
+    "Meaad Al-Marri",
+    "ميعاد المري"
+  ],
   "instruction_minutes": 300,
   "lab_minutes": 60,
-  "assessment_weights": [35, 15, 10, 40],
+  "assessment_weights": [
+    70,
+    20,
+    10
+  ],
   "days": [
     {
-      "id": 1, "label": ["From text to meaning", "من النص إلى المعنى"],
-      "question": ["How does a sentence become something a Transformer can process?", "كيف تتحول جملة بسيطة إلى شيء يستطيع المحوّل معالجته؟"],
-      "intro": ["Start with one feedback message, not a wall of equations. Follow its journey through protected text, tokens, embeddings and attention. Every step prepares a piece of Bayan.", "نبدأ بملاحظة واحدة، لا بصفحة مليئة بالمعادلات. نتتبع رحلتها: نص محمي، ثم وحدات ترميز، ثم تضمينات وانتباه. كل خطوة تجهّز جزءًا من بيان."],
-      "analogy": ["A token ID is like a catalogue number; an embedding is its learned numerical representation. The number alone is not the meaning.", "رقم الـToken يشبه رقمًا في الفهرس، أما الـEmbedding فهو تمثيله العددي المتعلَّم. الرقم وحده ليس المعنى."],
-      "watch": ["An attention heatmap is not causal proof of why the model decided.", "خريطة الانتباه ليست برهانًا سببيًا يشرح لماذا اتخذ النموذج قراره."],
-      "hours": [
-        ["Bayan story, readiness and the NLP journey", "قصة بيان، الجاهزية ورحلة معالجة اللغة"],
-        ["Unicode, privacy and two text copies", "Unicode والخصوصية ونسختا النص"],
-        ["Tokenisation, fertility and embeddings", "الترميز وكثافته والتضمينات"],
-        ["Q/K/V, attention and tensor shapes", "الاستعلام والمفتاح والقيمة والانتباه وأشكال المصفوفات"],
-        ["Transformer encoder and a guided reading of saved outputs", "مشفر المحوّل وقراءة موجّهة للمخرجات المحفوظة"]
+      "id": 1,
+      "label": [
+        "From text to meaning",
+        "من النص إلى المعنى"
       ],
-      "lessons": ["day-01/01-text-preprocessing.md", "day-01/02-tokenization-embeddings.md", "day-01/03-attention-transformers.md"],
-      "notebooks": ["01_text_processing_tokenization.ipynb", "02_attention_transformers.ipynb"],
-      "datasets": ["data/sample/bayan_day1_sample.csv"],
-      "lab_plan": [[5,"Open saved copies and check readiness","فتح النسخ المحفوظة وفحص الجاهزية"],[25,"Lab 1: preprocessing and tokenisation","مختبر 1: المعالجة والترميز"],[20,"Lab 2: attention and shape checks","مختبر 2: الانتباه وفحص الأشكال"],[10,"Gate A, explain a decision and save evidence","بوابة A وشرح قرار وحفظ الأدلة"]],
-      "gate": "day-01/04-labs-checkpoint.md", "gate_name": "A",
-      "evidence": ["Preprocessing tests + tokenizer decision + attention checks + commit", "اختبارات المعالجة + قرار الترميز + فحوص الانتباه + commit"],
-      "check": ["Does a larger token ID mean a stronger meaning?", "هل رقم Token الأكبر يعني معنى أقوى؟"],
-      "answer": ["No. It is a vocabulary index. The embedding and model encode learned representations.", "لا. هو فهرس داخل قاموس الرموز؛ أما التمثيلات المتعلَّمة ففي التضمينات والنموذج."],
-      "outcomes": ["LO1", "LO2"]
+      "question": [
+        "How does a sentence become something a Transformer can process?",
+        "كيف تتحول جملة بسيطة إلى شيء يستطيع المحوّل معالجته؟"
+      ],
+      "intro": [
+        "Start with one feedback message, not a wall of equations. Follow its journey through protected text, tokens, embeddings and attention. Every step prepares a piece of Bayan.",
+        "نبدأ بملاحظة واحدة، لا بصفحة مليئة بالمعادلات. نتتبع رحلتها: نص محمي، ثم وحدات ترميز، ثم تضمينات وانتباه. كل خطوة تجهّز جزءًا من بيان."
+      ],
+      "analogy": [
+        "A token ID is like a catalogue number; an embedding is its learned numerical representation. The number alone is not the meaning.",
+        "رقم الـToken يشبه رقمًا في الفهرس، أما الـEmbedding فهو تمثيله العددي المتعلَّم. الرقم وحده ليس المعنى."
+      ],
+      "watch": [
+        "An attention heatmap is not causal proof of why the model decided.",
+        "خريطة الانتباه ليست برهانًا سببيًا يشرح لماذا اتخذ النموذج قراره."
+      ],
+      "lessons": [
+        "day-01/01-text-preprocessing.md",
+        "day-01/02-tokenization-embeddings.md",
+        "day-01/03-attention-transformers.md"
+      ],
+      "notebooks": [
+        "01_text_processing_tokenization.ipynb",
+        "02_attention_transformers.ipynb"
+      ],
+      "datasets": [
+        "data/sample/bayan_day1_sample.csv"
+      ],
+      "gate": "day-01/04-labs-checkpoint.md",
+      "gate_name": "A",
+      "evidence": [
+        "Preprocessing tests + tokenizer decision + attention checks + commit",
+        "اختبارات المعالجة + قرار الترميز + فحوص الانتباه + commit"
+      ],
+      "check": [
+        "Does a larger token ID mean a stronger meaning?",
+        "هل رقم Token الأكبر يعني معنى أقوى؟"
+      ],
+      "answer": [
+        "No. It is a vocabulary index. The embedding and model encode learned representations.",
+        "لا. هو فهرس داخل قاموس الرموز؛ أما التمثيلات المتعلَّمة ففي التضمينات والنموذج."
+      ],
+      "outcomes": [
+        "LO1",
+        "LO2"
+      ],
+      "lab_steps": [
+        [
+          "Open saved copies and check readiness",
+          "فتح النسخ المحفوظة وفحص الجاهزية"
+        ],
+        [
+          "Lab 1: preprocessing and tokenisation",
+          "مختبر 1: المعالجة والترميز"
+        ],
+        [
+          "Lab 2: attention and shape checks",
+          "مختبر 2: الانتباه وفحص الأشكال"
+        ],
+        [
+          "Gate A, explain a decision and save evidence",
+          "بوابة A وشرح قرار وحفظ الأدلة"
+        ]
+      ],
+      "topics": [
+        {
+          "title": [
+            "The Bayan problem",
+            "مشكلة بيان"
+          ],
+          "explanation": [
+            "Turn Arabic and English feedback into an inspectable analysis. Distinguish a teaching prototype from a service that makes real decisions.",
+            "نحوّل ملاحظات عربية وإنجليزية إلى تحليل يمكن فحصه. نحدد المستفيد وما ينتجه المشروع، ونفصل النموذج التعليمي عن خدمة تتخذ قرارات حقيقية."
+          ],
+          "example": [
+            "An employee needs the topic, sentiment and similar cases—not an invented answer.",
+            "يحتاج الموظف الموضوع والمشاعر والحالات المتشابهة، لا إجابة مؤلّفة."
+          ]
+        },
+        {
+          "title": [
+            "Text, Unicode and privacy",
+            "النص وUnicode والخصوصية"
+          ],
+          "explanation": [
+            "Inspect text encoding, keep a safe display copy and create a model copy with documented masking and normalisation.",
+            "نفحص ترميز النص، ونحتفظ بنسخة عرض آمنة، وننشئ نسخة للنموذج مع إخفاء المعرّفات وتوثيق التطبيع. لا ننشر نصًا شخصيًا خامًا."
+          ],
+          "example": [
+            "Mask a synthetic phone number while preserving the surrounding complaint.",
+            "أخفِ رقم هاتف اصطناعيًا دون إفساد معنى الملاحظة."
+          ]
+        },
+        {
+          "title": [
+            "Tokens and embeddings",
+            "الترميز والتضمينات"
+          ],
+          "explanation": [
+            "Compare words and subwords; measure fragmentation and truncation. Token IDs are vocabulary positions, while embeddings are learned vectors.",
+            "نميّز الكلمات والوحدات الجزئية ونقيس التجزئة والقطع. رقم الرمز موضع في القاموس؛ أما التضمين فهو متجه عددي متعلّم."
+          ],
+          "example": [
+            "Compare token counts for the Arabic and English version of one message.",
+            "قارن عدد الرموز في نسختي الملاحظة العربية والإنجليزية."
+          ]
+        },
+        {
+          "title": [
+            "Attention and Q/K/V",
+            "الانتباه وQ/K/V"
+          ],
+          "explanation": [
+            "Trace a small attention computation: queries compare with keys, and the resulting weights combine values. Check tensor shapes and masks.",
+            "نتتبع حسابًا صغيرًا: تقارن الاستعلامات بالمفاتيح، وتستخدم الأوزان الناتجة لدمج القيم. نفحص أبعاد المصفوفات وأقنعة الانتباه."
+          ],
+          "example": [
+            "Explain why masked positions must not receive attention.",
+            "فسّر لماذا لا ينبغي أن تنتبه الخلية إلى المواضع المحجوبة."
+          ]
+        },
+        {
+          "title": [
+            "Transformer encoder",
+            "مشفر المحوّل"
+          ],
+          "explanation": [
+            "Connect multi-head attention, residual paths, normalisation and feed-forward layers; inspect a real forward pass and explain the limits of attention visualisation.",
+            "نربط الانتباه متعدد الرؤوس بالمسارات المتبقية والتطبيع والطبقات الأمامية، ونفحص تمريرًا فعليًا مع توضيح حدود تفسير خرائط الانتباه."
+          ],
+          "example": [
+            "Draw the encoder block and label its input and output shapes.",
+            "ارسم وحدة المشفر وحدد أبعاد المدخلات والمخرجات."
+          ]
+        }
+      ],
+      "architecture": [
+        [
+          "Synthetic AR/EN text",
+          "نص عربي/إنجليزي اصطناعي"
+        ],
+        [
+          "Privacy + profile",
+          "حماية + معالجة موثقة"
+        ],
+        [
+          "Tokens → vectors",
+          "رموز ← تمثيل عددي"
+        ],
+        [
+          "Encoder + attention checks",
+          "مشفر + فحوص الانتباه"
+        ]
+      ]
     },
     {
-      "id": 2, "label": ["Give the model a task", "أعطِ النموذج مهمة"],
-      "question": ["How can one pretrained encoder support classification, NER and extractive QA?", "كيف يخدم مشفر مدرَّب مسبقًا التصنيف والكيانات والأسئلة الاستخراجية؟"],
-      "intro": ["Keep the same Bayan context. First define the task and a baseline; then inspect the data split, task head and metric. Training comes after the contract is clear.", "نبقى مع سياق بيان نفسه. نحدد المهمة وخط الأساس أولًا، ثم نفهم تقسيم البيانات ورأس المهمة والمقياس. يأتي التدريب بعد وضوح العقد."],
-      "analogy": ["A shared foundation does not mean identical tasks: classification returns a label, NER labels entities, and extractive QA selects a span or no answer.", "الأساس المشترك لا يعني تطابق المهام: التصنيف يعيد فئة، والتعرف على الكيانات يحدد الكيانات، والإجابة الاستخراجية تختار مقطعًا أو لا توجد إجابة."],
-      "watch": ["High accuracy is not enough when groups leak across splits or labels are misaligned.", "ارتفاع الدقة لا يكفي إذا تسربت المجموعات بين التقسيمات أو اختلت محاذاة الوسوم."],
-      "hours": [
-        ["Pretraining, fine-tuning and task heads", "التدريب المسبق والضبط الدقيق ورؤوس المهام"],
-        ["TF-IDF baseline, honest splits and macro-F1", "خط أساس TF-IDF والتقسيم السليم وmacro-F1"],
-        ["NER, BIO labels and subword alignment", "الكيانات ووسوم BIO ومحاذاة الوحدات الجزئية"],
-        ["Extractive QA, valid spans and no-answer", "الأسئلة الاستخراجية والمقاطع الصالحة وعدم وجود إجابة"],
-        ["Arabic model choices and a guided trace of the training notebooks", "اختيار النماذج العربية وتتبع موجّه لدفاتر التدريب"]
+      "id": 2,
+      "label": [
+        "Give the model a task",
+        "أعطِ النموذج مهمة"
       ],
-      "lessons": ["day-02/01-fine-tuning-classification.md", "day-02/02-ner-label-alignment.md", "day-02/03-extractive-qa.md", "day-02/04-arabic-models-intro.md"],
-      "notebooks": ["03_text_classification.ipynb", "04_ner_and_qa.ipynb"],
-      "datasets": ["data/sample/bayan_day2_classification.csv", "data/sample/bayan_day2_ner.jsonl", "data/sample/bayan_day2_qa.json"],
-      "lab_plan": [[5,"Restore Gate A and check cached resources","استعادة بوابة A وفحص الموارد المحفوظة"],[20,"Lab 3a: classification and split checks","مختبر 3أ: التصنيف وفحص التقسيم"],[25,"Lab 3b: NER and QA checks","مختبر 3ب: فحوص الكيانات والأسئلة"],[10,"Gate B and evidence commit","بوابة B وحفظ الأدلة في commit"]],
-      "gate": "day-02/05-labs-checkpoint.md", "gate_name": "B",
-      "evidence": ["Baseline + zero group overlap + classification/NER/QA evidence + commit", "خط أساس + عدم تداخل المجموعات + أدلة التصنيف والكيانات والأسئلة + commit"],
-      "check": ["Can we report a tiny training smoke test as production accuracy?", "هل نعرض نتيجة تدريب مصغّر بوصفها دقة إنتاجية؟"],
-      "answer": ["No. Preserve the MEASURED_SMOKE label and explain the small synthetic sample and the frozen-test contract.", "لا. نحافظ على وسم MEASURED_SMOKE ونوضح صغر العينة الاصطناعية وعقد مجموعة الاختبار المجمدة."],
-      "outcomes": ["LO3", "LO5"]
+      "question": [
+        "How can one pretrained encoder support classification, NER and extractive QA?",
+        "كيف يخدم مشفر مدرَّب مسبقًا التصنيف والكيانات والأسئلة الاستخراجية؟"
+      ],
+      "intro": [
+        "Keep the same Bayan context. First define the task and a baseline; then inspect the data split, task head and metric. Training comes after the contract is clear.",
+        "نبقى مع سياق بيان نفسه. نحدد المهمة وخط الأساس أولًا، ثم نفهم تقسيم البيانات ورأس المهمة والمقياس. يأتي التدريب بعد وضوح العقد."
+      ],
+      "analogy": [
+        "A shared foundation does not mean identical tasks: classification returns a label, NER labels entities, and extractive QA selects a span or no answer.",
+        "الأساس المشترك لا يعني تطابق المهام: التصنيف يعيد فئة، والتعرف على الكيانات يحدد الكيانات، والإجابة الاستخراجية تختار مقطعًا أو لا توجد إجابة."
+      ],
+      "watch": [
+        "High accuracy is not enough when groups leak across splits or labels are misaligned.",
+        "ارتفاع الدقة لا يكفي إذا تسربت المجموعات بين التقسيمات أو اختلت محاذاة الوسوم."
+      ],
+      "lessons": [
+        "day-02/01-fine-tuning-classification.md",
+        "day-02/02-ner-label-alignment.md",
+        "day-02/03-extractive-qa.md",
+        "day-02/04-arabic-models-intro.md"
+      ],
+      "notebooks": [
+        "03_text_classification.ipynb",
+        "04_ner_and_qa.ipynb"
+      ],
+      "datasets": [
+        "data/sample/bayan_day2_classification.csv",
+        "data/sample/bayan_day2_ner.jsonl",
+        "data/sample/bayan_day2_qa.json"
+      ],
+      "gate": "day-02/05-labs-checkpoint.md",
+      "gate_name": "B",
+      "evidence": [
+        "Baseline + zero group overlap + classification/NER/QA evidence + commit",
+        "خط أساس + عدم تداخل المجموعات + أدلة التصنيف والكيانات والأسئلة + commit"
+      ],
+      "check": [
+        "Can we report a tiny training smoke test as production accuracy?",
+        "هل نعرض نتيجة تدريب مصغّر بوصفها دقة إنتاجية؟"
+      ],
+      "answer": [
+        "No. Preserve the MEASURED_SMOKE label and explain the small synthetic sample and the frozen-test contract.",
+        "لا. نحافظ على وسم MEASURED_SMOKE ونوضح صغر العينة الاصطناعية وعقد مجموعة الاختبار المجمدة."
+      ],
+      "outcomes": [
+        "LO3",
+        "LO5"
+      ],
+      "lab_steps": [
+        [
+          "Restore Gate A and check cached resources",
+          "استعادة بوابة A وفحص الموارد المحفوظة"
+        ],
+        [
+          "Lab 3a: classification and split checks",
+          "مختبر 3أ: التصنيف وفحص التقسيم"
+        ],
+        [
+          "Lab 3b: NER and QA checks",
+          "مختبر 3ب: فحوص الكيانات والأسئلة"
+        ],
+        [
+          "Gate B and evidence commit",
+          "بوابة B وحفظ الأدلة في commit"
+        ]
+      ],
+      "topics": [
+        {
+          "title": [
+            "Pretraining and task heads",
+            "التدريب المسبق ورؤوس المهام"
+          ],
+          "explanation": [
+            "Reuse a pretrained encoder and understand what changes during fine-tuning. Record whether the encoder is frozen in the CPU path.",
+            "نعيد استخدام مشفر مدرب مسبقًا ونفهم ما يتغير في الضبط الدقيق، ونسجل بصراحة هل جُمّد المشفر عند استخدام بديل CPU."
+          ],
+          "example": [
+            "One encoder family can support different heads, not identical labels.",
+            "يمكن لعائلة مشفر واحدة دعم رؤوس مختلفة، وليس وسومًا متطابقة."
+          ]
+        },
+        {
+          "title": [
+            "Baseline and honest splits",
+            "خط الأساس والتقسيم السليم"
+          ],
+          "explanation": [
+            "Create a TF-IDF baseline, keep groups separate across train/validation/test, then evaluate topic and sentiment with independent label contracts.",
+            "نبني خط أساس TF-IDF ونمنع تداخل المجموعات بين التدريب والتحقق والاختبار، ثم نقيس الموضوع والمشاعر بعقدي وسوم مستقلين."
+          ],
+          "example": [
+            "Explain macro-F1 rather than reporting accuracy alone.",
+            "فسّر Macro-F1 بدل الاكتفاء برقم الدقة."
+          ]
+        },
+        {
+          "title": [
+            "NER and label alignment",
+            "الكيانات ومحاذاة الوسوم"
+          ],
+          "explanation": [
+            "Use BIO labels, align word labels to subwords and exclude special or ignored tokens from the loss as documented. Evaluate complete entities.",
+            "نستخدم وسوم BIO ونحاذي وسوم الكلمات مع الوحدات الجزئية ونستبعد الرموز الخاصة أو المهملة من حساب الخسارة وفق الدرس. نقيم الكيان كاملًا."
+          ],
+          "example": [
+            "Keep an organisation name aligned when one word becomes several subwords.",
+            "حافظ على محاذاة اسم الجهة عندما تتجزأ الكلمة إلى وحدات."
+          ]
+        },
+        {
+          "title": [
+            "Extractive QA and no-answer",
+            "الأسئلة الاستخراجية وعدم وجود إجابة"
+          ],
+          "explanation": [
+            "Select an answer span from the supplied context. When the context does not support an answer, return no-answer instead of generating text.",
+            "نختار مقطع إجابة من السياق المقدم. عندما لا يدعم السياق الإجابة نعيد عدم وجود إجابة، ولا نولّد نصًا من خارج المصدر."
+          ],
+          "example": [
+            "Ask about a service deadline that is absent from the context.",
+            "اسأل عن موعد خدمة غير مذكور في السياق."
+          ]
+        },
+        {
+          "title": [
+            "Arabic model choice",
+            "اختيار النموذج للعربية"
+          ],
+          "explanation": [
+            "Compare Arabic and multilingual checkpoint assumptions, tokenizer compatibility and sample coverage; justify the choice with evidence.",
+            "نقارن افتراضات النماذج العربية ومتعددة اللغات وتوافق المرمّز وتغطية العينة، ثم نبرر الاختيار بالدليل لا بالاسم الأشهر."
+          ],
+          "example": [
+            "State what a tiny training run proves—and what it does not.",
+            "حدد ما الذي تثبته تجربة التدريب المصغرة وما الذي لا تثبته."
+          ]
+        }
+      ],
+      "architecture": [
+        [
+          "Protected, grouped data",
+          "بيانات محمية ومقسمة"
+        ],
+        [
+          "Baseline + encoder",
+          "خط أساس + مشفر"
+        ],
+        [
+          "Topic / sentiment / NER / QA",
+          "موضوع / مشاعر / كيانات / أسئلة"
+        ],
+        [
+          "Task metrics + Gate B",
+          "مقاييس المهام + بوابة B"
+        ]
+      ]
     },
     {
-      "id": 3, "label": ["Understand Arabic. Find evidence.", "افهم العربية وابحث بالدليل"],
-      "question": ["How do we retrieve related cases across languages and know when the results fail?", "كيف نسترجع حالات متشابهة عبر اللغات ونعرف متى تخفق النتائج؟"],
-      "intro": ["A useful search result is more than shared words. Compare meaning, inspect the ranked cases, then measure retrieval and analyse errors rather than trusting a single score.", "النتيجة المفيدة ليست مجرد كلمات مشتركة. نقارن المعنى، ونفحص الحالات المرتبة، ثم نقيس الاسترجاع ونحلل الأخطاء بدل الثقة برقم واحد."],
-      "analogy": ["Bi-encoder retrieval finds a shortlist; a cross-encoder can review that shortlist more closely. Measure whether the extra work is worth its latency.", "يستخرج المشفر الثنائي قائمة مرشحين، ثم يفحصها المشفر المشترك بصورة أدق. نقيس هل تستحق هذه الخطوة زمنها الإضافي."],
-      "watch": ["Do not tune the no-answer threshold on the frozen test or hide small slices.", "لا تضبط عتبة عدم وجود إجابة على الاختبار المجمد، ولا تخفِ الشرائح الصغيرة."],
-      "hours": [
-        ["Arabic morphology, dialects and safe normalisation", "صرف العربية واللهجات والتطبيع الآمن"],
-        ["CAMeL Tools and the measured Arabic-model comparison", "أدوات CAMeL والمقارنة المقاسة بين النماذج العربية"],
-        ["Sentence embeddings, cosine and FAISS", "تضمينات الجمل وتشابه جيب التمام وFAISS"],
-        ["Re-ranking, Recall/MRR and no-answer decisions", "إعادة الترتيب وRecall/MRR وقرار عدم وجود إجابة"],
-        ["Sliced evaluation, uncertainty and error analysis", "التقييم بالشرائح وعدم اليقين وتحليل الأخطاء"]
+      "id": 3,
+      "label": [
+        "Understand Arabic. Find evidence.",
+        "افهم العربية وابحث بالدليل"
       ],
-      "lessons": ["day-03/01-arabic-nlp-camel-tools.md", "day-03/02-semantic-search.md", "day-03/03-evaluation-error-analysis.md"],
-      "notebooks": ["05_arabic_nlp.ipynb", "06_semantic_search.ipynb", "07_evaluation_error_analysis.ipynb"],
-      "datasets": ["data/sample/bayan_day3_arabic.csv", "data/sample/bayan_day3_cases.csv", "data/sample/bayan_day3_queries.jsonl", "data/sample/bayan_day3_predictions.csv"],
-      "lab_plan": [[15,"Lab 4: Arabic profile and comparison checks","مختبر 4: ملف العربية وفحوص المقارنة"],[20,"Lab 5: retrieval and re-ranking checks","مختبر 5: فحوص الاسترجاع وإعادة الترتيب"],[15,"Lab 6: evaluation and error report","مختبر 6: التقييم وتقرير الأخطاء"],[10,"Gate C and evidence commits","بوابة C وحفظ commits الأدلة"]],
-      "gate": "day-03/04-labs-checkpoint.md", "gate_name": "C",
-      "evidence": ["Arabic profile + search metrics + sliced report + three prioritised fixes", "ملف معالجة العربية + مقاييس البحث + تقرير الشرائح + ثلاثة إصلاحات مرتبة"],
-      "check": ["May a good overall score hide a weak Arabic slice?", "هل يمكن لنتيجة إجمالية جيدة أن تخفي ضعف شريحة عربية؟"],
-      "answer": ["Yes. Inspect per-language and other relevant slices, their sample sizes and uncertainty before deciding.", "نعم. نفحص شرائح اللغة والشرائح المناسبة وأحجام عيناتها وعدم اليقين قبل اتخاذ القرار."],
-      "outcomes": ["LO1", "LO3", "LO4", "LO5"]
+      "question": [
+        "How do we retrieve related cases across languages and know when the results fail?",
+        "كيف نسترجع حالات متشابهة عبر اللغات ونعرف متى تخفق النتائج؟"
+      ],
+      "intro": [
+        "A useful search result is more than shared words. Compare meaning, inspect the ranked cases, then measure retrieval and analyse errors rather than trusting a single score.",
+        "النتيجة المفيدة ليست مجرد كلمات مشتركة. نقارن المعنى، ونفحص الحالات المرتبة، ثم نقيس الاسترجاع ونحلل الأخطاء بدل الثقة برقم واحد."
+      ],
+      "analogy": [
+        "Bi-encoder retrieval finds a shortlist; a cross-encoder can review that shortlist more closely. Measure whether the extra work is worth its latency.",
+        "يستخرج المشفر الثنائي قائمة مرشحين، ثم يفحصها المشفر المشترك بصورة أدق. نقيس هل تستحق هذه الخطوة زمنها الإضافي."
+      ],
+      "watch": [
+        "Do not tune the no-answer threshold on the frozen test or hide small slices.",
+        "لا تضبط عتبة عدم وجود إجابة على الاختبار المجمد، ولا تخفِ الشرائح الصغيرة."
+      ],
+      "lessons": [
+        "day-03/01-arabic-nlp-camel-tools.md",
+        "day-03/02-semantic-search.md",
+        "day-03/03-evaluation-error-analysis.md"
+      ],
+      "notebooks": [
+        "05_arabic_nlp.ipynb",
+        "06_semantic_search.ipynb",
+        "07_evaluation_error_analysis.ipynb"
+      ],
+      "datasets": [
+        "data/sample/bayan_day3_arabic.csv",
+        "data/sample/bayan_day3_cases.csv",
+        "data/sample/bayan_day3_queries.jsonl",
+        "data/sample/bayan_day3_predictions.csv"
+      ],
+      "gate": "day-03/04-labs-checkpoint.md",
+      "gate_name": "C",
+      "evidence": [
+        "Arabic profile + search metrics + sliced report + three prioritised fixes",
+        "ملف معالجة العربية + مقاييس البحث + تقرير الشرائح + ثلاثة إصلاحات مرتبة"
+      ],
+      "check": [
+        "May a good overall score hide a weak Arabic slice?",
+        "هل يمكن لنتيجة إجمالية جيدة أن تخفي ضعف شريحة عربية؟"
+      ],
+      "answer": [
+        "Yes. Inspect per-language and other relevant slices, their sample sizes and uncertainty before deciding.",
+        "نعم. نفحص شرائح اللغة والشرائح المناسبة وأحجام عيناتها وعدم اليقين قبل اتخاذ القرار."
+      ],
+      "outcomes": [
+        "LO1",
+        "LO3",
+        "LO4",
+        "LO5"
+      ],
+      "lab_steps": [
+        [
+          "Lab 4: Arabic profile and comparison checks",
+          "مختبر 4: ملف العربية وفحوص المقارنة"
+        ],
+        [
+          "Lab 5: retrieval and re-ranking checks",
+          "مختبر 5: فحوص الاسترجاع وإعادة الترتيب"
+        ],
+        [
+          "Lab 6: evaluation and error report",
+          "مختبر 6: التقييم وتقرير الأخطاء"
+        ],
+        [
+          "Gate C and evidence commits",
+          "بوابة C وحفظ commits الأدلة"
+        ]
+      ],
+      "topics": [
+        {
+          "title": [
+            "Arabic variation",
+            "تنوع العربية"
+          ],
+          "explanation": [
+            "Handle morphology, clitics, dialects and orthographic variation without treating all normalisation as harmless.",
+            "نتعامل مع الصرف واللواصق واللهجات والتنوع الإملائي دون افتراض أن كل تطبيع آمن. نحتفظ بالنص المحمي الذي يمكن الرجوع إليه."
+          ],
+          "example": [
+            "Check whether a normalisation choice changes an entity boundary.",
+            "افحص هل يغير التطبيع حدّ كيان مسمى."
+          ]
+        },
+        {
+          "title": [
+            "CAMeL Tools and profiles",
+            "أدوات CAMeL وملفات المعالجة"
+          ],
+          "explanation": [
+            "Apply the documented Arabic profile and inspect the small Arabic-model comparison using the same evaluation contract.",
+            "نطبق ملف المعالجة العربي الموثق ونفحص المقارنة المصغرة بين النماذج مع تثبيت عقد التقييم وإظهار حدود العينة."
+          ],
+          "example": [
+            "Link the profile version to its golden tests.",
+            "اربط إصدار المعالجة باختباراته المرجعية."
+          ]
+        },
+        {
+          "title": [
+            "Sentence embeddings and FAISS",
+            "تضمينات الجمل وFAISS"
+          ],
+          "explanation": [
+            "Encode cases and queries with the same sentence model, normalise vectors and retrieve candidates using IndexFlatIP.",
+            "نرمّز الحالات والاستعلامات بنموذج جمل واحد، ونطبّع المتجهات ثم نسترجع المرشحين باستخدام IndexFlatIP. لا نخلط تضمين الجملة بمخرج المصنف."
+          ],
+          "example": [
+            "Find an English case for an Arabic query with a similar meaning.",
+            "استرجع حالة إنجليزية لاستعلام عربي متشابه في المعنى."
+          ]
+        },
+        {
+          "title": [
+            "Re-ranking and retrieval metrics",
+            "إعادة الترتيب ومقاييس البحث"
+          ],
+          "explanation": [
+            "Re-score the shortlist with a cross-encoder; compare Recall@k, MRR@k and latency. Tune no-answer on validation only.",
+            "نعيد تقييم المرشحين بالمشفر المشترك، ونقارن Recall@k وMRR@k والزمن. تضبط عتبة عدم الإجابة على التحقق فقط."
+          ],
+          "example": [
+            "A closer result may take longer; measure the trade-off.",
+            "قد تتحسن النتيجة مع زيادة الزمن؛ قِس المفاضلة."
+          ]
+        },
+        {
+          "title": [
+            "Error analysis and uncertainty",
+            "تحليل الأخطاء وعدم اليقين"
+          ],
+          "explanation": [
+            "Inspect language and task slices, sample sizes and confidence intervals. Classify errors and prioritise three evidence-backed fixes.",
+            "نفحص شرائح اللغة والمهمة وأحجام العينات وفترات الثقة، ونصنف الأخطاء ونرتب ثلاثة إصلاحات مدعومة بالدليل."
+          ],
+          "example": [
+            "A high overall score can hide weak Arabic performance.",
+            "قد يخفي الرقم الإجمالي الجيد ضعفًا في العربية."
+          ]
+        }
+      ],
+      "architecture": [
+        [
+          "Arabic profile + case corpus",
+          "معالجة العربية + الحالات"
+        ],
+        [
+          "Sentence vectors → FAISS",
+          "متجهات الجمل ← FAISS"
+        ],
+        [
+          "Retrieve → re-rank",
+          "استرجاع ← إعادة ترتيب"
+        ],
+        [
+          "Slices + error report",
+          "شرائح + تقرير أخطاء"
+        ]
+      ]
     },
     {
-      "id": 4, "label": ["Measure. Improve. Deliver.", "قِس، حسّن، ثم سلّم"],
-      "question": ["How do we improve inference without sacrificing evidence or quality?", "كيف نحسّن الاستدلال دون أن نخسر جودة النتيجة أو صدق الدليل؟"],
-      "intro": ["A model running in a notebook is the beginning, not the finish. Freeze the workload, compare before and after, test the API and make the final repository reviewable.", "عمل النموذج في الدفتر بداية وليس نهاية. نثبت عبء العمل، ونقارن قبل التحسين وبعده، ونختبر الخدمة، ونجعل المستودع النهائي قابلًا للمراجعة."],
-      "analogy": ["A fair comparison is a controlled experiment: same workload and environment, one change, then a measured decision.", "المقارنة العادلة تجربة مضبوطة: عبء عمل وبيئة ثابتان، وتغيير واحد، ثم قرار يستند إلى القياس."],
-      "watch": ["SYSTEMS_SMOKE checks mechanics. The final project needs PROJECT_ARTIFACT evidence; INT8 is not automatically faster.", "يفحص SYSTEMS_SMOKE المسار التقني. يحتاج المشروع النهائي دليل PROJECT_ARTIFACT؛ ولا يكون INT8 أسرع تلقائيًا."],
-      "hours": [
-        ["Performance budgets, warm-up and latency percentiles", "ميزانية الأداء والإحماء ومئينات زمن الاستجابة"],
-        ["Length, padding and batching", "طول النص والحشو والتجميع"],
-        ["ONNX, INT8, parity and quality cost", "ONNX وINT8 والتكافؤ وكلفة الجودة"],
-        ["FastAPI contracts, TestClient and canaries", "عقود FastAPI وTestClient وفحوص canary"],
-        ["Guided Bayan assembly, evidence review and delivery walkthrough", "شرح تجميع بيان ومراجعة الأدلة وخطوات التسليم"]
+      "id": 4,
+      "label": [
+        "Measure. Improve. Deliver.",
+        "قِس، حسّن، ثم سلّم"
       ],
-      "lessons": ["day-04/01-benchmark-before-optimization.md", "day-04/02-onnx-int8-decision.md", "day-04/03-fastapi-serving-canaries.md", "day-04/04-capstone-assembly-demo.md"],
-      "notebooks": ["08_optimization_serving.ipynb"],
+      "question": [
+        "How do we improve inference without sacrificing evidence or quality?",
+        "كيف نحسّن الاستدلال دون أن نخسر جودة النتيجة أو صدق الدليل؟"
+      ],
+      "intro": [
+        "A model running in a notebook is the beginning, not the finish. Freeze the workload, compare before and after, test the API and make the final repository reviewable.",
+        "عمل النموذج في الدفتر بداية وليس نهاية. نثبت عبء العمل، ونقارن قبل التحسين وبعده، ونختبر الخدمة، ونجعل المستودع النهائي قابلًا للمراجعة."
+      ],
+      "analogy": [
+        "A fair comparison is a controlled experiment: same workload and environment, one change, then a measured decision.",
+        "المقارنة العادلة تجربة مضبوطة: عبء عمل وبيئة ثابتان، وتغيير واحد، ثم قرار يستند إلى القياس."
+      ],
+      "watch": [
+        "SYSTEMS_SMOKE checks mechanics. The final project needs PROJECT_ARTIFACT evidence; INT8 is not automatically faster.",
+        "يفحص SYSTEMS_SMOKE المسار التقني. يحتاج المشروع النهائي دليل PROJECT_ARTIFACT؛ ولا يكون INT8 أسرع تلقائيًا."
+      ],
+      "lessons": [
+        "day-04/01-benchmark-before-optimization.md",
+        "day-04/02-onnx-int8-decision.md",
+        "day-04/03-fastapi-serving-canaries.md",
+        "day-04/04-capstone-assembly-demo.md"
+      ],
+      "notebooks": [
+        "08_optimization_serving.ipynb"
+      ],
       "datasets": [],
-      "lab_plan": [[5,"Restore the project artefact and freeze workload","استعادة ناتج المشروع وتثبيت عبء العمل"],[25,"Lab 7: benchmark, parity and API checks","مختبر 7: القياس والتكافؤ وفحص الخدمة"],[20,"Complete assembly and run the submission validator","استكمال التجميع وتشغيل فاحص التسليم"],[10,"Gates D/E, documentation and final tag","بوابتا D/E والتوثيق والوسم النهائي"]],
-      "gate": "day-04/05-lab-gates-submission.md", "gate_name": "D / E",
-      "evidence": ["Project benchmark + tested API + reports + validator + submission-v1.0", "قياس المشروع + خدمة مختبرة + تقارير + فاحص ناجح + submission-v1.0"],
-      "check": ["Is a smaller INT8 model always faster on every device?", "هل النموذج الأصغر بنمط INT8 أسرع دائمًا على أي جهاز؟"],
-      "answer": ["No. Measure latency, memory and quality on the actual project workload and document the ship-or-rollback decision.", "لا. نقيس الزمن والذاكرة والجودة على عبء عمل المشروع الفعلي، ونوثق قرار النشر أو التراجع."],
-      "outcomes": ["LO5", "LO6"]
+      "gate": "day-04/05-lab-gates-submission.md",
+      "gate_name": "D / E",
+      "evidence": [
+        "Project benchmark + tested API + reports + validator + submission-v1.0",
+        "قياس المشروع + خدمة مختبرة + تقارير + فاحص ناجح + submission-v1.0"
+      ],
+      "check": [
+        "Is a smaller INT8 model always faster on every device?",
+        "هل النموذج الأصغر بنمط INT8 أسرع دائمًا على أي جهاز؟"
+      ],
+      "answer": [
+        "No. Measure latency, memory and quality on the actual project workload and document the ship-or-rollback decision.",
+        "لا. نقيس الزمن والذاكرة والجودة على عبء عمل المشروع الفعلي، ونوثق قرار النشر أو التراجع."
+      ],
+      "outcomes": [
+        "LO5",
+        "LO6"
+      ],
+      "lab_steps": [
+        [
+          "Restore the project artefact and freeze workload",
+          "استعادة ناتج المشروع وتثبيت عبء العمل"
+        ],
+        [
+          "Lab 7: benchmark, parity and API checks",
+          "مختبر 7: القياس والتكافؤ وفحص الخدمة"
+        ],
+        [
+          "Complete assembly and run the submission validator",
+          "استكمال التجميع وتشغيل فاحص التسليم"
+        ],
+        [
+          "Gates D/E, documentation and final tag",
+          "بوابتا D/E والتوثيق والوسم النهائي"
+        ]
+      ],
+      "topics": [
+        {
+          "title": [
+            "Benchmark before changing",
+            "القياس قبل التغيير"
+          ],
+          "explanation": [
+            "Define the workload and performance budget; separate warm-up and record device, repetitions, latency, throughput and observed memory.",
+            "نحدد عبء العمل وميزانية الأداء، ونفصل الإحماء ونسجل الجهاز والتكرارات والزمن ومعدل المعالجة والذاكرة المرصودة."
+          ],
+          "example": [
+            "Compare the same requests on the same device.",
+            "قارن الطلبات نفسها على الجهاز نفسه."
+          ]
+        },
+        {
+          "title": [
+            "ONNX and INT8",
+            "ONNX وINT8"
+          ],
+          "explanation": [
+            "Export, check numerical or prediction parity, and measure the quality and speed cost of quantisation. Keep a rollback path.",
+            "نصدّر النموذج ونفحص التكافؤ العددي أو التنبؤي، ثم نقيس أثر التكميم على الجودة والسرعة مع الاحتفاظ بمسار تراجع."
+          ],
+          "example": [
+            "INT8 is a candidate to test, not a guaranteed speed-up.",
+            "INT8 خيار للاختبار، وليس تسريعًا مضمونًا."
+          ]
+        },
+        {
+          "title": [
+            "API contract and canaries",
+            "عقد الخدمة والاختبارات الحارسة"
+          ],
+          "explanation": [
+            "Connect project components through the documented service interface and test valid Arabic/English input, rejected input and preprocessing consistency.",
+            "نربط المكونات بواجهة الخدمة الموثقة، ونختبر طلبًا عربيًا وإنجليزيًا ومدخلًا مرفوضًا واتساق المعالجة مع النموذج."
+          ],
+          "example": [
+            "Use TestClient; paid public hosting is not required.",
+            "استخدم TestClient؛ لا تحتاج استضافة عامة مدفوعة."
+          ]
+        },
+        {
+          "title": [
+            "Integration and measured extension",
+            "التكامل والامتداد المقاس"
+          ],
+          "explanation": [
+            "Assemble previous lab outputs, evaluate the actual project artifact and measure one bounded extension against a baseline.",
+            "نجمع مخرجات اللابات السابقة ونقيّم ناتج المشروع الفعلي ونقيس امتدادًا محدودًا واحدًا مقارنة بخط أساس. لا نبدأ مشروعًا جديدًا."
+          ],
+          "example": [
+            "A small measured search improvement is stronger than an untested feature.",
+            "تحسين بحث صغير مقاس أقوى من ميزة غير مختبرة."
+          ]
+        },
+        {
+          "title": [
+            "Evidence, presentation and submission",
+            "الأدلة والعرض والتسليم"
+          ],
+          "explanation": [
+            "Trace every number to a report, explain one limitation, practise the individual demo and validate the exact commit you will submit once.",
+            "نربط كل رقم بتقرير، ونشرح قيدًا معروفًا، ونتدرب على العرض الفردي ونفحص نسخة الـCommit التي سنرسلها مرة واحدة."
+          ],
+          "example": [
+            "A green validator is a readiness check, not an automatic grade.",
+            "نجاح الفاحص تحقق من الجاهزية، وليس درجة تلقائية."
+          ]
+        }
+      ],
+      "architecture": [
+        [
+          "Actual project artifact",
+          "ناتج المشروع الفعلي"
+        ],
+        [
+          "Benchmark → ONNX / INT8",
+          "قياس ← ONNX / INT8"
+        ],
+        [
+          "Parity + quality + API tests",
+          "تكافؤ + جودة + اختبارات الخدمة"
+        ],
+        [
+          "Evidence → release",
+          "أدلة ← إصدار التسليم"
+        ]
+      ]
+    }
+  ],
+  "assessment_policy": "BAYAN-100-v2.1",
+  "assessment_total": 100,
+  "rubric": [
+    {
+      "id": "T1",
+      "category": "technical",
+      "points": 12,
+      "title": [
+        "Text preparation and Arabic handling",
+        "المعالجة والتعامل مع العربية"
+      ],
+      "items": [
+        {
+          "points": 4,
+          "text": [
+            "Protected text and consistent versioned preprocessing",
+            "نص محمي ومعالجة موحدة ذات إصدار"
+          ]
+        },
+        {
+          "points": 4,
+          "text": [
+            "Tokenisation, fertility and truncation evidence",
+            "أدلة الترميز وكثافته والقطع"
+          ]
+        },
+        {
+          "points": 4,
+          "text": [
+            "Arabic profile / CAMeL use and golden tests",
+            "معالجة عربية واستخدام CAMeL واختبارات مرجعية"
+          ]
+        }
+      ],
+      "evidence": "notebooks/01 + 05; DECISIONS.md; tests"
+    },
+    {
+      "id": "T2",
+      "category": "technical",
+      "points": 6,
+      "title": [
+        "Attention and architecture understanding",
+        "فهم الانتباه والمعمارية"
+      ],
+      "items": [
+        {
+          "points": 3,
+          "text": [
+            "Correct Q/K/V shapes, masks and attention checks",
+            "صحة أبعاد Q/K/V والأقنعة وفحوص الانتباه"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "Explain encoder flow and limits of attention interpretation",
+            "شرح مسار المشفر وحدود تفسير الانتباه"
+          ]
+        }
+      ],
+      "evidence": "notebooks/02; README architecture; DECISIONS.md"
+    },
+    {
+      "id": "T3",
+      "category": "technical",
+      "points": 18,
+      "title": [
+        "Classification, NER and QA",
+        "التصنيف والكيانات والأسئلة"
+      ],
+      "items": [
+        {
+          "points": 6,
+          "text": [
+            "Topic + sentiment heads, baseline, grouped split and metrics",
+            "رأسا الموضوع والمشاعر وخط الأساس والتقسيم والمقاييس"
+          ]
+        },
+        {
+          "points": 6,
+          "text": [
+            "BIO/subword alignment, training and entity-level evaluation",
+            "محاذاة BIO والوحدات الجزئية والتدريب وتقييم الكيانات"
+          ]
+        },
+        {
+          "points": 6,
+          "text": [
+            "Extractive spans, no-answer and boundary tests",
+            "المقاطع الاستخراجية وعدم الإجابة والاختبارات الحدية"
+          ]
+        }
+      ],
+      "evidence": "notebooks/03 + 04; reports; tests"
+    },
+    {
+      "id": "T4",
+      "category": "technical",
+      "points": 10,
+      "title": [
+        "Bilingual semantic search",
+        "البحث الدلالي الثنائي"
+      ],
+      "items": [
+        {
+          "points": 4,
+          "text": [
+            "Sentence vectors, normalisation and FAISS index",
+            "متجهات الجمل والتطبيع وفهرس FAISS"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "Measured cross-encoder re-ranking",
+            "إعادة ترتيب بالمشفر المشترك مع قياسها"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "Recall/MRR, cross-lingual case and no-answer decision",
+            "Recall/MRR وحالة عبر اللغات وقرار عدم الإجابة"
+          ]
+        }
+      ],
+      "evidence": "notebooks/06; retrieval reports"
+    },
+    {
+      "id": "T5",
+      "category": "technical",
+      "points": 10,
+      "title": [
+        "Evaluation and error analysis",
+        "التقييم وتحليل الأخطاء"
+      ],
+      "items": [
+        {
+          "points": 4,
+          "text": [
+            "Appropriate metrics, frozen split and traceable outputs",
+            "مقاييس مناسبة وتقسيم مجمد ومخرجات قابلة للتتبع"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "Slices, sample sizes and uncertainty",
+            "الشرائح وأحجام العينات وعدم اليقين"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "Error taxonomy and three prioritised fixes",
+            "تصنيف الأخطاء وثلاثة إصلاحات مرتبة"
+          ]
+        }
+      ],
+      "evidence": "notebooks/07; EVALUATION_REPORT.md"
+    },
+    {
+      "id": "T6",
+      "category": "technical",
+      "points": 10,
+      "title": [
+        "Optimisation and tested service",
+        "التحسين والخدمة المختبرة"
+      ],
+      "items": [
+        {
+          "points": 4,
+          "text": [
+            "Actual PROJECT_ARTIFACT benchmark before/after",
+            "قياس PROJECT_ARTIFACT الفعلي قبل التحسين وبعده"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "ONNX/INT8 attempt, parity, quality tax and rollback decision",
+            "تجربة ONNX/INT8 والتكافؤ وأثر الجودة وقرار التراجع"
+          ]
+        },
+        {
+          "points": 3,
+          "text": [
+            "Unified service contract and AR/EN/invalid-input tests",
+            "عقد خدمة موحد واختبارات العربية والإنجليزية والمدخل المرفوض"
+          ]
+        }
+      ],
+      "evidence": "notebooks/08; BENCHMARKS.md; API tests"
+    },
+    {
+      "id": "T7",
+      "category": "technical",
+      "points": 4,
+      "title": [
+        "One measured extension",
+        "امتداد واحد مقاس"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Implemented, bounded extension in the original scope",
+            "امتداد منفذ ومحدود ضمن نطاق المشروع"
+          ]
+        },
+        {
+          "points": 2,
+          "text": [
+            "Baseline, benefit/cost and evidence",
+            "خط أساس وفائدة وتكلفة ودليل"
+          ]
+        }
+      ],
+      "evidence": "PROJECT_SUMMARY.json extension; DECISIONS.md"
+    },
+    {
+      "id": "A1",
+      "category": "administrative",
+      "points": 4,
+      "title": [
+        "Repository organisation and safe publication",
+        "تنظيم المستودع والنشر الآمن"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Own accessible repository, main branch and required paths",
+            "مستودع شخصي متاح وفرع main والمسارات المطلوبة"
+          ]
+        },
+        {
+          "points": 2,
+          "text": [
+            "No secrets, personal data or forbidden model artifacts",
+            "لا أسرار أو بيانات شخصية أو أوزان نموذج محظورة"
+          ]
+        }
+      ],
+      "evidence": "repository tree; private-window check"
+    },
+    {
+      "id": "A2",
+      "category": "administrative",
+      "points": 6,
+      "title": [
+        "README and attribution",
+        "README ونسب العمل"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Problem, scope, architecture and limitations",
+            "المشكلة والنطاق والمعمارية والحدود"
+          ]
+        },
+        {
+          "points": 2,
+          "text": [
+            "Own runnable links, result table and reproduction steps",
+            "روابط تشغيل شخصية وجدول نتائج وخطوات إعادة التشغيل"
+          ]
+        },
+        {
+          "points": 2,
+          "text": [
+            "Program code, SDAIA Academy, #SDAIAAcademy, trainer and sources",
+            "رمز البرنامج وأكاديمية سدايا و#SDAIAAcademy والمدربة والمصادر"
+          ]
+        }
+      ],
+      "evidence": "README.md"
+    },
+    {
+      "id": "A3",
+      "category": "administrative",
+      "points": 4,
+      "title": [
+        "Evidence package and documentation",
+        "حزمة الأدلة والتوثيق"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Required reports/cards/progress and real links to evidence",
+            "التقارير والبطاقات والتقدم وروابط الأدلة الفعلية"
+          ]
+        },
+        {
+          "points": 2,
+          "text": [
+            "Valid summary/YAML and preflight reports",
+            "صحة الملخص وYAML وتقارير الفحص"
+          ]
+        }
+      ],
+      "evidence": "required root files; reports/preflight.json"
+    },
+    {
+      "id": "A4",
+      "category": "administrative",
+      "points": 4,
+      "title": [
+        "Versioned final submission",
+        "نسخة التسليم النهائية"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Meaningful progress history and declared commit SHA",
+            "تاريخ تقدم مفهوم وبصمة Commit معلنة"
+          ]
+        },
+        {
+          "points": 2,
+          "text": [
+            "submission-v1.0, complete hand-in and one-shot acknowledgement",
+            "وسم submission-v1.0 وتسليم مكتمل وإقرار التقييم الواحد"
+          ]
+        }
+      ],
+      "evidence": "Git history; release; private hand-in"
+    },
+    {
+      "id": "A5",
+      "category": "administrative",
+      "points": 2,
+      "title": [
+        "Authorship and assistance disclosure",
+        "المساهمة والإفصاح عن المساعدة"
+      ],
+      "items": [
+        {
+          "points": 1,
+          "text": [
+            "Own contribution linked to a file/change/evidence",
+            "مساهمة شخصية مربوطة بملف أو تغيير أو دليل"
+          ]
+        },
+        {
+          "points": 1,
+          "text": [
+            "Honest source and AI/tool assistance disclosure or none",
+            "إفصاح صادق عن المصادر وأدوات المساعدة أو عدم استخدامها"
+          ]
+        }
+      ],
+      "evidence": "README contribution and assistance sections"
+    },
+    {
+      "id": "P1",
+      "category": "presentation",
+      "points": 2,
+      "title": [
+        "Problem and architecture",
+        "المشكلة والمعمارية"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Explain the user, scope and data flow accurately",
+            "شرح المستخدم والنطاق وتدفق البيانات بدقة"
+          ]
+        }
+      ],
+      "evidence": "individual presentation"
+    },
+    {
+      "id": "P2",
+      "category": "presentation",
+      "points": 3,
+      "title": [
+        "Bilingual demonstration",
+        "العرض التطبيقي الثنائي"
+      ],
+      "items": [
+        {
+          "points": 3,
+          "text": [
+            "Own AR/EN examples with extraction/search and a no-answer or rejected case",
+            "أمثلة شخصية بالعربية والإنجليزية مع استخراج أو بحث وحالة عدم إجابة أو رفض"
+          ]
+        }
+      ],
+      "evidence": "own running project or documented fallback"
+    },
+    {
+      "id": "P3",
+      "category": "presentation",
+      "points": 2,
+      "title": [
+        "Evidence and limitations",
+        "الدليل والحدود"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Trace one quality metric and one performance metric; state a limitation",
+            "تتبع مقياس جودة ومقياس أداء وشرح قيد معروف"
+          ]
+        }
+      ],
+      "evidence": "report links on screen"
+    },
+    {
+      "id": "P4",
+      "category": "presentation",
+      "points": 2,
+      "title": [
+        "Individual understanding",
+        "الفهم الفردي"
+      ],
+      "items": [
+        {
+          "points": 2,
+          "text": [
+            "Answer a code/decision question and a small input-change check",
+            "إجابة عن الكود أو القرار وفحص تغيير صغير في المدخل"
+          ]
+        }
+      ],
+      "evidence": "live instructor verification"
+    },
+    {
+      "id": "P5",
+      "category": "presentation",
+      "points": 1,
+      "title": [
+        "Clarity and delivery",
+        "الوضوح والالتزام"
+      ],
+      "items": [
+        {
+          "points": 1,
+          "text": [
+            "Readable visuals, clear sequence and prepared demo within the agreed slot",
+            "عرض مقروء وتسلسل واضح وتجهيز مسبق والتزام بالمدة"
+          ]
+        }
+      ],
+      "evidence": "maximum five slides or equivalent"
     }
   ]
 }

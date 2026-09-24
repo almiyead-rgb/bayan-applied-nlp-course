@@ -28,7 +28,7 @@ jobs:
       - name: Run course unit tests
         env:
           PYTHONPATH: src
-        run: python -m pytest -q tests
+        run: python -m pytest -q tests tools/test_preflight.py
 
       - name: Validate public materials and saved notebook evidence
         run: python scripts/validate_course.py

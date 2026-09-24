@@ -1,16 +1,24 @@
 # ابدأ مشروع بيان | Start your Bayan repository
 
-هذه الحزمة هي نقطة بدء المتدرب الرسمية لبرنامج `SDA-AIE-211`.
+حزمة البداية التعليمية لبرنامج SDA-AIE-211 بإعداد ميعاد المري. التقييم 70 تقنية + 20 إدارية + 10 عرض = 100. التصحيح مرة واحدة بعد الإرسال؛ صحح وافحص قبل التسليم.
 
-1. فك الضغط وارفع **محتويات** المجلد إلى مستودع GitHub عام باسم `bayan-nlp-YOUR-GITHUB-USERNAME`.
-2. استبدل كل `FILL_ME` و`TODO` و`YOUR_USERNAME` في ملفات الجذر.
-3. افتح الدفاتر بالترتيب `00` إلى `08`. تحتوي النسخ على نتائج مرجعية محفوظة؛ نفّذ خلاياك واحفظ نتائجك أنت قبل التسليم.
-4. شغّل `PYTHONPATH=src python -m pytest -q`.
-5. شغّل `PYTHONPATH=src python scripts/validate_submission.py .` قبل إنشاء الوسم النهائي.
+Use this scaffold for your own work. Save and run your own nine notebooks, upload actual outputs and code, complete the required reports and PRESENTATION.md, then validate your final release. No edited replacement is accepted after hand-in.
 
-ملاحظة: `assessments/pa-01/starter_buggy.py` معطوب **عن قصد**؛ أمر PA‑1 يبدأ بثلاث حالات FAIL ثم يصل إلى PASS بعد إصلاحك. لا يدخل هذا السيناريو في أمر pytest العام.
+1. فك ZIP وارفع محتوياته مع المجلدات إلى مستودعك الشخصي العام على main؛ لا ترفع ZIP فقط.
+2. استبدل حقول القالب في ملفات الجذر بمعلوماتك الفعلية، لا بمخرجات منسوخة.
+3. احفظ نسخك في Drive وشغّل الخلايا بالترتيب، ثم احفظ notebooks/00–08 في GitHub بأسمائها المطلوبة.
+4. احفظ التقارير وتعديلات src/bayan منفصلة؛ حفظ الدفتر لا يحفظ جميع ملفات runtime.
+5. شغّل: PYTHONPATH=src python -m pytest -q tests
+6. شغّل: python scripts/validate_submission.py .
+7. شغّل: python scripts/preflight_submission.py . --report reports/preflight.json
+8. افحص الروابط والخصوصية والعرض، ثم أنشئ submission-v1.0 وأعد الفحص مع --require-tag.
 
-المصدر العام الكامل والتعليمات المحدثة:
-https://github.com/almiyead-rgb/bayan-applied-nlp-course
+تظهر حزمة البداية فشلًا متوقعًا قبل ملء حقول الطالب. لا تغيّر الفاحص لكي يمر. أنشطة PA تدريبية دون درجة مستقلة؛ كود PA-1 معطوب عمدًا ولا يدخل pytest العام.
 
-لا ترفع أوزان النماذج أو مفاتيح API أو بيانات أشخاص. استخدم بيانات الدورة الاصطناعية فقط.
+Full step-by-step learner guide / الدليل الكامل:
+https://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/learner-workflow.md
+
+Rubric / التقييم:
+https://github.com/almiyead-rgb/bayan-applied-nlp-course/blob/main/docs/policies/assessment-and-completion.md
+
+Do not upload model weights, secrets or real personal data. / لا تنشر الأوزان أو الأسرار أو البيانات الشخصية الحقيقية.

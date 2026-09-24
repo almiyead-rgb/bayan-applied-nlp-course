@@ -64,16 +64,11 @@ The learner demonstrates the six official outcomes through the bilingual Bayan c
 
 **خارج النطاق:** تدريب نموذج لغوي من الصفر، واجهة سحابية مدفوعة، استضافة إنتاجية دائمة، تدريب موزّع، RLHF، أو بناء تطبيق LLM عام. تُذكر هذه الموضوعات كامتدادات فقط.
 
-## الجدول اليومي الثابت | Fixed daily timetable
+## رحلة التعلم | Learning journey
 
-| الفترة | المدة | النشاط | Activity |
-|---|---:|---|---|
-| 1–5 | 300 دقيقة | خمس فترات شرح وأمثلة وعروض توضيحية | Five explanation and demonstration blocks |
-| 6 | 60 دقيقة | لاب مستقل لتنفيذ Core وحفظ الدليل | Dedicated Core execution and evidence lab |
+أربعة أيام متدرجة، ولكل يوم مفاهيم وتطبيق ودليل. [افتح رحلة الأيام دون جدول زمني تفصيلي](04-delivery-plan.md).
 
-**اليوم: 300 دقيقة شرح + 60 دقيقة لاب = 6 ساعات تعلم صافية؛ البرنامج: 24 ساعة.** الاستراحات والتجهيز ونوافذ التقييم منفصلة ومعلنة؛ ليست محسوبة ضمن 24 ساعة. راجع [خطة التنفيذ](04-delivery-plan.md) للتفاصيل وحدود تقدير وقت اللاب.
-
-**Daily: 300 minutes of explanation + 60 lab minutes = 6 net learning hours; course: 24 hours.** Breaks, setup and assessment windows are separately scheduled. Lab timings are targets, not verified clean-runtime benchmarks.
+Four progressive days, each with concepts, practice and evidence. Open the journey guide for topic summaries.
 
 ## خريطة الأيام | Four-day arc
 
@@ -86,30 +81,19 @@ The learner demonstrates the six official outcomes through the bilingual Bayan c
 
 ## التقييم | Assessment
 
-| المكوّن | الوزن | الدليل |
-|---|---:|---|
-| المختبرات 1–7 | 35% | commits، اختبارات، ومخرجات متوقعة |
-| تقويمان عمليان | 15% | تشخيص وإصلاح/مراجعة مدعومة بالدليل |
-| اختبار قصير | 10% | 10 أسئلة موضوعية |
-| مشروع بيان | 40% | rubric + مستودع + عرض |
+**70 تقنية + 20 إدارية + 10 للعرض = 100 درجة إجمالًا.** العرض داخل المئة. تُقيّم نسخة التسليم مرة واحدة ولا تقبل نسخة معدلة بعد الإرسال. تبقى الأنشطة والاختبارات القصيرة للممارسة دون وزن مستقل.
 
-مواد المتدرب للتقييمين العمليين وتعليمات الاختبار في [حزمة التقييم](../assessments/README.md). مفاتيح الإجابة والتصحيح التفصيلي لا تُنشر في المستودع العام.
+**70 technical + 20 administrative + 10 presentation = 100 total.** The presentation is included. The submitted version is graded once; later replacements are not accepted. Practice activities and quizzes have no separate weight.
+
+[سلم التقييم الكامل | Full rubric](policies/assessment-and-completion.md) · [متطلبات العرض | Presentation](presentation-guide.md)
 
 ## شروط الاجتياز | Completion requirements
 
-تتحقق **الأهلية الأكاديمية للاجتياز** عند استيفاء الشروط المثبتة في الحزمة المرجعية ومتطلبات التسليم التقنية لهذه النسخة:
+الحد الأدنى **70/100** مع الأدلة الإلزامية والتسليم الصحيح وعدم ثبوت مخالفة نزاهة أو خصوصية. التميز من **90/100** بعد استيفاء الشروط، بلا نقاط خارج المئة. `submission-v1.0` وSHA النهائي يحددان النسخة التي ستصحح مرة واحدة.
 
-1. الدرجة النهائية **70/100 فأعلى**.
-2. درجة المشروع الختامي **70/100 فأعلى**.
-3. عدم وجود مخالفة للنزاهة الأكاديمية.
-4. مستودع GitHub عام ومكتمل، ورابطه مسلّم في الموعد بوصفه دليل هذه النسخة.
-5. اجتياز فاحص التسليم ووجود الأدلة الإلزامية.
-6. عدم نشر بيانات شخصية أو أسرار.
-7. وسم الإصدار النهائي `submission-v1.0`.
+A minimum of **70/100**, mandatory evidence, valid hand-in and no established integrity/privacy violation are required. Distinction starts at **90/100** after those conditions; no extra bonus is added. The final tag and recorded SHA identify the single assessed version.
 
-الحضور، والتيسيرات، وإعادة المحاولة، وآلية إصدار الشهادة/الشارة تحددها الجهة المنظمة وتعلنها للدفعة؛ لا يضع هذا المستودع نسبة حضور غير واردة في المصدر المرجعي.
-
-**مسار التميّز | Distinction lane:** التميّز عند `90/100` فأعلى بعد استيفاء شروط الاجتياز. مهام bonus تضيف حتى `+5` نقاط (بحد أقصى `100`) فقط عندما تبلغ المتطلبات الإلزامية للمشروع `80/100` على الأقل؛ ولا تعوض نقص Core أو الامتداد الإلزامي المقاس.
+إصدار الشهادة والحضور والتيسيرات الإدارية تخضع لإجراءات الجهة المنظمة. لا يُقدّم تعديل السلم باعتباره اعتمادًا جديدًا.
 
 ## سياسة الأدوات | Tooling policy
 

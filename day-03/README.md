@@ -2,7 +2,7 @@
 # Day 3 — Arabic, Search, and Truth
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **البيئة:** Google Colab Free + GitHub
+**المسار:** رحلة تعلم تطبيقية · **البيئة:** Google Colab Free + GitHub
 
 > **السؤال المحوري:** كيف نبني بحثًا دلاليًا عربيًا/إنجليزيًا، ثم نثبت بصدق أين ينجح وأين يضعف؟
 >
@@ -39,19 +39,23 @@
 
 [افتح قاموس اليوم الثالث](GLOSSARY.md) واتركه في تبويب مستقل. يغطي صرف العربية واللهجات وArabizi وCAMeL Tools وSentence Embeddings وFAISS وRecall/MRR والتقييم بالشرائح وتحليل الأخطاء، مع النطق والتعريف الإنجليزي والشرح العربي ومثال لكل مصطلح. يمكن الرجوع كذلك إلى [قاموس الدورة الكامل](../docs/glossary/README.md).
 
-## جدول اليوم | Schedule
+## رحلة اليوم | Learning journey
 
-| الفترة | المدة | English | العربية |
-|---|---:|---|---|
-| 1 | 60 min | Arabic morphology, dialects and safe normalisation | صرف العربية واللهجات والتطبيع الآمن |
-| 2 | 60 min | CAMeL Tools and the measured Arabic-model comparison | أدوات CAMeL والمقارنة المقاسة بين النماذج العربية |
-| 3 | 60 min | Sentence embeddings, cosine and FAISS | تضمينات الجمل وتشابه جيب التمام وFAISS |
-| 4 | 60 min | Re-ranking, Recall/MRR and no-answer decisions | إعادة الترتيب وRecall/MRR وقرار عدم وجود إجابة |
-| 5 | 60 min | Sliced evaluation, uncertainty and error analysis | التقييم بالشرائح وعدم اليقين وتحليل الأخطاء |
-| 6 | 60 min | Dedicated lab + C | لاب مستقل + C |
+| English topic | الموضوع والشرح بالعربية |
+|---|---|
+| **Arabic variation** — Handle morphology, clitics, dialects and orthographic variation without treating all normalisation as harmless. | **تنوع العربية** — نتعامل مع الصرف واللواصق واللهجات والتنوع الإملائي دون افتراض أن كل تطبيع آمن. نحتفظ بالنص المحمي الذي يمكن الرجوع إليه. |
+| **CAMeL Tools and profiles** — Apply the documented Arabic profile and inspect the small Arabic-model comparison using the same evaluation contract. | **أدوات CAMeL وملفات المعالجة** — نطبق ملف المعالجة العربي الموثق ونفحص المقارنة المصغرة بين النماذج مع تثبيت عقد التقييم وإظهار حدود العينة. |
+| **Sentence embeddings and FAISS** — Encode cases and queries with the same sentence model, normalise vectors and retrieve candidates using IndexFlatIP. | **تضمينات الجمل وFAISS** — نرمّز الحالات والاستعلامات بنموذج جمل واحد، ونطبّع المتجهات ثم نسترجع المرشحين باستخدام IndexFlatIP. لا نخلط تضمين الجملة بمخرج المصنف. |
+| **Re-ranking and retrieval metrics** — Re-score the shortlist with a cross-encoder; compare Recall@k, MRR@k and latency. Tune no-answer on validation only. | **إعادة الترتيب ومقاييس البحث** — نعيد تقييم المرشحين بالمشفر المشترك، ونقارن Recall@k وMRR@k والزمن. تضبط عتبة عدم الإجابة على التحقق فقط. |
+| **Error analysis and uncertainty** — Inspect language and task slices, sample sizes and confidence intervals. Classify errors and prioritise three evidence-backed fixes. | **تحليل الأخطاء وعدم اليقين** — نفحص شرائح اللغة والمهمة وأحجام العينات وفترات الثقة، ونصنف الأخطاء ونرتب ثلاثة إصلاحات مدعومة بالدليل. |
 
-التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+**Architecture:** Arabic profile + case corpus → Sentence vectors → FAISS → Retrieve → re-rank → Slices + error report
 
+**المسار المعماري:** معالجة العربية + الحالات ← متجهات الجمل ← FAISS ← استرجاع ← إعادة ترتيب ← شرائح + تقرير أخطاء
+
+**الدليل:** ملف معالجة العربية + مقاييس البحث + تقرير الشرائح + ثلاثة إصلاحات مرتبة
+
+[المشروع وهيكله](../docs/project-walkthrough.md) · [التشغيل والحفظ خطوة بخطوة](../docs/learner-workflow.md) · [تقييم 100 درجة](../docs/policies/assessment-and-completion.md)
 
 ## خط بيان اليوم | Today’s Bayan pipeline
 

@@ -2,7 +2,7 @@
 # Day 2 — Make the Model Yours
 
 **إعداد وتقديم | Prepared and delivered by:** ميعاد المري · Meaad Al-Marri  
-**الوقت:** 6 ساعات صافية · 300 دقيقة شرح + 60 دقيقة لاب · **البيئة:** Google Colab Free + GitHub
+**المسار:** رحلة تعلم تطبيقية · **البيئة:** Google Colab Free + GitHub
 
 > **السؤال المحوري:** كيف نحول مشفرًا لغويًا عامًا إلى ثلاثة نماذج تحل مهامًا محددة، من دون تسرب بيانات أو أرقام مضللة؟
 >
@@ -36,19 +36,23 @@
 
 [افتح قاموس اليوم الثاني](GLOSSARY.md) واتركه في تبويب مستقل. يغطي Fine-tuning والتقسيم والمقاييس وNER ومحاذاة BIO وExtractive QA واختيار النموذج، مع النطق والتعريف الإنجليزي والشرح العربي ومثال لكل مصطلح. يمكن الرجوع كذلك إلى [قاموس الدورة الكامل](../docs/glossary/README.md).
 
-## جدول اليوم
+## رحلة اليوم | Learning journey
 
-| الفترة | المدة | English | العربية |
-|---|---:|---|---|
-| 1 | 60 min | Pretraining, fine-tuning and task heads | التدريب المسبق والضبط الدقيق ورؤوس المهام |
-| 2 | 60 min | TF-IDF baseline, honest splits and macro-F1 | خط أساس TF-IDF والتقسيم السليم وmacro-F1 |
-| 3 | 60 min | NER, BIO labels and subword alignment | الكيانات ووسوم BIO ومحاذاة الوحدات الجزئية |
-| 4 | 60 min | Extractive QA, valid spans and no-answer | الأسئلة الاستخراجية والمقاطع الصالحة وعدم وجود إجابة |
-| 5 | 60 min | Arabic model choices and a guided trace of the training notebooks | اختيار النماذج العربية وتتبع موجّه لدفاتر التدريب |
-| 6 | 60 min | Dedicated lab + B | لاب مستقل + B |
+| English topic | الموضوع والشرح بالعربية |
+|---|---|
+| **Pretraining and task heads** — Reuse a pretrained encoder and understand what changes during fine-tuning. Record whether the encoder is frozen in the CPU path. | **التدريب المسبق ورؤوس المهام** — نعيد استخدام مشفر مدرب مسبقًا ونفهم ما يتغير في الضبط الدقيق، ونسجل بصراحة هل جُمّد المشفر عند استخدام بديل CPU. |
+| **Baseline and honest splits** — Create a TF-IDF baseline, keep groups separate across train/validation/test, then evaluate topic and sentiment with independent label contracts. | **خط الأساس والتقسيم السليم** — نبني خط أساس TF-IDF ونمنع تداخل المجموعات بين التدريب والتحقق والاختبار، ثم نقيس الموضوع والمشاعر بعقدي وسوم مستقلين. |
+| **NER and label alignment** — Use BIO labels, align word labels to subwords and exclude special or ignored tokens from the loss as documented. Evaluate complete entities. | **الكيانات ومحاذاة الوسوم** — نستخدم وسوم BIO ونحاذي وسوم الكلمات مع الوحدات الجزئية ونستبعد الرموز الخاصة أو المهملة من حساب الخسارة وفق الدرس. نقيم الكيان كاملًا. |
+| **Extractive QA and no-answer** — Select an answer span from the supplied context. When the context does not support an answer, return no-answer instead of generating text. | **الأسئلة الاستخراجية وعدم وجود إجابة** — نختار مقطع إجابة من السياق المقدم. عندما لا يدعم السياق الإجابة نعيد عدم وجود إجابة، ولا نولّد نصًا من خارج المصدر. |
+| **Arabic model choice** — Compare Arabic and multilingual checkpoint assumptions, tokenizer compatibility and sample coverage; justify the choice with evidence. | **اختيار النموذج للعربية** — نقارن افتراضات النماذج العربية ومتعددة اللغات وتوافق المرمّز وتغطية العينة، ثم نبرر الاختيار بالدليل لا بالاسم الأشهر. |
 
-التوزيع الجديد: **300 دقيقة شرح + 60 دقيقة لاب**. الاستراحات ونوافذ الاختبارات والعروض خارج ساعات التعلم الصافية. [تفاصيل التنفيذ والاستعادة](../docs/04-delivery-plan.md).
+**Architecture:** Protected, grouped data → Baseline + encoder → Topic / sentiment / NER / QA → Task metrics + Gate B
 
+**المسار المعماري:** بيانات محمية ومقسمة ← خط أساس + مشفر ← موضوع / مشاعر / كيانات / أسئلة ← مقاييس المهام + بوابة B
+
+**الدليل:** خط أساس + عدم تداخل المجموعات + أدلة التصنيف والكيانات والأسئلة + commit
+
+[المشروع وهيكله](../docs/project-walkthrough.md) · [التشغيل والحفظ خطوة بخطوة](../docs/learner-workflow.md) · [تقييم 100 درجة](../docs/policies/assessment-and-completion.md)
 
 ## خط الأنابيب الذي سنبنيه
 

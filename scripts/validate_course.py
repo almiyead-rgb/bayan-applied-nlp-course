@@ -41,7 +41,8 @@ REQUIRED_PUBLIC_FILES = {
     "assessments/README.md", "assessments/pa-01/starter_buggy.py",
     "assessments/pa-01/check_pa1.py", "assessments/pa-02/rival-team-report.md",
     "assessments/quiz/README.md", "downloads/bayan-student-starter.zip",
-    "downloads/SHA256SUMS.txt", "student-starter/GETTING_STARTED.md",
+    "downloads/SHA256SUMS.txt", "student-starter/GETTING_STARTED.md", "docs/learner-workflow.md",
+    "docs/project-walkthrough.md", "docs/presentation-guide.md", "docs/pre-submission-checklist.md",
 }
 PRIVATE_DIRECTORIES = {"private", "internal", "instructor", "trainer", "solutions", "answer_keys"}
 PRIVATE_PREFIXES = ("instructor_", "trainer_", "internal_")
@@ -93,6 +94,7 @@ def collect_files() -> set[str]:
         for path in ROOT.rglob("*")
         if path.is_file() and ".git" not in path.parts
         and "__pycache__" not in path.parts and ".pytest_cache" not in path.parts
+        and "_site" not in path.parts
     }
 
 
@@ -310,14 +312,15 @@ def validate_starter(errors: list[str]) -> int:
     required = {
         "README.md", "STUDENT_PROFILE.md", "PROGRESS.md", "DECISIONS.md",
         "BENCHMARKS.md", "EVALUATION_REPORT.md", "MODEL_CARD.md", "DATA_CARD.md",
-        "PROJECT_SUMMARY.json", "SUBMISSION.yml", "GETTING_STARTED.md",
+        "PROJECT_SUMMARY.json", "SUBMISSION.yml", "GETTING_STARTED.md", "PRESENTATION.md",
+        "scripts/preflight_submission.py", "scripts/export_submission.py",
         "reports/README.md", "sample_outputs/README.md",
     } | {f"notebooks/{name}" for name in NOTEBOOK_MARKERS}
     missing = required - set(directory_files)
     if missing:
         fail(errors, f"Student starter missing required paths: {sorted(missing)}")
-    if len(directory_files) != 75:
-        fail(errors, f"Student starter file count changed: expected 75, found {len(directory_files)}")
+    if len(directory_files) != 78:
+        fail(errors, f"Student starter file count changed: expected 78, found {len(directory_files)}")
     return len(directory_files)
 
 
@@ -339,10 +342,10 @@ def validate_accreditation_contract(errors: list[str]) -> None:
             "≥100", "≤40 ms", "16", "Required measured extension",
         ],
         "docs/policies/assessment-and-completion.md": [
-            "90/100", "+5", "80/100", "300 دقيقة", "60 دقيقة",
+            "90/100", "70/100", "BAYAN-100-v2.1", "70", "20", "10", "100", "T7", "A5", "P5",
         ],
         "day-04/README.md": [
-            "300 دقيقة", "60 دقيقة", "تجميع بيان I", "عروض بيان",
+            "Learning journey", "Architecture", "PROJECT_ARTIFACT",
         ],
         "templates/PROJECT_SUMMARY.template.json": [
             '"sentiment"', '"extension"', '"evidence"',

@@ -26,9 +26,15 @@ def load_course() -> dict:
     assert c['instruction_minutes'] == 300 and c['lab_minutes'] == 60
     assert len(c['days']) == 4 and sum(c['assessment_weights']) == 100
     assert [d['id'] for d in c['days']] == [1,2,3,4]
+    assert c['assessment_weights'] == [70,20,10]
+    assert sum(x['points'] for x in c['rubric']) == 100
+    for category,total in [('technical',70),('administrative',20),('presentation',10)]:
+        assert sum(x['points'] for x in c['rubric'] if x['category']==category)==total
+    for row in c['rubric']: assert sum(x['points'] for x in row['items'])==row['points']
     assert set(o for d in c['days'] for o in d['outcomes']) == {f'LO{i}' for i in range(1,7)}
     for d in c['days']:
-        assert len(d['hours']) == 5 and sum(x[0] for x in d['lab_plan']) == 60
+        assert len(d['topics']) == 5 and len(d['architecture']) == 4
+        assert len(d['lab_steps']) == 4
         for f in d['lessons'] + d['datasets'] + [d['gate']] + ['notebooks/'+n for n in d['notebooks']]:
             if not (ROOT/f).is_file(): raise FileNotFoundError(f'Missing course source: {f}')
     return c
