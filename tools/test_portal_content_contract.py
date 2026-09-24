@@ -23,6 +23,7 @@ class PageParser(HTMLParser):
         self.in_data = False
         self.data_parts: list[str] = []
         self.images: list[str] = []
+        self.links: list[str] = []
         self.python_blocks: list[str] = []
         self.code_parts: list[str] | None = None
         self.text_parts: list[str] = []
@@ -31,6 +32,8 @@ class PageParser(HTMLParser):
         a = dict(attrs)
         if tag == 'script' and a.get('id') == 'portal-data':
             self.in_data = True
+        if tag == 'a' and a.get('href'):
+            self.links.append(a['href'])
         if tag == 'img' and 'brand-image' in (a.get('class') or '').split():
             self.images.append(a.get('src') or '')
         if tag == 'code' and 'language-python' in (a.get('class') or '').split():
@@ -131,7 +134,13 @@ def check_site(path: Path) -> dict:
             and 'no edited replacement' in source.lower()
             and 'similarity percentage alone' in source.lower(),
             'one_shot_policy_with_evidence_based_integrity_notice')
-    require('file:///C:' not in source and 'AppData/Local/Temp' not in source,
+    # Warning examples may legitimately show file:///C:/... in code text.
+    # Only actual hyperlinks must be portable; do not censor the warning.
+    links = page.links + [link for parsed in parsed_docs.values() for link in parsed.links]
+    probe = PageParser()
+    probe.feed('<code>file:///C:/example</code><a href="file:///C:/bad">bad</a>')
+    require(probe.links == ['file:///C:/bad']
+            and not any(link.lower().startswith('file:') or 'AppData/Local/Temp' in link for link in links),
             'no_machine_specific_student_links')
     return {'result': 'PORTAL_CONTENT_CONTRACT_PASS', 'count': len(checks),
             'checks': checks, 'rubric_totals': totals,
